@@ -1,0 +1,10 @@
+# MacOSX用
+.DS_Store
+
+# npmプロジェクト開発
+node_modules/
+#public/**
+#!public/index.html
+
+# Gatsby blog cacheデータ
+.cache
