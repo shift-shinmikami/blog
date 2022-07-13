@@ -1,7 +1,7 @@
 ---
 title:
-date: "2015-05-01T22:12:03"
-description: "Hello World"
+date: "2022-07-13T16:11:00"
+description: "Moff animal cafe イーアス高尾に行ってきました。"
 ---
 
 This is my first post on my new fake blog! How exciting!
