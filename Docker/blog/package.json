@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "shin-tech25_blog",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Authored By Shin-tech25. Engineering Blog.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Shin-tech25 <m.shin0509@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
