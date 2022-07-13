@@ -26,7 +26,10 @@ const Layout = ({ location, title, children }) => {
       <header className="global-header">{header}</header>
       <main>{children}</main>
       <footer>
-        <a href="https://www.twitter.com/Shin-tech25">Shin-tech25</a>'s Engineering Blog!
+        <p><a href="https://www.twitter.com/Shin-tech25">Shin-tech25</a>'s Engineering Blog!</p>
+        <Link className="header-link-home" to="/">
+          {title}
+        </Link>
       </footer>
     </div>
   )

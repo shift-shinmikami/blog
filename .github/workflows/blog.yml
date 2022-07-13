@@ -42,4 +42,4 @@ jobs:
           ssh-add ~/.ssh/id_rsa
           ssh-keyscan -p 22 -H 164.70.121.236 >> ~/.ssh/known_hosts  # manager001.ga
           cd Ansible/
-          ansible-playbook -i inventory/hosts.yml playbooks/docker-deploy.yml --private-key ~/.ssh/id_rsa --extra-vars 'docker_deploy_host=manager001.ga docker_image="${{ secrets.DOCKER_HUB_USERNAME }}/blog:latest" docker_host_port=1010 docker_container_port=80 docker_container_name=blog'
+          ansible-playbook -i inventory/hosts.yml playbooks/docker-deploy.yml --private-key ~/.ssh/id_rsa --extra-vars 'docker_deploy_host=manager001.ga docker_image="${{ secrets.DOCKER_HUB_USERNAME }}/blog:latest" docker_host_port=80 docker_container_port=80 docker_container_name=blog'

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Engineering and Programming Blog.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 13 Jul 2022 06:59:04 GMT</lastBuildDate><item><title><![CDATA[メンテナンスしやすいAnsiblePlaybookの書き方]]></title><description><![CDATA[このページでは、保守的な Playbook の書き方、冪等性などをしっかりと考慮した Playbook や tips を紹介しています。シンプルでクリーンな Playbook を作成しましょう。 Ansible は Red Hat…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/posted_20220705/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/posted_20220705/</guid><pubDate>Wed, 06 Jul 2022 02:29:00 GMT</pubDate><content:encoded>&lt;p&gt;このページでは、保守的な Playbook の書き方、冪等性などをしっかりと考慮した Playbook や tips を紹介しています。シンプルでクリーンな Playbook を作成しましょう。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Engineering and Programming Blog.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 13 Jul 2022 10:49:19 GMT</lastBuildDate><item><title><![CDATA[メンテナンスしやすいAnsiblePlaybookの書き方]]></title><description><![CDATA[このページでは、保守的な Playbook の書き方、冪等性などをしっかりと考慮した Playbook や tips を紹介しています。シンプルでクリーンな Playbook を作成しましょう。 Ansible は Red Hat…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/posted_20220705/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/posted_20220705/</guid><pubDate>Wed, 06 Jul 2022 02:29:00 GMT</pubDate><content:encoded>&lt;p&gt;このページでは、保守的な Playbook の書き方、冪等性などをしっかりと考慮した Playbook や tips を紹介しています。シンプルでクリーンな Playbook を作成しましょう。&lt;/p&gt;
 &lt;p&gt;Ansible は Red Hat 社により開発されているサーバプロビジョニング・ツールです。Linux を始めとして、Windows、Cisco 機器などに対しても設定変更を行うことができます。汎用性が高いことがメリットです。&lt;/p&gt;
 &lt;p&gt;一方、設計段階で Playbook( = Ansible 実行コード)の設計方針をしっかりと決めなければ、Playbook と処理の対応関係が次第に分かりづらくなり、保守に時間がかかるコードを量産してしまうことに繋がります。&lt;/p&gt;
 &lt;p&gt;業務で実際に複雑な Playbook を見てきました。見ただけでは実際に何をする処理なのか分かりづらく、ミスの温床になります。&lt;/p&gt;
@@ -94,8 +94,173 @@ Playbookを実行する前に、冪等性のチェックと同様にドライラ
 &lt;h3&gt;内部リンク&lt;/h3&gt;
 &lt;h3&gt;参考&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://dev.classmethod.jp/articles/ansible-molecule/&quot;&gt;AnsibleのテストツールMoleculeでできること&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[New Beginnings]]></title><description><![CDATA[Far far away, behind the word mountains, far from the countries Vokalia and
+&lt;li&gt;&lt;a href=&quot;https://dev.classmethod.jp/articles/ansible-molecule/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;AnsibleのテストツールMoleculeでできること&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Moff animal cafe イーアス高尾に行ってきました。]]></title><description><![CDATA[醍醐味 Moff animal cafe イーアス高尾は、室内で動物と触れ合うことができるこじんまりした動物園です。常時 15 ～ 2…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/posted_20220703/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/posted_20220703/</guid><pubDate>Sun, 03 Jul 2022 03:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;醍醐味&lt;/h2&gt;
+&lt;p&gt;Moff animal cafe イーアス高尾は、室内で動物と触れ合うことができるこじんまりした動物園です。常時 15 ～ 20 種の動物達と触れ合うことができ、フリードリンクを飲みながらゆったりすることができます。イメージとしては、カフェと動物園の中間みたいな場所でした。&lt;/p&gt;
+&lt;p&gt;都内の猫カフェは忙しく時間制限を設けている場所も多い印象ですが、ここは時間制限等は特にないのが特徴です！&lt;/p&gt;
+&lt;p&gt;公式ページはこちら → &lt;a href=&quot;https://takao.iias.jp/shop/detail/1020.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Moff animal cafe イーアス高尾&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;フクロウとの触れ合い&lt;/h2&gt;
+&lt;p&gt;フクロウとの触れ合いが出来る珍しいコーナーです。大きなワシミミズクを腕に乗せて「フクロウ体験」をすることが出来ました。&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 400px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5c8640db975043113768d307e18fa57f/066f9/owl_on_arm.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.54430379746836%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAIDBQT/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/2gAMAwEAAhADEAAAAdJn9hXMlN0pC6ga/8QAHhAAAgIABwAAAAAAAAAAAAAAAQIDMgAQERIhIjH/2gAIAQEAAQUC4zZgGZusUUhTUuq23YWgsff/xAAWEQEBAQAAAAAAAAAAAAAAAAAAERD/2gAIAQMBAT8BRc//xAAWEQEBAQAAAAAAAAAAAAAAAAAAERD/2gAIAQIBAT8BVM//xAAdEAABBAIDAAAAAAAAAAAAAAACAAEQESFxMUFi/9oACAEBAAY/AuZom0vVdK2Ih2rMFlnhp//EAB0QAQACAgIDAAAAAAAAAAAAAAEAESExEEFxkaH/2gAIAQEAAT8hsGR7hkE0yp1MavURYbSHEnqMCvERVBity5gnyk0cX//aAAwDAQACAAMAAAAQHMbA/8QAFhEBAQEAAAAAAAAAAAAAAAAAARBB/9oACAEDAQE/EEYMT//EABcRAAMBAAAAAAAAAAAAAAAAAAABEVH/2gAIAQIBAT8QTTINUp//xAAeEAEAAgICAwEAAAAAAAAAAAABABEhMUFxUYGRof/aAAgBAQABPxBsgHSIZ2Fj5IKL6I7BQ6x69xBshpaa4e9Rca3dnvcRrLgNsQKqV1ri4MRQGswfa/Jnb5gLYJ//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;owl_on_arm&quot;
+        title=&quot;owl_on_arm&quot;
+        src=&quot;/static/5c8640db975043113768d307e18fa57f/066f9/owl_on_arm.jpg&quot;
+        srcset=&quot;/static/5c8640db975043113768d307e18fa57f/ff44c/owl_on_arm.jpg 158w,
+/static/5c8640db975043113768d307e18fa57f/a6688/owl_on_arm.jpg 315w,
+/static/5c8640db975043113768d307e18fa57f/066f9/owl_on_arm.jpg 400w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;リクガメの散歩&lt;/h2&gt;
+&lt;p&gt;リクガメはマイペースで非常に気まぐれです。そして、私の写真も気まぐれだったようで撮影するのを忘れてしまいました。リクガメの名前は「石塚さん」だったことを覚えています（何故、石塚さんなのかは分かりません）。石塚さんの散歩は偶に見ることが出来ますよ。&lt;/p&gt;
+&lt;h2&gt;ひよこコーナー&lt;/h2&gt;
+&lt;p&gt;室内に入ってすぐの場所にひよこコーナーがあります。ひよこさん達は皆元気で、エサを与えると近寄って食べてくれます。モフモフしていて温かったです。&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 400px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2553b920f2e2d1ae18b53a2c38c05327/066f9/chiks1.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.54430379746836%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAMCBAX/xAAXAQEBAQEAAAAAAAAAAAAAAAABAAID/9oADAMBAAIQAxAAAAGPJ6nHz3tMjKgzFf/EABwQAAICAgMAAAAAAAAAAAAAAAABAhEDBCAiMf/aAAgBAQABBQLPrNEE4yseSx+l8L6H/8QAFREBAQAAAAAAAAAAAAAAAAAAASD/2gAIAQMBAT8BY//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAECAQE/ASP/xAAcEAAABgMAAAAAAAAAAAAAAAAAAQIQETEgIZH/2gAIAQEABj8ClKeCTKm2LyJv/8QAHBABAAICAwEAAAAAAAAAAAAAAQARITEQQVFx/9oACAEBAAE/IULH3SWTXgDM4BpWp35CNi3UzPUTNm5ftsNMUjx//9oADAMBAAIAAwAAABAoGML/xAAYEQACAwAAAAAAAAAAAAAAAAAAARARQf/aAAgBAwEBPxBNmj//xAAWEQADAAAAAAAAAAAAAAAAAAABIEH/2gAIAQIBAT8QKJ//xAAcEAEAAwEAAwEAAAAAAAAAAAABABEhMUFRYXH/2gAIAQEAAT8QvoULRorsG3jwtSeb37Y9FR2Or5EHYoXsaNOfs02SzIzYS1iZMrVPeTXwLIwGwMzmxdn/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;chiks1&quot;
+        title=&quot;chiks1&quot;
+        src=&quot;/static/2553b920f2e2d1ae18b53a2c38c05327/066f9/chiks1.jpg&quot;
+        srcset=&quot;/static/2553b920f2e2d1ae18b53a2c38c05327/ff44c/chiks1.jpg 158w,
+/static/2553b920f2e2d1ae18b53a2c38c05327/a6688/chiks1.jpg 315w,
+/static/2553b920f2e2d1ae18b53a2c38c05327/066f9/chiks1.jpg 400w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 400px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/291d9e8114c4dc25a6b7c6081653ff48/066f9/chiks2.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.54430379746836%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAABAABAgX/xAAWAQEBAQAAAAAAAAAAAAAAAAACAQD/2gAMAwEAAhADEAAAAT56YilXEaV5EzVsF//EAB4QAAICAgIDAAAAAAAAAAAAAAECABEDEgQzEyMx/9oACAEBAAEFAuRgohjjKNsvmWm9sCmh3UqzaZu5fs//xAAWEQADAAAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8BI//EABgRAAIDAAAAAAAAAAAAAAAAAAABEBEx/9oACAECAQE/AWWbH//EABsQAAMAAwEBAAAAAAAAAAAAAAABERAxQQJh/9oACAEBAAY/Arq8RPVui4t+PEfSpGhDx//EAB4QAAICAgIDAAAAAAAAAAAAAAABESExQVFhcYHB/9oACAEBAAE/IWKxNCsswo7G+LyZzd9nEqUETbfohcq0EV52YIpv4NSNaK9iGf/aAAwDAQACAAMAAAAQhy5z/8QAFhEBAQEAAAAAAAAAAAAAAAAAABEB/9oACAEDAQE/EMqmZFf/xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAIAQIBAT8QQWJZl//EAB8QAQEAAgIBBQAAAAAAAAAAAAERACFBUWExcZGh8P/aAAgBAQABPxA5E6x6XRouWYhQfMcQUbE024q4apw+cNSFQLFNfZMbMoQbYdZN6pA99mB4cqWr+mFwitAwpAENgDvzzmiAgqYC5//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;chiks2&quot;
+        title=&quot;chiks2&quot;
+        src=&quot;/static/291d9e8114c4dc25a6b7c6081653ff48/066f9/chiks2.jpg&quot;
+        srcset=&quot;/static/291d9e8114c4dc25a6b7c6081653ff48/ff44c/chiks2.jpg 158w,
+/static/291d9e8114c4dc25a6b7c6081653ff48/a6688/chiks2.jpg 315w,
+/static/291d9e8114c4dc25a6b7c6081653ff48/066f9/chiks2.jpg 400w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;犬猫コーナー&lt;/h2&gt;
+&lt;p&gt;犬さん猫さんも十数匹いました。猫さんはちょっとクールなのが特徴（笑）。ただし、エサにはすぐに食いついて来ます。ダラけている様子がとても可愛い。&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 400px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c0572b3bf803e1b9c6c939872428c513/066f9/cat1.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.54430379746836%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAQL/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAgH/2gAMAwEAAhADEAAAAV2TPinmGIVdrKRYf//EABsQAQACAwEBAAAAAAAAAAAAAAEAAhESISIx/9oACAEBAAEFArpsfNczFkXIPGwzztkjCVOf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAHBAAAQQDAQAAAAAAAAAAAAAAEAABESESMWGR/9oACAEBAAY/At0bx9Ui2UzjxbYOP//EABwQAQADAQEAAwAAAAAAAAAAAAEAESExQRBRsf/aAAgBAQABPyFHNWabHlOQ6wshhqz9QAo39EpEKEWvEhkXT2LcK49/ADzP/9oADAMBAAIAAwAAABB3+f8A/8QAFhEBAQEAAAAAAAAAAAAAAAAAEAER/9oACAEDAQE/EIYf/8QAFhEBAQEAAAAAAAAAAAAAAAAAABEB/9oACAECAQE/ENxVV//EAB4QAQACAgIDAQAAAAAAAAAAAAEAESExQXFRYYHx/9oACAEBAAE/ECSIADoByXydwzdWiV1msbMwqo7AafxFL5iFXCBZ9ZVZqaLfPrUTxMD8YbqICh2VFgcLMKcGoUUL1P/Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cat1&quot;
+        title=&quot;cat1&quot;
+        src=&quot;/static/c0572b3bf803e1b9c6c939872428c513/066f9/cat1.jpg&quot;
+        srcset=&quot;/static/c0572b3bf803e1b9c6c939872428c513/ff44c/cat1.jpg 158w,
+/static/c0572b3bf803e1b9c6c939872428c513/a6688/cat1.jpg 315w,
+/static/c0572b3bf803e1b9c6c939872428c513/066f9/cat1.jpg 400w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 400px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3f4251c4412983839d5343b604e40582/066f9/cat2.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 74.68354430379746%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAABA//aAAwDAQACEAMQAAABZCEzptlcD//EABoQAQACAwEAAAAAAAAAAAAAAAIAAQMEIRP/2gAIAQEAAQUC9uDYMKLMB6RWOv/EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAwEBPwGsf//EABURAQEAAAAAAAAAAAAAAAAAAAAS/9oACAECAQE/AVP/xAAcEAACAgIDAAAAAAAAAAAAAAAAAQIRITEygaH/2gAIAQEABj8CyrOCouOhpQ9FFx7sqJ//xAAaEAEAAwADAAAAAAAAAAAAAAABABEhMUFR/9oACAEBAAE/IaA53axOtLyHK1QECEHX1N7l9YqlZzs//9oADAMBAAIAAwAAABCQH//EABcRAAMBAAAAAAAAAAAAAAAAAAABIRH/2gAIAQMBAT8Qpw2f/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAFB/9oACAECAQE/EMWX/8QAHhABAAICAQUAAAAAAAAAAAAAAQARIVExQWFxgfD/2gAIAQEAAT8Q64ChFeyJo2BRle0aLUAU6TccvgRZW8+IgUXkN8amQsbILX4J/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cat2&quot;
+        title=&quot;cat2&quot;
+        src=&quot;/static/3f4251c4412983839d5343b604e40582/066f9/cat2.jpg&quot;
+        srcset=&quot;/static/3f4251c4412983839d5343b604e40582/ff44c/cat2.jpg 158w,
+/static/3f4251c4412983839d5343b604e40582/a6688/cat2.jpg 315w,
+/static/3f4251c4412983839d5343b604e40582/066f9/cat2.jpg 400w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;アクセス&lt;/h2&gt;
+&lt;p&gt;最寄り駅 JR 高尾駅 から徒歩 5-10 分程度です。駅から直線で歩くだけですのでとても分かり易い！&lt;/p&gt;
+&lt;h2&gt;公式ページ&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://takao.iias.jp/shop/detail/1020.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Moff animal cafe イーアス高尾&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[New Beginnings]]></title><description><![CDATA[Far far away, behind the word mountains, far from the countries Vokalia and
 Consonantia, there live the blind texts. Separated they live in…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</guid><pubDate>Thu, 28 May 2015 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
 Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
 right at the coast of the Semantics, a large language ocean. A small river named
@@ -116,13 +281,13 @@ made herself on the way.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;When she reached the first hills of the &lt;strong&gt;Italic Mountains&lt;/strong&gt;, she had a last
 view back on the skyline of her hometown &lt;em&gt;Bookmarksgrove&lt;/em&gt;, the headline of
-&lt;a href=&quot;http://google.com&quot;&gt;Alphabet Village&lt;/a&gt; and the subline of her own road, the Line
+&lt;a href=&quot;http://google.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Alphabet Village&lt;/a&gt; and the subline of her own road, the Line
 Lane. Pityful a rhetoric question ran over her cheek, then she continued her
 way. On her way she met a copy.&lt;/p&gt;
 &lt;h3&gt;Overlaid the jeepers uselessly much excluding&lt;/h3&gt;
 &lt;p&gt;But nothing the copy said could convince her and so it didn’t take long until a
 few insidious Copy Writers ambushed her, made her drunk with
-&lt;a href=&quot;http://google.com&quot;&gt;Longe and Parole&lt;/a&gt; and dragged her into their agency, where
+&lt;a href=&quot;http://google.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Longe and Parole&lt;/a&gt; and dragged her into their agency, where
 they abused her for their projects again and again. And if she hasn’t been
 rewritten, then they are still using her.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -192,11 +357,11 @@ chicken eggs, though the…]]></description><link>https://gatsbystarterblogsourc
 &lt;p&gt;Did you know that “despite its name, salted duck eggs can also be made from
 chicken eggs, though the taste and texture will be somewhat different, and the
 egg yolk will be less rich.”?
-(&lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;Wikipedia Link&lt;/a&gt;)&lt;/p&gt;
+(&lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Wikipedia Link&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;Yeah, I didn’t either.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I’m sure I’ll write a lot more interesting things in the future. Oh, and here’s a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</guid><pubDate>Fri, 01 May 2015 13:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This is my first post on my new fake blog! How exciting!&lt;/p&gt;
 &lt;p&gt;I’m sure I’ll write a lot more interesting things in the future.&lt;/p&gt;
 &lt;p&gt;Oh, and here’s a great quote from this Wikipedia on
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;salted duck eggs&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;salted duck eggs&lt;/a&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;A salted duck egg is a Chinese preserved food product made by soaking duck
 eggs in brine, or packing each egg in damp, salted charcoal. In Asian
@@ -267,7 +432,7 @@ firm-textured, round yolk that is bright orange-red in color.&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;a href=&quot;https://raw.github.com/adamschwartz/github-markdown-kitchen-sink/master/README.md&quot;&gt;View raw (TEST.md)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://raw.github.com/adamschwartz/github-markdown-kitchen-sink/master/README.md&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;View raw (TEST.md)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This is a paragraph.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;This is a paragraph.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1&gt;Header 1&lt;/h1&gt;
@@ -387,9 +552,9 @@ Header 2
 - - -
 
 ---------------------------------------&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;This is &lt;a href=&quot;http://example.com&quot; title=&quot;Example&quot;&gt;an example&lt;/a&gt; link.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://example.com&quot;&gt;This link&lt;/a&gt; has no title attr.&lt;/p&gt;
-&lt;p&gt;This is &lt;a href=&quot;http://example.com&quot; title=&quot;Optional Title&quot;&gt;an example&lt;/a&gt; reference-style link.&lt;/p&gt;
+&lt;p&gt;This is &lt;a href=&quot;http://example.com&quot; title=&quot;Example&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;an example&lt;/a&gt; link.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://example.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;This link&lt;/a&gt; has no title attr.&lt;/p&gt;
+&lt;p&gt;This is &lt;a href=&quot;http://example.com&quot; title=&quot;Optional Title&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;an example&lt;/a&gt; reference-style link.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;This is [an example](http://example.com &quot;Example&quot;) link.
 
 [This link](http://example.com) has no title attr.

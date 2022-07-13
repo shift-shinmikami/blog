@@ -1,9 +1,0 @@
----
-- name: Staging用のPlaybook
-  hosts: staging
-  become: true
-  gather_facts: true
-
-  roles:
-    - role: httpd
-      tags: httpd
