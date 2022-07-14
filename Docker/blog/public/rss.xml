@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Engineering and Programming Blog.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 13 Jul 2022 10:49:19 GMT</lastBuildDate><item><title><![CDATA[メンテナンスしやすいAnsiblePlaybookの書き方]]></title><description><![CDATA[このページでは、保守的な Playbook の書き方、冪等性などをしっかりと考慮した Playbook や tips を紹介しています。シンプルでクリーンな Playbook を作成しましょう。 Ansible は Red Hat…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/posted_20220705/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/posted_20220705/</guid><pubDate>Wed, 06 Jul 2022 02:29:00 GMT</pubDate><content:encoded>&lt;p&gt;このページでは、保守的な Playbook の書き方、冪等性などをしっかりと考慮した Playbook や tips を紹介しています。シンプルでクリーンな Playbook を作成しましょう。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Engineering and Programming Blog.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 14 Jul 2022 01:39:14 GMT</lastBuildDate><item><title><![CDATA[メンテナンスしやすいAnsiblePlaybookの書き方]]></title><description><![CDATA[このページでは、保守的な Playbook の書き方、冪等性などをしっかりと考慮した Playbook や tips を紹介しています。シンプルでクリーンな Playbook を作成しましょう。 Ansible は Red Hat…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/posted_20220705/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/posted_20220705/</guid><pubDate>Wed, 06 Jul 2022 02:29:00 GMT</pubDate><content:encoded>&lt;p&gt;このページでは、保守的な Playbook の書き方、冪等性などをしっかりと考慮した Playbook や tips を紹介しています。シンプルでクリーンな Playbook を作成しましょう。&lt;/p&gt;
 &lt;p&gt;Ansible は Red Hat 社により開発されているサーバプロビジョニング・ツールです。Linux を始めとして、Windows、Cisco 機器などに対しても設定変更を行うことができます。汎用性が高いことがメリットです。&lt;/p&gt;
 &lt;p&gt;一方、設計段階で Playbook( = Ansible 実行コード)の設計方針をしっかりと決めなければ、Playbook と処理の対応関係が次第に分かりづらくなり、保守に時間がかかるコードを量産してしまうことに繋がります。&lt;/p&gt;
 &lt;p&gt;業務で実際に複雑な Playbook を見てきました。見ただけでは実際に何をする処理なのか分かりづらく、ミスの温床になります。&lt;/p&gt;
 &lt;p&gt;そういった Playbook を作らないためにどうしたら良いか。以下に記載しました。&lt;/p&gt;
 &lt;h2&gt;概要&lt;/h2&gt;
 &lt;p&gt;保守的な Playbook を考える上でも観点はいくつかあります。
-その中でも特に重要な観点である、以下の 3 つ:&lt;/p&gt;
+その中でも特に重要な観点を以下に挙げました。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;トップダウン設計&lt;/li&gt;
+&lt;li&gt;インベントリ設計&lt;/li&gt;
 &lt;li&gt;ドライランチェック&lt;/li&gt;
 &lt;li&gt;冪等性&lt;/li&gt;
 &lt;li&gt;変数の設計&lt;/li&gt;
@@ -66,36 +67,180 @@
   &lt;span class=&quot;token comment&quot;&gt;# SELinux 無効化と必要なら再起動&lt;/span&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; selinux
     &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; selinux&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;図にすると以下のようになります。
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d90c01beefc6ce9a680a8b11eea879c1/b3058/Playbook%E3%83%88%E3%83%83%E3%83%97%E3%83%80%E3%82%A6%E3%83%B3%E8%A8%AD%E8%A8%88.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 59.49367088607595%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB3pQB/8QAFhABAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAEBAAEFAkTIj//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABcQAQEBAQAAAAAAAAAAAAAAAAAxARD/2gAIAQEAAT8h4hc1CH//2gAMAwEAAgADAAAAEODP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAHBABAAIBBQAAAAAAAAAAAAAAAQARURAhgbHR/9oACAEBAAE/EG0bK5mXs74O4yyrag0f/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Playbookトップダウン設計&quot;
+        title=&quot;Playbookトップダウン設計&quot;
+        src=&quot;/static/d90c01beefc6ce9a680a8b11eea879c1/828fb/Playbook%E3%83%88%E3%83%83%E3%83%97%E3%83%80%E3%82%A6%E3%83%B3%E8%A8%AD%E8%A8%88.jpg&quot;
+        srcset=&quot;/static/d90c01beefc6ce9a680a8b11eea879c1/ff44c/Playbook%E3%83%88%E3%83%83%E3%83%97%E3%83%80%E3%82%A6%E3%83%B3%E8%A8%AD%E8%A8%88.jpg 158w,
+/static/d90c01beefc6ce9a680a8b11eea879c1/a6688/Playbook%E3%83%88%E3%83%83%E3%83%97%E3%83%80%E3%82%A6%E3%83%B3%E8%A8%AD%E8%A8%88.jpg 315w,
+/static/d90c01beefc6ce9a680a8b11eea879c1/828fb/Playbook%E3%83%88%E3%83%83%E3%83%97%E3%83%80%E3%82%A6%E3%83%B3%E8%A8%AD%E8%A8%88.jpg 630w,
+/static/d90c01beefc6ce9a680a8b11eea879c1/0ede0/Playbook%E3%83%88%E3%83%83%E3%83%97%E3%83%80%E3%82%A6%E3%83%B3%E8%A8%AD%E8%A8%88.jpg 945w,
+/static/d90c01beefc6ce9a680a8b11eea879c1/3ac88/Playbook%E3%83%88%E3%83%83%E3%83%97%E3%83%80%E3%82%A6%E3%83%B3%E8%A8%AD%E8%A8%88.jpg 1260w,
+/static/d90c01beefc6ce9a680a8b11eea879c1/b3058/Playbook%E3%83%88%E3%83%83%E3%83%97%E3%83%80%E3%82%A6%E3%83%B3%E8%A8%AD%E8%A8%88.jpg 1296w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;インベントリ設計&lt;/h3&gt;
+&lt;p&gt;以下に YAML 形式でのインベントリを例として記載しました。&lt;/p&gt;
+&lt;p&gt;YAML 形式では、&lt;code class=&quot;language-text&quot;&gt;children:&lt;/code&gt;の下に位置するグループがその上のグループに所属することになります。また、&lt;code class=&quot;language-text&quot;&gt;hosts:&lt;/code&gt;の下に位置するホストがその上のグループに所属することになります。&lt;/p&gt;
+&lt;p&gt;例えば、グループ&lt;code class=&quot;language-text&quot;&gt;manager&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;staging&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;production&lt;/code&gt;は&lt;code class=&quot;language-text&quot;&gt;linux&lt;/code&gt;グループに所属しており、同時に&lt;code class=&quot;language-text&quot;&gt;all&lt;/code&gt;に所属しています。（&lt;code class=&quot;language-text&quot;&gt;all&lt;/code&gt;は特別なグループで全てのホストが必ずこれに属しています。）&lt;code class=&quot;language-text&quot;&gt;staging001.ga&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;test003.ga&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;test004.ga&lt;/code&gt;は&lt;code class=&quot;language-text&quot;&gt;staging&lt;/code&gt;グループと&lt;code class=&quot;language-text&quot;&gt;all&lt;/code&gt;グループに所属しています。&lt;/p&gt;
+&lt;p&gt;hosts.yml&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;linux&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;staging&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;production&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;manager001.ga&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;staging&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;staging001.ga&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;test003.ga&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;test004.ga&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;test005.ga&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;production&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        production001.ga&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ホストやグループの変数（Inventory Variables）は、&lt;code class=&quot;language-text&quot;&gt;host_vars/&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;group_vars/&lt;/code&gt;の下にそれぞれのホストやグループの名前を冠した YAML ファイルを配置し記載します。&lt;/p&gt;
+&lt;p&gt;以下にディレクトリ構造の例を記載します。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Ansible/
+  inventory/
+    group_vars/
+      all.yml
+      manager.yml
+      production.yml
+      staging.yml
+    host_vars/
+      manager001.ga.yml
+      production001.ga.yml
+      staging001.ga.yml
+      test003.ga.yml
+      test004.ga.yml
+      test005.ga.yml
+    hosts.yml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;グループも意識しないと沢山出来てしまいますが、原則として「一つの Playbook には、一つのグループが紐づく」ことを意識すると沢山のグループを作らずに済み可読性が上がります。グループには役割や機能を抽象化したものを記載すると分かりやすいです。例えば、Zabbix サーバなら zabbix グループという具合に。&lt;/p&gt;
+&lt;p&gt;今回の例で、インベントリの設計を図にしたものが以下になります。&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ecf23d3e43543dbffdc25988c10376ab/e7cb9/%E3%82%A4%E3%83%B3%E3%83%99%E3%83%B3%E3%83%88%E3%83%AA%E8%A8%AD%E8%A8%88.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.59493670886076%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAd+aQig//8QAFxAAAwEAAAAAAAAAAAAAAAAAAAEgQf/aAAgBAQABBQIxR//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABcQAAMBAAAAAAAAAAAAAAAAAAABMRD/2gAIAQEAAT8hGJxQUP/aAAwDAQACAAMAAAAQMw//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAaEAEBAAMBAQAAAAAAAAAAAAABABEhMYHw/9oACAEBAAE/EFU5j2+M5lem4CNEA0L/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;インベントリ設計&quot;
+        title=&quot;インベントリ設計&quot;
+        src=&quot;/static/ecf23d3e43543dbffdc25988c10376ab/828fb/%E3%82%A4%E3%83%B3%E3%83%99%E3%83%B3%E3%83%88%E3%83%AA%E8%A8%AD%E8%A8%88.jpg&quot;
+        srcset=&quot;/static/ecf23d3e43543dbffdc25988c10376ab/ff44c/%E3%82%A4%E3%83%B3%E3%83%99%E3%83%B3%E3%83%88%E3%83%AA%E8%A8%AD%E8%A8%88.jpg 158w,
+/static/ecf23d3e43543dbffdc25988c10376ab/a6688/%E3%82%A4%E3%83%B3%E3%83%99%E3%83%B3%E3%83%88%E3%83%AA%E8%A8%AD%E8%A8%88.jpg 315w,
+/static/ecf23d3e43543dbffdc25988c10376ab/828fb/%E3%82%A4%E3%83%B3%E3%83%99%E3%83%B3%E3%83%88%E3%83%AA%E8%A8%AD%E8%A8%88.jpg 630w,
+/static/ecf23d3e43543dbffdc25988c10376ab/0ede0/%E3%82%A4%E3%83%B3%E3%83%99%E3%83%B3%E3%83%88%E3%83%AA%E8%A8%AD%E8%A8%88.jpg 945w,
+/static/ecf23d3e43543dbffdc25988c10376ab/3ac88/%E3%82%A4%E3%83%B3%E3%83%99%E3%83%B3%E3%83%88%E3%83%AA%E8%A8%AD%E8%A8%88.jpg 1260w,
+/static/ecf23d3e43543dbffdc25988c10376ab/e7cb9/%E3%82%A4%E3%83%B3%E3%83%99%E3%83%B3%E3%83%88%E3%83%AA%E8%A8%AD%E8%A8%88.jpg 1367w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;トップダウン設計によるメリット&lt;/h3&gt;
+&lt;p&gt;トップダウン設計のメリットは単に可読性が上がり、スケーラビリティが高くなるだけではありません。コマンド実行が非常に簡単で運用も楽になります。Ansible には実際には沢山のオプションがあります。コマンド実行時にそれらを適切に付与してやる必要がありますが、トップダウン設計によってオプションもシンプルで簡単になります。&lt;/p&gt;
+&lt;p&gt;例えば、以下のようになります。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# ansible-playbook site.yml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これは、Playbook の総本山である&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;をホストの制限なく実行されています。&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;に指定されているホストは&lt;code class=&quot;language-text&quot;&gt;all&lt;/code&gt;です。また、&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;は&lt;code class=&quot;language-text&quot;&gt;linux-common.yml&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;manager.yml&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;staging.yml&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;production.yml&lt;/code&gt;を import していますから、結果的に&lt;strong&gt;必要なインフラが全て揃う&lt;/strong&gt;コマンドということになります。&lt;/p&gt;
+&lt;p&gt;以下はどうでしょうか？&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# ansible-playbook site.yml -l staging&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;-l&lt;/code&gt;オプションは、ホストやグループを制限するオプションです。上の例では、&lt;code class=&quot;language-text&quot;&gt;staging&lt;/code&gt;グループに制限して&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;を実行しています。実際には、&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;を実行するのにはたとえ変更が全く無かったとしてもそれなりの時間を要します為、ホストやグループを制限して実行するのが普通です。しっかりとトップダウンで設計されていれば、Playbook は常に&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;を指定して実行することができ、各種 Playbook を指定して実行することもできますがその必要がなくなります。これが最大のメリットです。&lt;/p&gt;
+&lt;p&gt;また、次の例も見てみましょう。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# ansible-playbook site.yml -l staging --tags httpd&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;この例では、httpd という&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt;を指定して実行しています。&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt;は&lt;code class=&quot;language-text&quot;&gt;tag&lt;/code&gt;でタグ付けしています。コマンド実行時に&lt;code class=&quot;language-text&quot;&gt;--tags&lt;/code&gt;で指定した&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt;を実行することができます。このようにすることで&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt;の局所的使用を可能にします。&lt;/p&gt;
+&lt;p&gt;まとめると、以下のようなコマンドで Playbook を実行することができます。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# ansible-playbook site.yml &amp;lt; -l (指定したターゲット) &gt; &amp;lt; --tags (role名) &gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;トップダウン設計することで、Playbook の実行コマンドがシンプルになりました。&lt;/p&gt;
 &lt;h3&gt;ドライランチェック&lt;/h3&gt;
 &lt;p&gt;ドライランチェックには、&lt;code class=&quot;language-text&quot;&gt;ansible-playbook site.yml --check&lt;/code&gt;のように、&lt;code class=&quot;language-text&quot;&gt;--check&lt;/code&gt;をオプションとして付与して実行します。
-Playbookを実行する前に、冪等性のチェックと同様にドライランチェックを実行しましょう。
-ドライランチェックを実行した際に問題が無いようなPlaybookの設計をしましょう。&lt;/p&gt;
+Playbook を実行する前に、冪等性のチェックと同様にドライランチェックを実行しましょう。
+ドライランチェックを実行した際に問題が無いような Playbook の設計をしましょう。&lt;/p&gt;
 &lt;h3&gt;冪等性&lt;/h3&gt;
-&lt;p&gt;Playbookが冪等性が保たれていることを確認するために、最も簡単な方法はPlaybookを二度実行して変更箇所が無いかどうか確認することです。
-ただし、これはサーバの設定変更が反映されてしまいます。冪等性を確認するためにAnsibleが用意してくれているツールがあります。それが、&lt;code class=&quot;language-text&quot;&gt;Ansible Molecule&lt;/code&gt;です。&lt;/p&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Molecule&lt;/code&gt;では、テスト環境の作成、テスト、テスト環境の削除が行われます。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;テスト環境の構築&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;テスト環境を新規構築します。MoleculeではAnsibleがサポートしている環境（Docker, EC2など）の構築が可能です。Molecule内の定義ファイルへ、DockerやEC2などの構築したい環境を記載することが出来ます。&lt;/p&gt;
+&lt;p&gt;Playbook が冪等性が保たれていることを確認するために、最も簡単な方法は Playbook を二度実行して変更箇所が無いかどうか確認することです。
+ただし、これはサーバの設定変更が反映されてしまいます。冪等性を確認するために Ansible が用意してくれているツールがあります。それが、&lt;code class=&quot;language-text&quot;&gt;Ansible Molecule&lt;/code&gt;です。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Molecule&lt;/code&gt;では、&lt;code class=&quot;language-text&quot;&gt;Role&lt;/code&gt;の開発支援とテスト自動化を行うことが出来るツールで、テストの部分に注目すると以下のテストを行えるとされている。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lint チェック&lt;/li&gt;
+&lt;li&gt;Docker 内での Playbook 実行&lt;/li&gt;
+&lt;li&gt;冪等性チェック&lt;/li&gt;
+&lt;li&gt;テストコードの実行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ansible Molecule の使い方については、別のページで詳しく書くことにしますが品質を考えるとこれは便利そうです。&lt;/p&gt;
 &lt;h3&gt;変数の設計&lt;/h3&gt;
-&lt;h2&gt;Playbook&lt;/h2&gt;
-&lt;h3&gt;Playbook の総本山 site.yml&lt;/h3&gt;
-&lt;h3&gt;役割単位で Playbook を設計する&lt;/h3&gt;
-&lt;h3&gt;role に実際の処理を書く&lt;/h3&gt;
-&lt;h3&gt;role はタグ付けし、局所的運用を可能にする&lt;/h3&gt;
-&lt;h2&gt;Inventory の設計&lt;/h2&gt;
-&lt;h3&gt;YAML 形式での Inventory 構成&lt;/h3&gt;
-&lt;h3&gt;host_vars, group_vars&lt;/h3&gt;
-&lt;h2&gt;role の書き方&lt;/h2&gt;
-&lt;h3&gt;車輪の再発明を防ぐ!Ansible-Galaxy&lt;/h3&gt;
-&lt;h2&gt;リファクタリング&lt;/h2&gt;
-&lt;h2&gt;リンク&lt;/h2&gt;
+&lt;p&gt;Playbook では、Vars セクションに限らず、様々なところで変数を定義することが出来ます。他の多くのプログラミング言語と同じく、スコープが狭い変数のほうが優先度が高い（＝上書きされる）特徴があります。&lt;/p&gt;
+&lt;p&gt;参照範囲は 3 つのスコープに分かれます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Global 領域&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;環境変数(environment vars)&lt;/li&gt;
+&lt;li&gt;エキストラ変数(extra vars)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Play 単位&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;プレイ変数(play vars)&lt;/li&gt;
+&lt;li&gt;タスク変数(task vars)&lt;/li&gt;
+&lt;li&gt;ロール変数(role vars)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Host 単位&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;インベントリ変数(inventory vars)&lt;/li&gt;
+&lt;li&gt;ファクト変数(host facts)&lt;/li&gt;
+&lt;li&gt;レジスタ変数(registered vars)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;変数をどこで定義しているかで Playbook 自体の汎用性も変わってきます。ホストやグループに紐づく変数はインベントリ変数、role は汎用的に定義して Playbook の方でタスク変数としてロールのデフォルト変数を上書きするなどの工夫が必要です。実際には何が正解ということはないですが、上で書いたようなことを意識した上で汎用性の高い Playbook を設計しましょう。&lt;/p&gt;
 &lt;h3&gt;内部リンク&lt;/h3&gt;
 &lt;h3&gt;参考&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://dev.classmethod.jp/articles/ansible-molecule/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;AnsibleのテストツールMoleculeでできること&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Moff animal cafe イーアス高尾に行ってきました。]]></title><description><![CDATA[醍醐味 Moff animal cafe イーアス高尾は、室内で動物と触れ合うことができるこじんまりした動物園です。常時 15 ～ 2…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/posted_20220703/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/posted_20220703/</guid><pubDate>Sun, 03 Jul 2022 03:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;醍醐味&lt;/h2&gt;
+&lt;li&gt;&lt;a href=&quot;https://dev.classmethod.jp/articles/ansible-molecule/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Ansible のテストツール Molecule でできること&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Moff animal cafe イーアス高尾に行ってきました。]]></title><description><![CDATA[醍醐味 Moff animal cafe イーアス高尾は、室内で動物と触れ合うことができるこじんまりした動物園です。常時 15 ～ 2…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/posted_20220703/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/posted_20220703/</guid><pubDate>Sun, 03 Jul 2022 03:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;醍醐味&lt;/h2&gt;
 &lt;p&gt;Moff animal cafe イーアス高尾は、室内で動物と触れ合うことができるこじんまりした動物園です。常時 15 ～ 20 種の動物達と触れ合うことができ、フリードリンクを飲みながらゆったりすることができます。イメージとしては、カフェと動物園の中間みたいな場所でした。&lt;/p&gt;
 &lt;p&gt;都内の猫カフェは忙しく時間制限を設けている場所も多い印象ですが、ここは時間制限等は特にないのが特徴です！&lt;/p&gt;
 &lt;p&gt;公式ページはこちら → &lt;a href=&quot;https://takao.iias.jp/shop/detail/1020.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Moff animal cafe イーアス高尾&lt;/a&gt;&lt;/p&gt;
