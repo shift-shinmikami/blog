@@ -17,9 +17,10 @@ Ansible は Red Hat 社により開発されているサーバプロビジョニ
 ## 概要
 
 保守的な Playbook を考える上でも観点はいくつかあります。
-その中でも特に重要な観点である、以下の 3 つ:
+その中でも特に重要な観点を以下に挙げました。
 
 - トップダウン設計
+- インベントリ設計
 - ドライランチェック
 - 冪等性
 - 変数の設計
@@ -89,54 +90,156 @@ Playbook の設計で最も重視すべきなのがこのトップダウン設�
     tags: selinux
 ```
 
+図にすると以下のようになります。
+![Playbookトップダウン設計](./Playbookトップダウン設計.jpg)
+
+### インベントリ設計
+
+以下に YAML 形式でのインベントリを例として記載しました。
+
+YAML 形式では、`children:`の下に位置するグループがその上のグループに所属することになります。また、`hosts:`の下に位置するホストがその上のグループに所属することになります。
+
+例えば、グループ`manager`、`staging`、`production`は`linux`グループに所属しており、同時に`all`に所属しています。（`all`は特別なグループで全てのホストが必ずこれに属しています。）`staging001.ga`、`test003.ga`、`test004.ga`は`staging`グループと`all`グループに所属しています。
+
+hosts.yml
+
+```YAML
+all:
+  children:
+    linux:
+      children:
+        manager:
+        staging:
+        production:
+    manager:
+      hosts:
+        manager001.ga:
+    staging:
+      hosts:
+        staging001.ga:
+        test003.ga:
+        test004.ga:
+        test005.ga:
+    production:
+      hosts:
+        production001.ga:
+```
+
+ホストやグループの変数（Inventory Variables）は、`host_vars/`、`group_vars/`の下にそれぞれのホストやグループの名前を冠した YAML ファイルを配置し記載します。
+
+以下にディレクトリ構造の例を記載します。
+
+```
+Ansible/
+  inventory/
+    group_vars/
+      all.yml
+      manager.yml
+      production.yml
+      staging.yml
+    host_vars/
+      manager001.ga.yml
+      production001.ga.yml
+      staging001.ga.yml
+      test003.ga.yml
+      test004.ga.yml
+      test005.ga.yml
+    hosts.yml
+```
+
+グループも意識しないと沢山出来てしまいますが、原則として「一つの Playbook には、一つのグループが紐づく」ことを意識すると沢山のグループを作らずに済み可読性が上がります。グループには役割や機能を抽象化したものを記載すると分かりやすいです。例えば、Zabbix サーバなら zabbix グループという具合に。
+
+今回の例で、インベントリの設計を図にしたものが以下になります。
+
+![インベントリ設計](./インベントリ設計.jpg)
+
+### トップダウン設計によるメリット
+
+トップダウン設計のメリットは単に可読性が上がり、スケーラビリティが高くなるだけではありません。コマンド実行が非常に簡単で運用も楽になります。Ansible には実際には沢山のオプションがあります。コマンド実行時にそれらを適切に付与してやる必要がありますが、トップダウン設計によってオプションもシンプルで簡単になります。
+
+例えば、以下のようになります。
+
+```
+# ansible-playbook site.yml
+```
+
+これは、Playbook の総本山である`site.yml`をホストの制限なく実行されています。`site.yml`に指定されているホストは`all`です。また、`site.yml`は`linux-common.yml`、`manager.yml`、`staging.yml`、`production.yml`を import していますから、結果的に**必要なインフラが全て揃う**コマンドということになります。
+
+以下はどうでしょうか？
+
+```
+# ansible-playbook site.yml -l staging
+```
+
+`-l`オプションは、ホストやグループを制限するオプションです。上の例では、`staging`グループに制限して`site.yml`を実行しています。実際には、`site.yml`を実行するのにはたとえ変更が全く無かったとしてもそれなりの時間を要します為、ホストやグループを制限して実行するのが普通です。しっかりとトップダウンで設計されていれば、Playbook は常に`site.yml`を指定して実行することができ、各種 Playbook を指定して実行することもできますがその必要がなくなります。これが最大のメリットです。
+
+また、次の例も見てみましょう。
+
+```
+# ansible-playbook site.yml -l staging --tags httpd
+```
+
+この例では、httpd という`role`を指定して実行しています。`role`は`tag`でタグ付けしています。コマンド実行時に`--tags`で指定した`role`を実行することができます。このようにすることで`role`の局所的使用を可能にします。
+
+まとめると、以下のようなコマンドで Playbook を実行することができます。
+
+```
+# ansible-playbook site.yml < -l (指定したターゲット) > < --tags (role名) >
+```
+
+トップダウン設計することで、Playbook の実行コマンドがシンプルになりました。
+
 ### ドライランチェック
+
 ドライランチェックには、`ansible-playbook site.yml --check`のように、`--check`をオプションとして付与して実行します。
-Playbookを実行する前に、冪等性のチェックと同様にドライランチェックを実行しましょう。
-ドライランチェックを実行した際に問題が無いようなPlaybookの設計をしましょう。
+Playbook を実行する前に、冪等性のチェックと同様にドライランチェックを実行しましょう。
+ドライランチェックを実行した際に問題が無いような Playbook の設計をしましょう。
 
 ### 冪等性
-Playbookが冪等性が保たれていることを確認するために、最も簡単な方法はPlaybookを二度実行して変更箇所が無いかどうか確認することです。
-ただし、これはサーバの設定変更が反映されてしまいます。冪等性を確認するためにAnsibleが用意してくれているツールがあります。それが、`Ansible Molecule`です。
 
-`Molecule`では、テスト環境の作成、テスト、テスト環境の削除が行われます。
+Playbook が冪等性が保たれていることを確認するために、最も簡単な方法は Playbook を二度実行して変更箇所が無いかどうか確認することです。
+ただし、これはサーバの設定変更が反映されてしまいます。冪等性を確認するために Ansible が用意してくれているツールがあります。それが、`Ansible Molecule`です。
 
-1. テスト環境の構築
-テスト環境を新規構築します。MoleculeではAnsibleがサポートしている環境（Docker, EC2など）の構築が可能です。Molecule内の定義ファイルへ、DockerやEC2などの構築したい環境を記載することが出来ます。
+`Molecule`では、`Role`の開発支援とテスト自動化を行うことが出来るツールで、テストの部分に注目すると以下のテストを行えるとされている。
 
+- Lint チェック
+- Docker 内での Playbook 実行
+- 冪等性チェック
+- テストコードの実行
+
+Ansible Molecule の使い方については、別のページで詳しく書くことにしますが品質を考えるとこれは便利そうです。
 
 ### 変数の設計
 
+Playbook では、Vars セクションに限らず、様々なところで変数を定義することが出来ます。他の多くのプログラミング言語と同じく、スコープが狭い変数のほうが優先度が高い（＝上書きされる）特徴があります。
 
+参照範囲は 3 つのスコープに分かれます。
 
-## Playbook
+- Global 領域
 
+  - 環境変数(environment vars)
+  - エキストラ変数(extra vars)
 
+- Play 単位
 
-### Playbook の総本山 site.yml
+  - プレイ変数(play vars)
+  - タスク変数(task vars)
+  - ロール変数(role vars)
 
+- Host 単位
 
+  - インベントリ変数(inventory vars)
+  - ファクト変数(host facts)
+  - レジスタ変数(registered vars)
 
-### 役割単位で Playbook を設計する
-
-### role に実際の処理を書く
-
-### role はタグ付けし、局所的運用を可能にする
-
-## Inventory の設計
-
-### YAML 形式での Inventory 構成
-
-### host_vars, group_vars
-
-## role の書き方
-
-### 車輪の再発明を防ぐ!Ansible-Galaxy
-
-## リファクタリング
-
-## リンク
+変数をどこで定義しているかで Playbook 自体の汎用性も変わってきます。ホストやグループに紐づく変数はインベントリ変数、role は汎用的に定義して Playbook の方でタスク変数としてロールのデフォルト変数を上書きするなどの工夫が必要です。実際には何が正解ということはないですが、上で書いたようなことを意識した上で汎用性の高い Playbook を設計しましょう。
 
 ### 内部リンク
 
 ### 参考
-- [AnsibleのテストツールMoleculeでできること](https://dev.classmethod.jp/articles/ansible-molecule/)
+
+- [Ansible のテストツール Molecule でできること](https://dev.classmethod.jp/articles/ansible-molecule/)
+
+```
+
+```
