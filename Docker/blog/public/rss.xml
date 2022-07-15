@@ -1,4 +1,225 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Engineering and Programming Blog.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 14 Jul 2022 02:00:30 GMT</lastBuildDate><item><title><![CDATA[メンテナンスしやすいAnsiblePlaybookの書き方]]></title><description><![CDATA[このページでは、保守的な Playbook の書き方、冪等性などをしっかりと考慮した Playbook や tips を紹介しています。シンプルでクリーンな Playbook を作成しましょう。 Ansible は Red Hat…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/posted_20220705/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/posted_20220705/</guid><pubDate>Wed, 06 Jul 2022 02:29:00 GMT</pubDate><content:encoded>&lt;p&gt;このページでは、保守的な Playbook の書き方、冪等性などをしっかりと考慮した Playbook や tips を紹介しています。シンプルでクリーンな Playbook を作成しましょう。&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[Engineering and Programming Blog.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 15 Jul 2022 03:35:57 GMT</lastBuildDate><item><title><![CDATA[山口周著「知的戦闘力を高める独学の技法」を読んで]]></title><description><![CDATA[…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/posted_20220714/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/posted_20220714/</guid><pubDate>Thu, 14 Jul 2022 06:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;概要&lt;/h2&gt;
+&lt;p&gt;社会人には独学が必須と言えます。その根拠と、独学の方法論について筆者の見解が述べられていて、示唆深い本になっています。概念的なビジネス本でしたが、私としては良い気づきを得ることが出来ましたので記事にしました。&lt;/p&gt;
+&lt;h2&gt;なぜ今独学が今必要なのか？&lt;/h2&gt;
+&lt;p&gt;「なぜ今独学が必要なのか」の根拠を 4 つほど提示されています。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;知識の不良債権化
+&lt;ul&gt;
+&lt;li&gt;学校で学んだ知識は急速に時代遅れになる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;産業蒸発の時代
+&lt;ul&gt;
+&lt;li&gt;イノベーションは今仕組みを根底から覆す&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;人生三毛作
+&lt;ul&gt;
+&lt;li&gt;労働期間は長くなるのに、企業の「旬の寿命」は短くなる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;クロスオーバー人材
+&lt;ul&gt;
+&lt;li&gt;様々な領域にわたる広範な知識は独学によってしか身につかない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;・・・簡単にまとめると、価値のある知識は常にアップデートされ続け、仕事内容はより効率化され創造的になり、寿命は長くなり、一方で学校教育はじめ社会システムは専門家を養成するように出来ているが、本当に今必要なのは領域を跨いだ知識の掛け算（＝クロスオーバー）である、ということです。&lt;/p&gt;
+&lt;h2&gt;独学の方法論&lt;/h2&gt;
+&lt;p&gt;独学の方法論と言うと、単に読書術とかの浅いハウツーになりがちですが、この本ではより概念的、本質的なことが述べられているので参考になりました。&lt;/p&gt;
+&lt;p&gt;独学には、大きく 4 つのステップがあると述べられています。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;戦略&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;どのようなテーマについて知的戦闘力を高めようとしているのか、その方向性を考えること&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;インプット&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;戦略の方向性に基づいて、本やその他の情報ソースから情報をインプットすること&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;抽象化・構造化&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;インプットした知識を抽象化したり、他のものと結びつけたりすることで、自分なりのユニークな示唆・洞察・気づきを生み出すこと&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;ストック&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;獲得した知識と、抽象化・構造化によって得られた示唆や洞察をセットとして保存し、必要に応じて引き出せるように整理しておくこと。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一般的には、 「2. インプットに」目が行きがちですが、「なぜ、何を、どのように」インプットするのか、加えて「アウトプットし易い形にストックし整理する」という価値発揮に必要なプロセスまで丁寧に述べられていました。この辺りは、特にコンサルティングなどを行っているビジネスマンなら分かるかなと思いました。&lt;/p&gt;
+&lt;p&gt;私に関して言うならば、まず戦略は「ビジネスマンとして自由を獲得するためにシステム実装に強くなる」となり、インプットは「業務はじめ業務外での勉強、電子書籍や参考動画など何でも」となり、抽象化・構造化とストックは「このブログでのアウトプット」となります。ブログは検索やタグ付けなどもっと機能面での拡張が必要ですね・・・。GatsbyJS で実装していますので後々実装していこうと思います。&lt;/p&gt;
+&lt;h2&gt;この本で繰り返し注意されていること&lt;/h2&gt;
+&lt;p&gt;「教養主義に陥るな」と何度も述べられています。この本はあくまでもビジネスマンがビジネスで理論武装して価値発揮するための手段として読むものです。調べて出てくる浅い知識はビジネスにおける差異化には繋がらないわけです。論語の下りや、“Knowing is becoming obsolete.”など、その辺りたくさん例を用いて解説してあります。&lt;/p&gt;
+&lt;p&gt;ここで一つの引用をしようと思います。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ショーペンハウエル『知性について』&lt;/p&gt;
+&lt;p&gt;「知は力なり」。とんでもない。
+きわめて多くの知識を身に着けていても、
+少しの力を持ってない人もあるし、
+逆に、なけなしの知識しかなくても、
+最高の威力を揮う人もある。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;問いを立てることの重要性&lt;/h2&gt;
+&lt;p&gt;沢山の浅い知識は無意味、では何が重要か。その答えは「自分なりの問いを持つこと」だと述べられていました。情報がオーバーフローしている現代社会において、この主張は示唆深いです。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;レオナルド・ダ・ヴィンチ（1452 ～ 1519）芸術家&lt;/p&gt;
+&lt;p&gt;食欲がないのに食べると健康を害すのと同じように、欲求を伴わない勉強はむしろ記憶を損なう&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;参考古典のラベリング、紹介&lt;/h2&gt;
+&lt;p&gt;知識は不良債権化しますが、古典名著などずっと残ってきた書物にはほぼ普遍的に価値があるため読んでおいて損はないだろう、という趣旨が述べられています。これについては同感で、ベストセラーや最近流行ったビジネス書を 10 冊読むより、古典名著を 1 冊読もう、ということですね（・・・実践出来てないですが。。）。&lt;/p&gt;
+&lt;p&gt;後半で、教養を得るために最低でもこれらの本は読んでおいた方が良いよね、という共通項としての参考本が並べて紹介されています。「最低でも」と書きましたが、実際には結構多いな、と感じたところです。以下に記載します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;歴史
+&lt;ul&gt;
+&lt;li&gt;歴史とは何か E.H. カー&lt;/li&gt;
+&lt;li&gt;図説 世界の歴史 J.M. ロバーツ&lt;/li&gt;
+&lt;li&gt;歴史家の自画像 阿部謹也&lt;/li&gt;
+&lt;li&gt;銃・病原菌・鉄 ジャレド・ダイアモンド&lt;/li&gt;
+&lt;li&gt;&amp;#x3C;普及版&gt; 地中海 フェルナン・ブローデル&lt;/li&gt;
+&lt;li&gt;新装版 大英帝国衰亡史 中西輝政&lt;/li&gt;
+&lt;li&gt;エーゲ 永遠回帰の海 立花隆&lt;/li&gt;
+&lt;li&gt;中世の秋 ホイジンガ&lt;/li&gt;
+&lt;li&gt;サピエンス全史 ユヴァル・ノア・ハラリ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;経済学
+&lt;ul&gt;
+&lt;li&gt;マンキュー経済学 I II ミクロ編 N・グレゴリー・マンキュー&lt;/li&gt;
+&lt;li&gt;日本人のための経済原論 小室直樹&lt;/li&gt;
+&lt;li&gt;エンデの遺言 根源からお金を問うこと 河邑 厚徳&lt;/li&gt;
+&lt;li&gt;経済学の考え方 宇沢弘文&lt;/li&gt;
+&lt;li&gt;共産党宣言 マルクス・エンゲルス&lt;/li&gt;
+&lt;li&gt;プロテスタンティズムの倫理と資本主義の精神 マックス・ヴェーバー&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;哲学
+&lt;ul&gt;
+&lt;li&gt;世界十五大哲学 大井 正, 寺沢 恒信&lt;/li&gt;
+&lt;li&gt;寝ながら学べる構造主義 内田 樹&lt;/li&gt;
+&lt;li&gt;哲学大図鑑 ウィル・バッキンガム&lt;/li&gt;
+&lt;li&gt;竹田教授の哲学講義 21 講 21 世紀を読み解く 竹田青嗣&lt;/li&gt;
+&lt;li&gt;新訳 弓と禅 オイゲン・ヘリゲル&lt;/li&gt;
+&lt;li&gt;バカの壁 養老 孟司&lt;/li&gt;
+&lt;li&gt;史上最強の哲学入門 飲茶&lt;/li&gt;
+&lt;li&gt;理性の限界 不可能性・不確定性・不完全性 高橋昌一郎&lt;/li&gt;
+&lt;li&gt;自由からの逃走 エーリヒ・フロム&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;経営学
+&lt;ul&gt;
+&lt;li&gt;競争優位の戦略 M.E.ポーター&lt;/li&gt;
+&lt;li&gt;企業戦略論 ジェイ・B・バーニー&lt;/li&gt;
+&lt;li&gt;コトラー＆ケラーのマーケティング・マネジメント Philip Kotler (著), Kevin Lane Keller (著)&lt;/li&gt;
+&lt;li&gt;イノベーションの普及 エベレット・ロジャーズ (著)&lt;/li&gt;
+&lt;li&gt;イノベーションのジレンマ クレイトン・クリステンセン (著)&lt;/li&gt;
+&lt;li&gt;コーポレートファイナンス リチャード・A・ブリーリー他&lt;/li&gt;
+&lt;li&gt;戦略の経済学 デイビッド・ベサンコ他&lt;/li&gt;
+&lt;li&gt;【新版】組織行動のマネジメント スティーブン P.ロビンス&lt;/li&gt;
+&lt;li&gt;キャズム ジェフリー・ムーア&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;心理学
+&lt;ul&gt;
+&lt;li&gt;心理学大図鑑 キャサリン・コーリン&lt;/li&gt;
+&lt;li&gt;現代心理学 I P.G. ジンバルドー&lt;/li&gt;
+&lt;li&gt;ファスト＆スロー ダニエル・カーネマン&lt;/li&gt;
+&lt;li&gt;影響力の武器「第三版」 ロバート・B・チャルディーニ&lt;/li&gt;
+&lt;li&gt;フロー体験 喜びの現象学 M. チクセントミハイ&lt;/li&gt;
+&lt;li&gt;社会心理学講義 小坂井敏晶&lt;/li&gt;
+&lt;li&gt;セラピスト 最相葉月&lt;/li&gt;
+&lt;li&gt;昔話の深層 河合隼雄&lt;/li&gt;
+&lt;li&gt;ポジティブ心理学の挑戦 マーティン・セリグマン&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;音楽
+&lt;ul&gt;
+&lt;li&gt;音楽の基礎&lt;/li&gt;
+&lt;li&gt;小澤征爾さんと、音楽について話をする 小澤征爾 (著), 村上春樹 (著)&lt;/li&gt;
+&lt;li&gt;東京大学のアルバート・アイラー 東大ジャズ講義録・歴史編&lt;/li&gt;
+&lt;li&gt;音楽&lt;/li&gt;
+&lt;li&gt;音楽機械論&lt;/li&gt;
+&lt;li&gt;西洋音楽史「クラシック」の黄昏&lt;/li&gt;
+&lt;li&gt;阿久悠神話解体 歌謡曲の日本語&lt;/li&gt;
+&lt;li&gt;谷川俊太郎が聞く、武満徹の素顔&lt;/li&gt;
+&lt;li&gt;マイルス・デイビス自叙伝&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;脳科学
+&lt;ul&gt;
+&lt;li&gt;進化しすぎた脳 中高生と語る「大脳生理学の」最前線&lt;/li&gt;
+&lt;li&gt;最新脳科学で読み解く 脳のしくみ&lt;/li&gt;
+&lt;li&gt;脳科学の教科書 こころ編&lt;/li&gt;
+&lt;li&gt;脳科学の教科書 神経編&lt;/li&gt;
+&lt;li&gt;&amp;#x3C;わたし&gt;は脳に操られているのか&lt;/li&gt;
+&lt;li&gt;EQ こころの知能指数&lt;/li&gt;
+&lt;li&gt;&amp;#x3C;わたし&gt;はどこにあるのか ガザニガ脳科学講義&lt;/li&gt;
+&lt;li&gt;デカルトの誤り 情動、理性、人間の脳&lt;/li&gt;
+&lt;li&gt;脳科学は人格を変えられるか？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;文学
+&lt;ul&gt;
+&lt;li&gt;高慢と偏見 ジェーン・オースティン&lt;/li&gt;
+&lt;li&gt;嵐が丘 エミリー・ブロンテ&lt;/li&gt;
+&lt;li&gt;罪と罰 ドストエフスキー&lt;/li&gt;
+&lt;li&gt;変身 フランツ・カフカ&lt;/li&gt;
+&lt;li&gt;ボヴァリー夫人 フローベール&lt;/li&gt;
+&lt;li&gt;人形の家 イプセン&lt;/li&gt;
+&lt;li&gt;一九八四年「新約版」 ジョージ・オーウェル&lt;/li&gt;
+&lt;li&gt;楽園の道 マリオ・バルガス＝リョサ&lt;/li&gt;
+&lt;li&gt;オン・ザ・ロード ジャック・ケルアック&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;詩
+&lt;ul&gt;
+&lt;li&gt;地獄の季節 ランポオ&lt;/li&gt;
+&lt;li&gt;誌のこころを読む 茨木のり子&lt;/li&gt;
+&lt;li&gt;詩ってなんだろう 谷川俊太郎&lt;/li&gt;
+&lt;li&gt;繰り返し読みたい日本の名詞 - ○○&lt;/li&gt;
+&lt;li&gt;中原中也詩集 - 中原中也&lt;/li&gt;
+&lt;li&gt;みだれ髪 - 与謝野晶子&lt;/li&gt;
+&lt;li&gt;ヘッセ詩集 ヘルマン・ヘッセ&lt;/li&gt;
+&lt;li&gt;新唐詩選 吉川幸次郎&lt;/li&gt;
+&lt;li&gt;世界の名詞を読みかえす 飯吉光夫&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;宗教
+&lt;ul&gt;
+&lt;li&gt;新約聖書&lt;/li&gt;
+&lt;li&gt;日本人のための宗教言論&lt;/li&gt;
+&lt;li&gt;キリスト教神学入門&lt;/li&gt;
+&lt;li&gt;イエスという男&lt;/li&gt;
+&lt;li&gt;カルト教団太陽寺院事変&lt;/li&gt;
+&lt;li&gt;ヨブへの答え&lt;/li&gt;
+&lt;li&gt;約束された場所で&lt;/li&gt;
+&lt;li&gt;善悪の彼岸へ&lt;/li&gt;
+&lt;li&gt;イエスの生涯&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;自然科学
+&lt;ul&gt;
+&lt;li&gt;新版 動的平衡&lt;/li&gt;
+&lt;li&gt;働かないアリに意義がある&lt;/li&gt;
+&lt;li&gt;利己的な遺伝子&lt;/li&gt;
+&lt;li&gt;生命とは何か&lt;/li&gt;
+&lt;li&gt;サイバネティックス&lt;/li&gt;
+&lt;li&gt;部分と全体&lt;/li&gt;
+&lt;li&gt;鳥類学者 無謀にも恐竜を語る&lt;/li&gt;
+&lt;li&gt;二重らせん&lt;/li&gt;
+&lt;li&gt;科学の発見&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[メンテナンスしやすいAnsiblePlaybookの書き方]]></title><description><![CDATA[このページでは、保守的な Playbook の書き方、冪等性などをしっかりと考慮した Playbook や tips を紹介しています。シンプルでクリーンな Playbook を作成しましょう。 Ansible は Red Hat…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/posted_20220705/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/posted_20220705/</guid><pubDate>Wed, 06 Jul 2022 02:29:00 GMT</pubDate><content:encoded>&lt;p&gt;このページでは、保守的な Playbook の書き方、冪等性などをしっかりと考慮した Playbook や tips を紹介しています。シンプルでクリーンな Playbook を作成しましょう。&lt;/p&gt;
 &lt;p&gt;Ansible は Red Hat 社により開発されているサーバプロビジョニング・ツールです。Linux を始めとして、Windows、Cisco 機器などに対しても設定変更を行うことができます。汎用性が高いことがメリットです。&lt;/p&gt;
 &lt;p&gt;一方、設計段階で Playbook( = Ansible 実行コード)の設計方針をしっかりと決めなければ、Playbook と処理の対応関係が次第に分かりづらくなり、保守に時間がかかるコードを量産してしまうことに繋がります。&lt;/p&gt;
 &lt;p&gt;業務で実際に複雑な Playbook を見てきました。見ただけでは実際に何をする処理なのか分かりづらく、ミスの温床になります。&lt;/p&gt;
@@ -405,105 +626,7 @@ Playbook を実行する前に、冪等性のチェックと同様にドライ�
 &lt;h2&gt;アクセス&lt;/h2&gt;
 &lt;p&gt;最寄り駅 JR 高尾駅 から徒歩 5-10 分程度です。駅から直線で歩くだけですのでとても分かり易い！&lt;/p&gt;
 &lt;h2&gt;公式ページ&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://takao.iias.jp/shop/detail/1020.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Moff animal cafe イーアス高尾&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[New Beginnings]]></title><description><![CDATA[Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</guid><pubDate>Thu, 28 May 2015 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean. A small river named
-Duden flows by their place and supplies it with the necessary regelialia.&lt;/p&gt;
-&lt;h2&gt;On deer horse aboard tritely yikes and much&lt;/h2&gt;
-&lt;p&gt;The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;This however showed weasel&lt;/li&gt;
-&lt;li&gt;Well uncritical so misled
-&lt;ul&gt;
-&lt;li&gt;this is very interesting&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Goodness much until that fluid owl&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;When she reached the first hills of the &lt;strong&gt;Italic Mountains&lt;/strong&gt;, she had a last
-view back on the skyline of her hometown &lt;em&gt;Bookmarksgrove&lt;/em&gt;, the headline of
-&lt;a href=&quot;http://google.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Alphabet Village&lt;/a&gt; and the subline of her own road, the Line
-Lane. Pityful a rhetoric question ran over her cheek, then she continued her
-way. On her way she met a copy.&lt;/p&gt;
-&lt;h3&gt;Overlaid the jeepers uselessly much excluding&lt;/h3&gt;
-&lt;p&gt;But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with
-&lt;a href=&quot;http://google.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Longe and Parole&lt;/a&gt; and dragged her into their agency, where
-they abused her for their projects again and again. And if she hasn’t been
-rewritten, then they are still using her.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;It is a paradisematic country, in which roasted parts of sentences fly into your
-mouth. Even the all-powerful Pointing has no control about the blind texts it is
-an almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar.&lt;/p&gt;
-&lt;h3&gt;According a funnily until pre-set or arrogant well cheerful&lt;/h3&gt;
-&lt;p&gt;The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;So baboon this&lt;/li&gt;
-&lt;li&gt;Mounted militant weasel gregariously admonishingly straightly hey&lt;/li&gt;
-&lt;li&gt;Dear foresaw hungry and much some overhung&lt;/li&gt;
-&lt;li&gt;Rash opossum less because less some amid besides yikes jeepers frenetic
-impassive fruitlessly shut&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;When she reached the first hills of the Italic Mountains, she had a last view
-back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet
-Village and the subline of her own road, the Line Lane. Pityful a rhetoric
-question ran over her cheek, then she continued her way. On her way she met a
-copy.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word “and” and the Little Blind Text should turn around and
-return to its own, safe country.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with Longe and Parole
-and dragged her into their agency, where they abused her for their projects
-again and again. And if she hasn’t been rewritten, then they are still using
-her. Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts.&lt;/p&gt;
-&lt;h4&gt;Silent delightfully including because before one up barring chameleon&lt;/h4&gt;
-&lt;p&gt;Separated they live in Bookmarksgrove right at the coast of the Semantics, a
-large language ocean. A small river named Duden flows by their place and
-supplies it with the necessary regelialia. It is a paradisematic country, in
-which roasted parts of sentences fly into your mouth.&lt;/p&gt;
-&lt;p&gt;Even the all-powerful Pointing has no control about the blind texts it is an
-almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox
-advised her not to do so, because there were thousands of bad Commas, wild
-Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.&lt;/p&gt;
-&lt;h5&gt;Wherever far wow thus a squirrel raccoon jeez jaguar this from along&lt;/h5&gt;
-&lt;p&gt;She packed her seven versalia, put her initial into the belt and made herself on
-the way. When she reached the first hills of the Italic Mountains, she had a
-last view back on the skyline of her hometown Bookmarksgrove, the headline of
-Alphabet Village and the subline of her own road, the Line Lane. Pityful a
-rhetoric question ran over her cheek, then she continued her way. On her way she
-met a copy.&lt;/p&gt;
-&lt;h6&gt;Slapped cozy a that lightheartedly and far&lt;/h6&gt;
-&lt;p&gt;The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word “and” and the Little Blind Text should turn around and return
-to its own, safe country. But nothing the copy said could convince her and so it
-didn’t take long until a few insidious Copy Writers ambushed her, made her drunk
-with Longe and Parole and dragged her into their agency, where they abused her
-for their projects again and again.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[My Second Post!]]></title><description><![CDATA[Wow! I love blogging so much already. Did you know that “despite its name, salted duck eggs can also be made from
-chicken eggs, though the…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/my-second-post/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/my-second-post/</guid><pubDate>Wed, 06 May 2015 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;Wow! I love blogging so much already.&lt;/p&gt;
-&lt;p&gt;Did you know that “despite its name, salted duck eggs can also be made from
-chicken eggs, though the taste and texture will be somewhat different, and the
-egg yolk will be less rich.”?
-(&lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Wikipedia Link&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;Yeah, I didn’t either.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[No title]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I’m sure I’ll write a lot more interesting things in the future. Oh, and here’s a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</guid><pubDate>Fri, 01 May 2015 13:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This is my first post on my new fake blog! How exciting!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://takao.iias.jp/shop/detail/1020.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Moff animal cafe イーアス高尾&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World!]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I’m sure I’ll write a lot more interesting things in the future. Oh, and here’s a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</guid><pubDate>Fri, 01 May 2015 13:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This is my first post on my new fake blog! How exciting!&lt;/p&gt;
 &lt;p&gt;I’m sure I’ll write a lot more interesting things in the future.&lt;/p&gt;
 &lt;p&gt;Oh, and here’s a great quote from this Wikipedia on
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;salted duck eggs&lt;/a&gt;.&lt;/p&gt;
