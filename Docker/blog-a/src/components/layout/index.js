@@ -19,7 +19,7 @@ const Layout = props => {
       <main className={isHome ? "isHome content" : "notHome content"}>
         {children}
       </main>
-      <Footer />
+      {/*<Footer />*/}
       <GlobalStyle />
     </Wrapper>
   )

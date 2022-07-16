@@ -80,9 +80,9 @@ function setColor() {
 #  font setting
 =============================================== */
 const font = css`
-  font-family: -apple-system, system-ui, "Helvetica Neue", "Segoe UI",
+  font-family: メイリオ, -apple-system, system-ui, "Helvetica Neue", "Segoe UI",
     "Hiragino Kaku Gothic ProN", "Hiragino Sans", "ヒラギノ角ゴ ProN W3", Arial,
-    メイリオ, Meiryo, sans-serif;
+     Meiryo, sans-serif;
   word-wrap: break-word;
   word-break: break-all;
   -moz-font-feature-settings: "palt";
@@ -94,7 +94,7 @@ const font = css`
   text-rendering: auto;
   -webkit-text-stroke: 1px transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.10rem;
   font-weight: 400;
   color: var(--text);
 `
@@ -118,7 +118,7 @@ const GlobalStyle = createGlobalStyle`
     background: var(--background);
     a {
       color: var(--text);
-    } 
+    }
   }
   * {
     box-sizing: boreder-box;
@@ -143,7 +143,7 @@ const GlobalStyle = createGlobalStyle`
     background: none;
     line-height: 1.5;
     font-size: 16px;
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
     &:focus {
       border: none;
       outline: none;
@@ -156,7 +156,7 @@ const GlobalStyle = createGlobalStyle`
   /* ===============================================
   # smart phone
   =============================================== */
-  @media screen and (max-width: 780px) { 
+  @media screen and (max-width: 780px) {
     html, body {
       font-size: 15px;
     }
@@ -168,7 +168,7 @@ const GlobalStyle = createGlobalStyle`
   /* ===============================================
   # pc
   =============================================== */
-  @media screen and (min-width: 781px) { 
+  @media screen and (min-width: 781px) {
     .sp {
       display: none !important;
     }
