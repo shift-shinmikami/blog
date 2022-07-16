@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Shin-tech25's blog`,
     author: `Shin-tech25`,
-    description: `A blog powered by Gatsby`,
+    description: `Engineering Blog`,
     siteUrl: `https://Shin-tech25.netlify.app/`,
     social: {
       twitter: `Shin-tech25`,
@@ -184,7 +184,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `${__dirname}/src/images/tony.jpg`,
+        icon: `${__dirname}/src/images/icon.png`,
       },
     },
     `gatsby-plugin-offline`,

@@ -43,7 +43,7 @@ const Wrapper = styled.div`
     }
     .gatsby-image-wrapper {
       border-radius: 50%;
-      opacity: 0.8;
+      opacity: 1.00;
       margin-top: 15px;
       margin-bottom: 15px;
     }
@@ -101,9 +101,9 @@ export const pageQuery = graphql`
         description
       }
     }
-    avatar: file(absolutePath: { regex: "/tony.jpg/" }) {
+    avatar: file(absolutePath: { regex: "/welcome-squid.jpg/" }) {
       childImageSharp {
-        fixed(width: 80, height: 80) {
+        fixed(width: 150, height: 150) {
           ...GatsbyImageSharpFixed
         }
       }
