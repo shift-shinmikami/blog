@@ -1,0 +1,1079 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[A blog powered by Gatsby]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 16 Jul 2022 13:03:28 GMT</lastBuildDate><item><title><![CDATA[山口周著「知的戦闘力を高める独学の技法」を読んで]]></title><description><![CDATA[…]]></description><link>https://Shin-tech25.netlify.app/book-review-howto-learn/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/book-review-howto-learn/</guid><pubDate>Thu, 14 Jul 2022 06:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
+&lt;p&gt;社会人には独学が必須と言えます。その根拠と、独学の方法論について筆者の見解が述べられていて、示唆深い本になっています。概念的なビジネス本でしたが、私としては良い気づきを得ることが出来ましたので記事にしました。&lt;/p&gt;
+&lt;h2 id=&quot;なぜ今独学が今必要なのか？&quot;&gt;なぜ今独学が今必要なのか？&lt;/h2&gt;
+&lt;p&gt;「なぜ今独学が必要なのか」の根拠を 4 つほど提示されています。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;知識の不良債権化&lt;/li&gt;
+&lt;li&gt;産業蒸発の時代&lt;/li&gt;
+&lt;li&gt;人生三毛作&lt;/li&gt;
+&lt;li&gt;クロスオーバー人材&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;簡単にまとめると、価値のある知識は常にアップデートされ続け、仕事内容はより効率化され創造的になり、寿命は長くなり、一方で学校教育はじめ社会システムは専門家を養成するように出来ているが、本当に今必要なのは領域を跨いだ知識の掛け算（＝クロスオーバー）である、ということです。&lt;/p&gt;
+&lt;h2 id=&quot;独学の方法論&quot;&gt;独学の方法論&lt;/h2&gt;
+&lt;p&gt;独学の方法論と言うと、単に読書術とかの浅いハウツーになりがちですが、この本ではより概念的、本質的なことが述べられているので参考になりました。&lt;/p&gt;
+&lt;p&gt;独学には、大きく 4 つのステップがあると述べられています。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;戦略: どのようなテーマについて知的戦闘力を高めようとしているのか、その方向性を考えること&lt;/li&gt;
+&lt;li&gt;インプット: 戦略の方向性に基づいて、本やその他の情報ソースから情報をインプットすること&lt;/li&gt;
+&lt;li&gt;抽象化・構造化: インプットした知識を抽象化したり、他のものと結びつけたりすることで、自分なりのユニークな示唆・洞察・気づきを生み出すこと&lt;/li&gt;
+&lt;li&gt;ストック: 獲得した知識と、抽象化・構造化によって得られた示唆や洞察をセットとして保存し、必要に応じて引き出せるように整理しておくこと。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一般的には、 「2. インプット」に目が行きがちですが、「なぜ、何を、どのように」インプットするのか、加えて「アウトプットし易い形にストックし整理する」という価値発揮に必要なプロセスまで丁寧に述べられていました。この辺りは、特にコンサルティングなどを行っているビジネスマンなら分かるかなと思いました。&lt;/p&gt;
+&lt;p&gt;私に関して言うならば、まず戦略は「ビジネスマンとして自由を獲得するためにシステム実装に強くなる」となり、インプットは「業務はじめ業務外での勉強、電子書籍や参考動画など何でも」となり、抽象化・構造化とストックは「このブログでのアウトプット」となります。ブログは検索やタグ付けなどもっと機能面での拡張が必要ですね・・・。GatsbyJS で実装していますので後々実装していこうと思います。&lt;/p&gt;
+&lt;h2 id=&quot;この本で繰り返し注意されていること&quot;&gt;この本で繰り返し注意されていること&lt;/h2&gt;
+&lt;p&gt;「教養主義に陥るな」と何度も述べられています。この本はあくまでもビジネスマンがビジネスで理論武装して価値発揮するための手段として読むものです。調べて出てくる浅い知識はビジネスにおける差異化には繋がらないわけです。論語の下りや、“Knowing is becoming obsolete.”など、その辺りたくさん例を用いて解説してあります。&lt;/p&gt;
+&lt;p&gt;ここで一つの引用をしようと思います。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ショーペンハウエル『知性について』&lt;/p&gt;
+&lt;p&gt;「知は力なり」。とんでもない。
+きわめて多くの知識を身に着けていても、
+少しの力を持ってない人もあるし、
+逆に、なけなしの知識しかなくても、
+最高の威力を揮う人もある。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;問いを立てることの重要性&quot;&gt;問いを立てることの重要性&lt;/h2&gt;
+&lt;p&gt;沢山の浅い知識は無意味、では何が重要か。その答えは「自分なりの問いを持つこと」だと述べられていました。情報がオーバーフローしている現代社会において、この主張は示唆深いです。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;レオナルド・ダ・ヴィンチ（1452 ～ 1519）芸術家&lt;/p&gt;
+&lt;p&gt;食欲がないのに食べると健康を害すのと同じように、欲求を伴わない勉強はむしろ記憶を損なう&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;参考古典のラベリング、紹介&quot;&gt;参考古典のラベリング、紹介&lt;/h2&gt;
+&lt;p&gt;知識は不良債権化しますが、古典名著などずっと残ってきた書物にはほぼ普遍的に価値があるため読んでおいて損はないだろう、という趣旨が述べられています。これについては同感で、ベストセラーや最近流行ったビジネス書を 10 冊読むより、古典名著を 1 冊読もう、ということですね（・・・実践出来てないですが。。）。&lt;/p&gt;
+&lt;p&gt;後半で、教養を得るために最低でもこれらの本は読んでおいた方が良いよね、という共通項としての参考本が並べて紹介されています。「最低でも」と書きましたが、実際には結構多いな、と感じたところです。以下に記載します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;歴史&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;歴史とは何か E.H. カー&lt;/li&gt;
+&lt;li&gt;図説 世界の歴史 J.M. ロバーツ&lt;/li&gt;
+&lt;li&gt;歴史家の自画像 阿部謹也&lt;/li&gt;
+&lt;li&gt;銃・病原菌・鉄 ジャレド・ダイアモンド&lt;/li&gt;
+&lt;li&gt;&amp;#x3C;普及版&gt; 地中海 フェルナン・ブローデル&lt;/li&gt;
+&lt;li&gt;新装版 大英帝国衰亡史 中西輝政&lt;/li&gt;
+&lt;li&gt;エーゲ 永遠回帰の海 立花隆&lt;/li&gt;
+&lt;li&gt;中世の秋 ホイジンガ&lt;/li&gt;
+&lt;li&gt;サピエンス全史 ユヴァル・ノア・ハラリ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;経済学&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;マンキュー経済学 I II ミクロ編 N・グレゴリー・マンキュー&lt;/li&gt;
+&lt;li&gt;日本人のための経済原論 小室直樹&lt;/li&gt;
+&lt;li&gt;エンデの遺言 根源からお金を問うこと 河邑 厚徳&lt;/li&gt;
+&lt;li&gt;経済学の考え方 宇沢弘文&lt;/li&gt;
+&lt;li&gt;共産党宣言 マルクス・エンゲルス&lt;/li&gt;
+&lt;li&gt;プロテスタンティズムの倫理と資本主義の精神 マックス・ヴェーバー&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;哲学&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;世界十五大哲学 大井 正, 寺沢 恒信&lt;/li&gt;
+&lt;li&gt;寝ながら学べる構造主義 内田 樹&lt;/li&gt;
+&lt;li&gt;哲学大図鑑 ウィル・バッキンガム&lt;/li&gt;
+&lt;li&gt;竹田教授の哲学講義 21 講 21 世紀を読み解く 竹田青嗣&lt;/li&gt;
+&lt;li&gt;新訳 弓と禅 オイゲン・ヘリゲル&lt;/li&gt;
+&lt;li&gt;バカの壁 養老 孟司&lt;/li&gt;
+&lt;li&gt;史上最強の哲学入門 飲茶&lt;/li&gt;
+&lt;li&gt;理性の限界 不可能性・不確定性・不完全性 高橋昌一郎&lt;/li&gt;
+&lt;li&gt;自由からの逃走 エーリヒ・フロム&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;経営学&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;競争優位の戦略 M.E.ポーター&lt;/li&gt;
+&lt;li&gt;企業戦略論 ジェイ・B・バーニー&lt;/li&gt;
+&lt;li&gt;コトラー＆ケラーのマーケティング・マネジメント Philip Kotler (著), Kevin Lane Keller (著)&lt;/li&gt;
+&lt;li&gt;イノベーションの普及 エベレット・ロジャーズ (著)&lt;/li&gt;
+&lt;li&gt;イノベーションのジレンマ クレイトン・クリステンセン (著)&lt;/li&gt;
+&lt;li&gt;コーポレートファイナンス リチャード・A・ブリーリー他&lt;/li&gt;
+&lt;li&gt;戦略の経済学 デイビッド・ベサンコ他&lt;/li&gt;
+&lt;li&gt;【新版】組織行動のマネジメント スティーブン P.ロビンス&lt;/li&gt;
+&lt;li&gt;キャズム ジェフリー・ムーア&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;心理学&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;心理学大図鑑 キャサリン・コーリン&lt;/li&gt;
+&lt;li&gt;現代心理学 I P.G. ジンバルドー&lt;/li&gt;
+&lt;li&gt;ファスト＆スロー ダニエル・カーネマン&lt;/li&gt;
+&lt;li&gt;影響力の武器「第三版」 ロバート・B・チャルディーニ&lt;/li&gt;
+&lt;li&gt;フロー体験 喜びの現象学 M. チクセントミハイ&lt;/li&gt;
+&lt;li&gt;社会心理学講義 小坂井敏晶&lt;/li&gt;
+&lt;li&gt;セラピスト 最相葉月&lt;/li&gt;
+&lt;li&gt;昔話の深層 河合隼雄&lt;/li&gt;
+&lt;li&gt;ポジティブ心理学の挑戦 マーティン・セリグマン&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;音楽&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;音楽の基礎&lt;/li&gt;
+&lt;li&gt;小澤征爾さんと、音楽について話をする 小澤征爾 (著), 村上春樹 (著)&lt;/li&gt;
+&lt;li&gt;東京大学のアルバート・アイラー 東大ジャズ講義録・歴史編&lt;/li&gt;
+&lt;li&gt;音楽&lt;/li&gt;
+&lt;li&gt;音楽機械論&lt;/li&gt;
+&lt;li&gt;西洋音楽史「クラシック」の黄昏&lt;/li&gt;
+&lt;li&gt;阿久悠神話解体 歌謡曲の日本語&lt;/li&gt;
+&lt;li&gt;谷川俊太郎が聞く、武満徹の素顔&lt;/li&gt;
+&lt;li&gt;マイルス・デイビス自叙伝&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;脳科学&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;進化しすぎた脳 中高生と語る「大脳生理学の」最前線&lt;/li&gt;
+&lt;li&gt;最新脳科学で読み解く 脳のしくみ&lt;/li&gt;
+&lt;li&gt;脳科学の教科書 こころ編&lt;/li&gt;
+&lt;li&gt;脳科学の教科書 神経編&lt;/li&gt;
+&lt;li&gt;&amp;#x3C;わたし&gt;は脳に操られているのか&lt;/li&gt;
+&lt;li&gt;EQ こころの知能指数&lt;/li&gt;
+&lt;li&gt;&amp;#x3C;わたし&gt;はどこにあるのか ガザニガ脳科学講義&lt;/li&gt;
+&lt;li&gt;デカルトの誤り 情動、理性、人間の脳&lt;/li&gt;
+&lt;li&gt;脳科学は人格を変えられるか？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文学&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;高慢と偏見 ジェーン・オースティン&lt;/li&gt;
+&lt;li&gt;嵐が丘 エミリー・ブロンテ&lt;/li&gt;
+&lt;li&gt;罪と罰 ドストエフスキー&lt;/li&gt;
+&lt;li&gt;変身 フランツ・カフカ&lt;/li&gt;
+&lt;li&gt;ボヴァリー夫人 フローベール&lt;/li&gt;
+&lt;li&gt;人形の家 イプセン&lt;/li&gt;
+&lt;li&gt;一九八四年「新約版」 ジョージ・オーウェル&lt;/li&gt;
+&lt;li&gt;楽園の道 マリオ・バルガス＝リョサ&lt;/li&gt;
+&lt;li&gt;オン・ザ・ロード ジャック・ケルアック&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;詩&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;地獄の季節 ランポオ&lt;/li&gt;
+&lt;li&gt;誌のこころを読む 茨木のり子&lt;/li&gt;
+&lt;li&gt;詩ってなんだろう 谷川俊太郎&lt;/li&gt;
+&lt;li&gt;繰り返し読みたい日本の名詞 - ○○&lt;/li&gt;
+&lt;li&gt;中原中也詩集 - 中原中也&lt;/li&gt;
+&lt;li&gt;みだれ髪 - 与謝野晶子&lt;/li&gt;
+&lt;li&gt;ヘッセ詩集 ヘルマン・ヘッセ&lt;/li&gt;
+&lt;li&gt;新唐詩選 吉川幸次郎&lt;/li&gt;
+&lt;li&gt;世界の名詞を読みかえす 飯吉光夫&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;宗教&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;新約聖書&lt;/li&gt;
+&lt;li&gt;日本人のための宗教言論&lt;/li&gt;
+&lt;li&gt;キリスト教神学入門&lt;/li&gt;
+&lt;li&gt;イエスという男&lt;/li&gt;
+&lt;li&gt;カルト教団太陽寺院事変&lt;/li&gt;
+&lt;li&gt;ヨブへの答え&lt;/li&gt;
+&lt;li&gt;約束された場所で&lt;/li&gt;
+&lt;li&gt;善悪の彼岸へ&lt;/li&gt;
+&lt;li&gt;イエスの生涯&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;自然科学&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;新版 動的平衡&lt;/li&gt;
+&lt;li&gt;働かないアリに意義がある&lt;/li&gt;
+&lt;li&gt;利己的な遺伝子&lt;/li&gt;
+&lt;li&gt;生命とは何か&lt;/li&gt;
+&lt;li&gt;サイバネティックス&lt;/li&gt;
+&lt;li&gt;部分と全体&lt;/li&gt;
+&lt;li&gt;鳥類学者 無謀にも恐竜を語る&lt;/li&gt;
+&lt;li&gt;二重らせん&lt;/li&gt;
+&lt;li&gt;科学の発見&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[メンテナンスしやすいAnsiblePlaybookの書き方]]></title><description><![CDATA[このページでは、保守的な Playbook の書き方、冪等性などをしっかりと考慮した Playbook や tips を紹介しています。シンプルでクリーンな Playbook を作成しましょう。 Ansible は Red Hat…]]></description><link>https://Shin-tech25.netlify.app/ansible-playbook-maintainance/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/ansible-playbook-maintainance/</guid><pubDate>Wed, 06 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;このページでは、保守的な Playbook の書き方、冪等性などをしっかりと考慮した Playbook や tips を紹介しています。シンプルでクリーンな Playbook を作成しましょう。&lt;/p&gt;
+&lt;p&gt;Ansible は Red Hat 社により開発されているサーバプロビジョニング・ツールです。Linux を始めとして、Windows、Cisco 機器などに対しても設定変更を行うことができます。汎用性が高いことがメリットです。&lt;/p&gt;
+&lt;p&gt;一方、設計段階で Playbook( = Ansible 実行コード)の設計方針をしっかりと決めなければ、Playbook と処理の対応関係が次第に分かりづらくなり、保守に時間がかかるコードを量産してしまうことに繋がります。&lt;/p&gt;
+&lt;p&gt;業務で実際に複雑な Playbook を見てきました。見ただけでは実際に何をする処理なのか分かりづらく、ミスの温床になります。&lt;/p&gt;
+&lt;p&gt;そういった Playbook を作らないためにどうしたら良いか。以下に記載しました。&lt;/p&gt;
+&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
+&lt;p&gt;保守的な Playbook を考える上でも観点はいくつかあります。
+その中でも特に重要な観点を以下に挙げました。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;トップダウン設計&lt;/li&gt;
+&lt;li&gt;インベントリ設計&lt;/li&gt;
+&lt;li&gt;ドライランチェック&lt;/li&gt;
+&lt;li&gt;冪等性&lt;/li&gt;
+&lt;li&gt;変数の設計&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;について挙げていきます。&lt;/p&gt;
+&lt;h3 id=&quot;トップダウン設計&quot;&gt;トップダウン設計&lt;/h3&gt;
+&lt;p&gt;Playbook の設計で最も重視すべきなのがこのトップダウン設計です。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;site.yml&lt;/li&gt;
+&lt;li&gt;各種 Playbook&lt;/li&gt;
+&lt;li&gt;role&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;この順番に Playbook を記述していきます。実際の処理(Task)は、role にだけ記述します。&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;や Playbook には、対応関係のみを記述します。こうすることで、メンテナンスしやすくなります。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;は以下のように、Playbook を&lt;code class=&quot;language-text&quot;&gt;import_playbook&lt;/code&gt;により import します。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Linuxの共通設定(all)
+  &lt;span class=&quot;token key atrule&quot;&gt;import_playbook&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; linux&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;common.yml
+
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Manager 用の設定
+  &lt;span class=&quot;token key atrule&quot;&gt;import_playbook&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; manager.yml
+
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Staging用の設定
+  &lt;span class=&quot;token key atrule&quot;&gt;import_playbook&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; staging.yml
+
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Production用の設定
+  &lt;span class=&quot;token key atrule&quot;&gt;import_playbook&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; production.yml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;各種 Playbook は以下のように、&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt; を用いて処理を記述していきます。なお、&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt;は&lt;code class=&quot;language-text&quot;&gt;roles&lt;/code&gt;の下にネストして、&lt;code class=&quot;language-text&quot;&gt;tags&lt;/code&gt;を付与します。
+このようにすることで、&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt;の局所的使用を可能にします。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Linux の共通設定用の Playbook
+  &lt;span class=&quot;token key atrule&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; linux
+  &lt;span class=&quot;token key atrule&quot;&gt;become&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;gather_facts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
+
+  &lt;span class=&quot;token key atrule&quot;&gt;roles&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;# ホスト名変更&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; change_hostname
+    &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; change_hostname
+
+  &lt;span class=&quot;token comment&quot;&gt;# 共通パッケージインストール&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; linux_common_packages
+    &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; linux_common_packages
+
+  &lt;span class=&quot;token comment&quot;&gt;# firewalld 有効化と設定&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; firewalld_setup
+    &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; firewalld_setup
+
+  &lt;span class=&quot;token comment&quot;&gt;# sshd 有効化と設定&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; sshd
+    &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; sshd
+
+  &lt;span class=&quot;token comment&quot;&gt;# docker インストール&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; install_docker
+    &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; install_docker
+
+  &lt;span class=&quot;token comment&quot;&gt;# SELinux 無効化と必要なら再起動&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; selinux
+    &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; selinux&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;図にすると以下のようになります。
+&lt;img src=&quot;./Playbook%E3%83%88%E3%83%83%E3%83%97%E3%83%80%E3%82%A6%E3%83%B3%E8%A8%AD%E8%A8%88.jpg&quot; alt=&quot;Playbookトップダウン設計&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;インベントリ設計&quot;&gt;インベントリ設計&lt;/h3&gt;
+&lt;p&gt;以下に YAML 形式でのインベントリを例として記載しました。&lt;/p&gt;
+&lt;p&gt;YAML 形式では、&lt;code class=&quot;language-text&quot;&gt;children:&lt;/code&gt;の下に位置するグループがその上のグループに所属することになります。また、&lt;code class=&quot;language-text&quot;&gt;hosts:&lt;/code&gt;の下に位置するホストがその上のグループに所属することになります。&lt;/p&gt;
+&lt;p&gt;例えば、グループ&lt;code class=&quot;language-text&quot;&gt;manager&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;staging&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;production&lt;/code&gt;は&lt;code class=&quot;language-text&quot;&gt;linux&lt;/code&gt;グループに所属しており、同時に&lt;code class=&quot;language-text&quot;&gt;all&lt;/code&gt;に所属しています。（&lt;code class=&quot;language-text&quot;&gt;all&lt;/code&gt;は特別なグループで全てのホストが必ずこれに属しています。）&lt;code class=&quot;language-text&quot;&gt;staging001.ga&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;test003.ga&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;test004.ga&lt;/code&gt;は&lt;code class=&quot;language-text&quot;&gt;staging&lt;/code&gt;グループと&lt;code class=&quot;language-text&quot;&gt;all&lt;/code&gt;グループに所属しています。&lt;/p&gt;
+&lt;p&gt;hosts.yml&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;linux&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;staging&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;production&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;manager001.ga&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;staging&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;staging001.ga&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;test003.ga&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;test004.ga&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;test005.ga&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;production&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        production001.ga&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ホストやグループの変数（Inventory Variables）は、&lt;code class=&quot;language-text&quot;&gt;host_vars/&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;group_vars/&lt;/code&gt;の下にそれぞれのホストやグループの名前を冠した YAML ファイルを配置し記載します。&lt;/p&gt;
+&lt;p&gt;以下にディレクトリ構造の例を記載します。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Ansible/
+  inventory/
+    group_vars/
+      all.yml
+      manager.yml
+      production.yml
+      staging.yml
+    host_vars/
+      manager001.ga.yml
+      production001.ga.yml
+      staging001.ga.yml
+      test003.ga.yml
+      test004.ga.yml
+      test005.ga.yml
+    hosts.yml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;グループも意識しないと沢山出来てしまいますが、原則として「一つの Playbook には、一つのグループが紐づく」ことを意識すると沢山のグループを作らずに済み可読性が上がります。グループには役割や機能を抽象化したものを記載すると分かりやすいです。例えば、Zabbix サーバなら zabbix グループという具合に。&lt;/p&gt;
+&lt;p&gt;今回の例で、インベントリの設計を図にしたものが以下になります。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./%E3%82%A4%E3%83%B3%E3%83%99%E3%83%B3%E3%83%88%E3%83%AA%E8%A8%AD%E8%A8%88.jpg&quot; alt=&quot;インベントリ設計&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;トップダウン設計によるメリット&quot;&gt;トップダウン設計によるメリット&lt;/h3&gt;
+&lt;p&gt;トップダウン設計のメリットは単に可読性が上がり、スケーラビリティが高くなるだけではありません。コマンド実行が非常に簡単で運用も楽になります。Ansible には実際には沢山のオプションがあります。コマンド実行時にそれらを適切に付与してやる必要がありますが、トップダウン設計によってオプションもシンプルで簡単になります。&lt;/p&gt;
+&lt;p&gt;例えば、以下のようになります。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# ansible-playbook site.yml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これは、Playbook の総本山である&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;をホストの制限なく実行されています。&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;に指定されているホストは&lt;code class=&quot;language-text&quot;&gt;all&lt;/code&gt;です。また、&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;は&lt;code class=&quot;language-text&quot;&gt;linux-common.yml&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;manager.yml&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;staging.yml&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;production.yml&lt;/code&gt;を import していますから、結果的に&lt;strong&gt;必要なインフラが全て揃う&lt;/strong&gt;コマンドということになります。&lt;/p&gt;
+&lt;p&gt;以下はどうでしょうか？&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# ansible-playbook site.yml -l staging&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;-l&lt;/code&gt;オプションは、ホストやグループを制限するオプションです。上の例では、&lt;code class=&quot;language-text&quot;&gt;staging&lt;/code&gt;グループに制限して&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;を実行しています。実際には、&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;を実行するのにはたとえ変更が全く無かったとしてもそれなりの時間を要します為、ホストやグループを制限して実行するのが普通です。しっかりとトップダウンで設計されていれば、Playbook は常に&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;を指定して実行することができ、各種 Playbook を指定して実行することもできますがその必要がなくなります。これが最大のメリットです。&lt;/p&gt;
+&lt;p&gt;また、次の例も見てみましょう。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# ansible-playbook site.yml -l staging --tags httpd&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;この例では、httpd という&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt;を指定して実行しています。&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt;は&lt;code class=&quot;language-text&quot;&gt;tag&lt;/code&gt;でタグ付けしています。コマンド実行時に&lt;code class=&quot;language-text&quot;&gt;--tags&lt;/code&gt;で指定した&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt;を実行することができます。このようにすることで&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt;の局所的使用を可能にします。&lt;/p&gt;
+&lt;p&gt;まとめると、以下のようなコマンドで Playbook を実行することができます。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# ansible-playbook site.yml &amp;lt; -l (指定したターゲット) &amp;gt; &amp;lt; --tags (role名) &amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;トップダウン設計することで、Playbook の実行コマンドがシンプルになりました。&lt;/p&gt;
+&lt;h3 id=&quot;ドライランチェック&quot;&gt;ドライランチェック&lt;/h3&gt;
+&lt;p&gt;ドライランチェックには、&lt;code class=&quot;language-text&quot;&gt;ansible-playbook site.yml --check&lt;/code&gt;のように、&lt;code class=&quot;language-text&quot;&gt;--check&lt;/code&gt;をオプションとして付与して実行します。
+Playbook を実行する前に、冪等性のチェックと同様にドライランチェックを実行しましょう。
+ドライランチェックを実行した際に問題が無いような Playbook の設計をしましょう。&lt;/p&gt;
+&lt;h3 id=&quot;冪等性&quot;&gt;冪等性&lt;/h3&gt;
+&lt;p&gt;Playbook が冪等性が保たれていることを確認するために、最も簡単な方法は Playbook を二度実行して変更箇所が無いかどうか確認することです。
+ただし、これはサーバの設定変更が反映されてしまいます。冪等性を確認するために Ansible が用意してくれているツールがあります。それが、&lt;code class=&quot;language-text&quot;&gt;Ansible Molecule&lt;/code&gt;です。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Molecule&lt;/code&gt;では、&lt;code class=&quot;language-text&quot;&gt;Role&lt;/code&gt;の開発支援とテスト自動化を行うことが出来るツールで、テストの部分に注目すると以下のテストを行えるとされている。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lint チェック&lt;/li&gt;
+&lt;li&gt;Docker 内での Playbook 実行&lt;/li&gt;
+&lt;li&gt;冪等性チェック&lt;/li&gt;
+&lt;li&gt;テストコードの実行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ansible Molecule の使い方については、別のページで詳しく書くことにしますが品質を考えるとこれは便利そうです。&lt;/p&gt;
+&lt;h3 id=&quot;変数の設計&quot;&gt;変数の設計&lt;/h3&gt;
+&lt;p&gt;Playbook では、Vars セクションに限らず、様々なところで変数を定義することが出来ます。他の多くのプログラミング言語と同じく、スコープが狭い変数のほうが優先度が高い（＝上書きされる）特徴があります。&lt;/p&gt;
+&lt;p&gt;参照範囲は 3 つのスコープに分かれます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Global 領域&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;環境変数(environment vars)&lt;/li&gt;
+&lt;li&gt;エキストラ変数(extra vars)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Play 単位&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;プレイ変数(play vars)&lt;/li&gt;
+&lt;li&gt;タスク変数(task vars)&lt;/li&gt;
+&lt;li&gt;ロール変数(role vars)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Host 単位&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;インベントリ変数(inventory vars)&lt;/li&gt;
+&lt;li&gt;ファクト変数(host facts)&lt;/li&gt;
+&lt;li&gt;レジスタ変数(registered vars)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;変数をどこで定義しているかで Playbook 自体の汎用性も変わってきます。ホストやグループに紐づく変数はインベントリ変数、role は汎用的に定義して Playbook の方でタスク変数としてロールのデフォルト変数を上書きするなどの工夫が必要です。実際には何が正解ということはないですが、上で書いたようなことを意識した上で汎用性の高い Playbook を設計しましょう。&lt;/p&gt;
+&lt;h3 id=&quot;内部リンク&quot;&gt;内部リンク&lt;/h3&gt;
+&lt;h3 id=&quot;参考&quot;&gt;参考&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://dev.classmethod.jp/articles/ansible-molecule/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Ansible のテストツール Molecule でできること&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Moff animal cafe イーアス高尾に行ってきました]]></title><description><![CDATA[醍醐味 Moff animal cafe イーアス高尾は、室内で動物と触れ合うことができるこじんまりした動物園です。常時 15 ～ 2…]]></description><link>https://Shin-tech25.netlify.app/moff-iias-takao/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/moff-iias-takao/</guid><pubDate>Sun, 03 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;醍醐味&quot;&gt;醍醐味&lt;/h2&gt;
+&lt;p&gt;Moff animal cafe イーアス高尾は、室内で動物と触れ合うことができるこじんまりした動物園です。常時 15 ～ 20 種の動物達と触れ合うことができ、フリードリンクを飲みながらゆったりすることができます。イメージとしては、カフェと動物園の中間みたいな場所でした。&lt;/p&gt;
+&lt;p&gt;都内の猫カフェは忙しく時間制限を設けている場所も多い印象ですが、ここは時間制限等は特にないのが特徴です！&lt;/p&gt;
+&lt;p&gt;公式ページはこちら → &lt;a href=&quot;https://takao.iias.jp/shop/detail/1020.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Moff animal cafe イーアス高尾&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;フクロウとの触れ合い&quot;&gt;フクロウとの触れ合い&lt;/h2&gt;
+&lt;p&gt;フクロウとの触れ合いが出来る珍しいコーナーです。大きなワシミミズクを腕に乗せて「フクロウ体験」をすることが出来ました。&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 400px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5c8640db975043113768d307e18fa57f/41689/owl_on_arm.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAUBAwQC/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQAC/9oADAMBAAIQAxAAAAFkL9hXCom3qZLUAa//xAAeEAACAQMFAAAAAAAAAAAAAAABAgMAMTIQERIiM//aAAgBAQABBQKr6MQrM3SKOUpuXVcuVJ5jI3//xAAWEQEBAQAAAAAAAAAAAAAAAAAAERD/2gAIAQMBAT8BRc//xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPwEh/8QAHhAAAQQBBQAAAAAAAAAAAAAAAQACEBEhIjFBUWL/2gAIAQEABj8CmnDA2XquFYc5t9rWxCwYE//EAB4QAQACAgEFAAAAAAAAAAAAAAEAESExEEFRYXGh/9oACAEBAAE/IcG0hQEbHjxwDtEUdV4FBsqjJn6iLAlVuD0T5ZogI//aAAwDAQACAAMAAAAQnMf8/8QAFhEBAQEAAAAAAAAAAAAAAAAAARBB/9oACAEDAQE/EEYMT//EABgRAAMBAQAAAAAAAAAAAAAAAAABERBR/9oACAECAQE/EE0U6uf/xAAeEAEAAgICAwEAAAAAAAAAAAABABEhMUFRYXGB8P/aAAgBAQABPxBSsR5Y6LCxOSUy602ZWmHyfYEMIotNcPvUcuHb9ysMrVrf1xlQQmlcXBWKA1mZ38lmdvcuME//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;owl_on_arm&quot;
+        title=&quot;owl_on_arm&quot;
+        src=&quot;/static/5c8640db975043113768d307e18fa57f/41689/owl_on_arm.jpg&quot;
+        srcset=&quot;/static/5c8640db975043113768d307e18fa57f/f544b/owl_on_arm.jpg 200w,
+/static/5c8640db975043113768d307e18fa57f/41689/owl_on_arm.jpg 400w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;リクガメの散歩&quot;&gt;リクガメの散歩&lt;/h2&gt;
+&lt;p&gt;リクガメはマイペースで非常に気まぐれです。そして、私の写真も気まぐれだったようで撮影するのを忘れてしまいました。リクガメの名前は「石塚さん」だったことを覚えています（何故、石塚さんなのかは分かりません）。石塚さんの散歩は偶に見ることが出来ますよ。&lt;/p&gt;
+&lt;h2 id=&quot;ひよこコーナー&quot;&gt;ひよこコーナー&lt;/h2&gt;
+&lt;p&gt;室内に入ってすぐの場所にひよこコーナーがあります。ひよこさん達は皆元気で、エサを与えると近寄って食べてくれます。モフモフしていて温かったです。&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 400px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2553b920f2e2d1ae18b53a2c38c05327/41689/chiks1.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAMCBAX/xAAXAQEBAQEAAAAAAAAAAAAAAAABAAID/9oADAMBAAIQAxAAAAGPJ6nHz3tMjKgzFf/EABwQAAICAgMAAAAAAAAAAAAAAAABAhEDBCAxQv/aAAgBAQABBQLPrNEE4yseS0+y+Hg//8QAFREBAQAAAAAAAAAAAAAAAAAAASD/2gAIAQMBAT8BY//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAECAQE/ASP/xAAcEAAABwEBAAAAAAAAAAAAAAAAAQIQESExIJH/2gAIAQEABj8ClKfBJljWN4tib//EAB0QAQACAgIDAAAAAAAAAAAAAAEAESFBEDFRYXH/2gAIAQEAAT8hQsfYsmvoMzg5l2b8QjbLXJM2dy/ZYbiqHH//2gAMAwEAAgADAAAAECgcwv/EABgRAAIDAAAAAAAAAAAAAAAAAAABEBFB/9oACAEDAQE/EE2aP//EABYRAAMAAAAAAAAAAAAAAAAAAAEgQf/aAAgBAgEBPxAon//EAB0QAQADAAIDAQAAAAAAAAAAAAEAESExUUFhceH/2gAIAQEAAT8QEKUcGJX5CvGOLUnm77ZRCdd4FeowGDQvYqZx9mtaswjNqrWJkqLTsZNlvBcUzYcZ7jzP/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;chiks1&quot;
+        title=&quot;chiks1&quot;
+        src=&quot;/static/2553b920f2e2d1ae18b53a2c38c05327/41689/chiks1.jpg&quot;
+        srcset=&quot;/static/2553b920f2e2d1ae18b53a2c38c05327/f544b/chiks1.jpg 200w,
+/static/2553b920f2e2d1ae18b53a2c38c05327/41689/chiks1.jpg 400w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 400px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/291d9e8114c4dc25a6b7c6081653ff48/41689/chiks2.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQBAgMF/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgEA/9oADAMBAAIQAxAAAAHCvTSKaKBqr6rE0kAX/8QAHxAAAgEDBQEAAAAAAAAAAAAAAQIAAxESBBMjMTND/9oACAEBAAEFAtRQtAxplGyXeWz8sANvtiqzKV/Re5//xAAWEQADAAAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8BI//EABgRAAIDAAAAAAAAAAAAAAAAAAABEBEx/9oACAECAQE/AWWbH//EABwQAAICAgMAAAAAAAAAAAAAAAERABACMUFRYf/aAAgBAQAGPwJ6HUWTeo6b8NI8xgUIa//EABoQAAMBAQEBAAAAAAAAAAAAAAABESExgZH/2gAIAQEAAT8hZPdFG6XRPRG16VZtmkIk0E3W/DNmahG+zsEquQxNJeH2IZ//2gAMAwEAAgADAAAAEGQuT//EABYRAAMAAAAAAAAAAAAAAAAAAAABEf/aAAgBAwEBPxBVlCUKf//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAgEBPxCowtMf/8QAHxABAAMAAQQDAAAAAAAAAAAAAQARITFBUWGBkdHw/9oACAEBAAE/EKvLOrxdjC4HoFB809YmK1MUuxMEbsHg9waVAF0p9lReJqhvh2hUYKg8cwDbqsu39kWF9WARi0AGwD8wgQYNkBc//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;chiks2&quot;
+        title=&quot;chiks2&quot;
+        src=&quot;/static/291d9e8114c4dc25a6b7c6081653ff48/41689/chiks2.jpg&quot;
+        srcset=&quot;/static/291d9e8114c4dc25a6b7c6081653ff48/f544b/chiks2.jpg 200w,
+/static/291d9e8114c4dc25a6b7c6081653ff48/41689/chiks2.jpg 400w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;犬猫コーナー&quot;&gt;犬猫コーナー&lt;/h2&gt;
+&lt;p&gt;犬さん猫さんも十数匹いました。猫さんはちょっとクールなのが特徴（笑）。ただし、エサにはすぐに食いついて来ます。ダラけている様子がとても可愛い。&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 400px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c0572b3bf803e1b9c6c939872428c513/41689/cat1.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAwAEAv/EABYBAQEBAAAAAAAAAAAAAAAAAAACAf/aAAwDAQACEAMQAAABPZmeKerGAuzNUcf/xAAcEAEAAgIDAQAAAAAAAAAAAAABABICIQMRIjH/2gAIAQEAAQUC5EsfK2npF0OnLFPNuyMJia//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAdEAABBAIDAAAAAAAAAAAAAAABABARMQIhEmGR/9oACAEBAAY/Ar0+wPVLUpGXHpWGLf/EAB0QAQACAgIDAAAAAAAAAAAAAAEAESExQVEQcZH/2gAIAQEAAT8hRrdMmfseKa1DdAtprk7dwEUb6JSIQstcJDF7iLcKfLAcyf/aAAwDAQACAAMAAAAQlz/D/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAEREP/aAAgBAwEBPxBZCH//xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQH/2gAIAQIBAT8Q3FVX/8QAHhABAAICAgMBAAAAAAAAAAAAAQARITFBUWFxsYH/2gAIAQEAAT8QDIpgOjOfI1uGbi0lRZzWzMz4Siw10etRWkN0V1CBfHcQDr6I381E2AKv8QbqKC/CKqDlmCODUKILP//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cat1&quot;
+        title=&quot;cat1&quot;
+        src=&quot;/static/c0572b3bf803e1b9c6c939872428c513/41689/cat1.jpg&quot;
+        srcset=&quot;/static/c0572b3bf803e1b9c6c939872428c513/f544b/cat1.jpg 200w,
+/static/c0572b3bf803e1b9c6c939872428c513/41689/cat1.jpg 400w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 400px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3f4251c4412983839d5343b604e40582/41689/cat2.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 74.75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMCBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAABA//aAAwDAQACEAMQAAABbFCZ02yuB//EABoQAQADAAMAAAAAAAAAAAAAAAIAAQMREyH/2gAIAQEAAQUC7q4O4hRRgPpFZ1//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAwEBPwFH/8QAFREBAQAAAAAAAAAAAAAAAAAAABL/2gAIAQIBAT8BU//EABwQAAMBAAIDAAAAAAAAAAAAAAABEQIhMTJBof/aAAgBAQAGPwLlU8FC5kGlj6LLz37pMn//xAAaEAEAAwEBAQAAAAAAAAAAAAABABEhMUFR/9oACAEBAAE/IaPU9WOdEfIWvKBWxusbWLcxVKzuz//aAAwDAQACAAMAAAAQQB//xAAXEQADAQAAAAAAAAAAAAAAAAAAASER/9oACAEDAQE/EG7DZ//EABYRAQEBAAAAAAAAAAAAAAAAAAABQf/aAAgBAgEBPxDFl//EAB4QAQACAQQDAAAAAAAAAAAAAAEAESExQVFhkcHw/9oACAEBAAE/EAm+yhNeI2cYKLb6ubGAUBXSbMwcIrFlfWkIK+gcY4mRgbILv4J//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cat2&quot;
+        title=&quot;cat2&quot;
+        src=&quot;/static/3f4251c4412983839d5343b604e40582/41689/cat2.jpg&quot;
+        srcset=&quot;/static/3f4251c4412983839d5343b604e40582/f544b/cat2.jpg 200w,
+/static/3f4251c4412983839d5343b604e40582/41689/cat2.jpg 400w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;アクセス&quot;&gt;アクセス&lt;/h2&gt;
+&lt;p&gt;最寄り駅 JR 高尾駅 から徒歩 5-10 分程度です。駅から直線で歩くだけですのでとても分かり易い！&lt;/p&gt;
+&lt;h2 id=&quot;公式ページ&quot;&gt;公式ページ&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://takao.iias.jp/shop/detail/1020.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Moff animal cafe イーアス高尾&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Commitizenのプレフィックスを絵文字に変更してコミットメッセージを可愛くしました]]></title><description><![CDATA[綺麗なコミットメッセージを書く為のCommitizenというツールで、コミットのタイプを表すプレフィックスを絵文字で表現できるようになるcz-emojiというアダプタがあるんですが、それを和訳して少し使いやすくカスタマイズしたものを、cz-emoji-japanese…]]></description><link>https://Shin-tech25.netlify.app/commitizen-with-emojis/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/commitizen-with-emojis/</guid><pubDate>Sun, 22 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;綺麗なコミットメッセージを書く為の&lt;strong&gt;Commitizen&lt;/strong&gt;というツールで、コミットのタイプを表すプレフィックスを絵文字で表現できるようになる&lt;strong&gt;cz-emoji&lt;/strong&gt;というアダプタがあるんですが、それを和訳して少し使いやすくカスタマイズしたものを、&lt;strong&gt;cz-emoji-japanese&lt;/strong&gt;という名前の npm パッケージとして公開してみました 🎉&lt;/p&gt;
+&lt;p&gt;この記事では&lt;strong&gt;Commitizen&lt;/strong&gt;と今回公開した&lt;strong&gt;cz-emoji-japanese&lt;/strong&gt;の概要やインストール方法についてまとめておきます。&lt;/p&gt;
+&lt;h2 id=&quot;commitizen-とは&quot;&gt;Commitizen とは&lt;/h2&gt;
+&lt;p&gt;Commitizen は対話型でコミットメッセージを作成できるツールです。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;screenshot.png&quot; alt=&quot;commitizenのスクリーンショット&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;コミットのタイプ(prefix)&lt;/li&gt;
+&lt;li&gt;コミットのスコープ&lt;/li&gt;
+&lt;li&gt;コミットのタイトル&lt;/li&gt;
+&lt;li&gt;コミットの本文&lt;/li&gt;
+&lt;li&gt;破壊的変更の有無&lt;/li&gt;
+&lt;li&gt;関連 issue の有無&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上記の質問に順番に答えていくだけで、ルールに沿った適切なコミットメッセージを作成することができます。&lt;/p&gt;
+&lt;p&gt;Commitizen で作成されたコミットメッセージはこんな形式になります。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;type&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;scope&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;: タイトル
+
+本文&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;cz-emojicz-emoji-japaneseとは&quot;&gt;cz-emoji(cz-emoji-japanese)とは&lt;/h2&gt;
+&lt;p&gt;github とかでよく見かけるプレフィックスに絵文字を使っているコミットメッセージを、Commitizen でも使えるようにするためのアダプタです。&lt;/p&gt;
+&lt;p&gt;そのまま使おうとするとあまりにもコミットタイプの種類が多すぎるので、カスタマイズして使用することが前提とされているように感じました。そこでよく使いそうなタイプに絞り、質問文やタイプの説明などを日本語に翻訳して使いやすくしたものが&lt;code class=&quot;language-text&quot;&gt;cz-emoji-japanese&lt;/code&gt;です。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Shin-tech25/cz-emoji-japanese&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;github リポジトリはこちらです！&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;インストール方法と使い方&quot;&gt;インストール方法と使い方&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; global &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; commitizen &lt;span class=&quot;token comment&quot;&gt;# commitizenインストール&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; global &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; cz-emoji-japanese &lt;span class=&quot;token comment&quot;&gt;# cz-emoji-japaneseインストール&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;{ &quot;path&quot;: &quot;cz-emoji-japanese&quot; }&apos;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; ~/.czrc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;後はコミットを行いたいディレクトリ内で、&lt;code class=&quot;language-text&quot;&gt;git commit&lt;/code&gt;とする代わりに&lt;code class=&quot;language-text&quot;&gt;git cz&lt;/code&gt;と打つと、コミットメッセージを作成するための質問が表示されていくので、それに順番に答えていくだけです！&lt;/p&gt;
+&lt;h2 id=&quot;おわり-&quot;&gt;おわり 🎉&lt;/h2&gt;
+&lt;p&gt;タイプの種類や対応する絵文字などは&lt;a href=&quot;https://gitmoji.carloscuesta.me/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;gitmoji&lt;/a&gt;などを参考にしながら考えてみたんですが、まだまだ改善の余地があると思うのでもっといいアイディアがある方は是非 issue などお寄せください 😊&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Gatsby製ブログでサイト内検索を実装しました]]></title><description><![CDATA[Gatsby ではビルド時に静的ページを生成する為、検索結果ページのように入力された検索ワードによって動的に内容が変わるようなページは生成することができません。 なので検索機能は SaaS…]]></description><link>https://Shin-tech25.netlify.app/gatsby-site-search/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/gatsby-site-search/</guid><pubDate>Fri, 25 Oct 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Gatsby ではビルド時に静的ページを生成する為、検索結果ページのように入力された検索ワードによって動的に内容が変わるようなページは生成することができません。&lt;/p&gt;
+&lt;p&gt;なので検索機能は SaaS などを利用して実装するのが一般的になっているみたいなんですが、&lt;a href=&quot;https://mottox2.com/posts/268&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;こちらのブログ&lt;/a&gt;で検索機能を自前実装する方法が紹介されていて、参考にさせていただいたところ思った以上に手軽にできたので、今回の記事ではその実装の記録を残しておきたいと思います。&lt;/p&gt;
+&lt;h2 id=&quot;実装方法&quot;&gt;実装方法&lt;/h2&gt;
+&lt;p&gt;以下のような手順を踏んで実装していきます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;useStaticQuery を使って検索コンポーネント内で全記事データを取得する&lt;/li&gt;
+&lt;li&gt;検索コンポーネント内で検索処理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;参考にさせていただいたブログ記事では、ビルドの度に全記事分の情報が格納された json ファイルを生成し、それを React コンポーネントから axios を使って取得していましたが、今回は&lt;code class=&quot;language-text&quot;&gt;useStaticQuery&lt;/code&gt;を利用して、検索用のコンポーネント内から全記事データを取得してみる事にしました。&lt;/p&gt;
+&lt;h2 id=&quot;usestaticquery-で全記事データを取得&quot;&gt;useStaticQuery で全記事データを取得&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; tempData &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useStaticQuery&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;graphql&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;
+  query SearchData {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 1000
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            slug
+            tags
+            keywords
+          }
+        }
+      }
+    }
+  }
+&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setData&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; temp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+  tempData&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;allMarkdownRemark&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;edges&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    temp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;node&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;frontmatter&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;setData&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;temp&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;全件取得なので、トップページで使うクエリとよく似た感じのクエリになります。検索対象にタイトルとタグとキーワードを含めたいと思っているので、その三つとスラッグを GraphQL を介して取得して、扱いやすい形に変換したものを&lt;code class=&quot;language-text&quot;&gt;data&lt;/code&gt;に格納しています。&lt;code class=&quot;language-text&quot;&gt;data&lt;/code&gt;に入っているデータは以下のような形になっています。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    title&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Gatsby製ブログでサイト内検索を実装しました&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    slug&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;gatsby-site-search&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    tags&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    keywords&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;JavaScript&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    title&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;VSCodeのMarketplaceに自作拡張機能を公開する方法&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    slug&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;publish-vscode-extension&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    tags&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    keywords&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;開発ツール&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;検索処理&quot;&gt;検索処理&lt;/h2&gt;
+&lt;p&gt;まず、検索対象にするタイトル・タグ・キーワードを一つの文字列として連結させ、その文字列が入力された値を含むかどうかで filter をかけています。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;result&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setResult&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;search&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; temp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; target &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tags&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;keywords&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; target&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;setResult&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;temp&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value &lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;検索ワード(&lt;code class=&quot;language-text&quot;&gt;props.value&lt;/code&gt;)が変更される度に検索処理が走り、&lt;code class=&quot;language-text&quot;&gt;result&lt;/code&gt;には検索ワードを含む記事だけが格納されます。あとはこれを表示させる UI を作れば完了です 🙆‍&lt;/p&gt;
+&lt;h2 id=&quot;検索ワードをハイライトさせてみる&quot;&gt;検索ワードをハイライトさせてみる&lt;/h2&gt;
+&lt;p&gt;タイトルに含まれる検索ワードをハイライトするコンポーネントを作ってみました。タイトルから検索ワード部分を抜き出して、span タグで囲んだものに置き換えるというだけの簡単な作りですが、ちょっと見た目が華やかになるんじゃないかなと思います 💅✨&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;TextHighlighter&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token parameter&quot;&gt;props&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; str&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; includes &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; props
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; temp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; str&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; start &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; temp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;includes&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; end &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; start &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; includes&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; item &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; str&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;start&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; end&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; res &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; str&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    item&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&amp;lt;span style=&quot;background: rgba(255, 250, 118, 0.4); padding: 3px 0&quot;&gt;&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;item&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&amp;lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;span dangerouslySetInnerHTML&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; __html&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; res &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;呼び出す時はこんな感じです ↓
+str にタイトル、includes に検索文字列を渡します。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;TextHighLighter str&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;post&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; includes&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;value&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;雑感&quot;&gt;雑感&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Shin-tech25/Shin-tech25-gatsby-blog/blob/master/src/components/search/index.js&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;実際のコードはこちらから！&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最初はビルドの度に json を生成する方法で実装していたんですが、useStaticQuery を使う方法で作り直してみたので、それに伴い記事の内容も変更しました。&lt;/p&gt;
+&lt;p&gt;シンプルな記述のみで実装できるので、個人ブログの検索機能程度であれば&lt;a href=&quot;https://www.gatsbyjs.org/docs/adding-search/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Gatsby の公式リファレンスガイド&lt;/a&gt;で紹介されている SaaS やライブラリを使用する方法よりも自前実装の方が早いんじゃないかな？という気さえしています。いろいろカスタマイズもしやすいですし、おすすめです。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[VSCodeのMarketplaceに自作拡張機能を公開する方法]]></title><description><![CDATA[Kawaii Themeのプレビュー画像 台風で予定が潰れてめっちゃ暇だったので、この暇を利用して VSCode のテーマを作って、Marketplace…]]></description><link>https://Shin-tech25.netlify.app/publish-vscode-extension/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/publish-vscode-extension/</guid><pubDate>Sun, 13 Oct 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;preview.png&quot; alt=&quot;Kawaii Themeのプレビュー画像&quot;&gt;&lt;/p&gt;
+&lt;p&gt;台風で予定が潰れてめっちゃ暇だったので、この暇を利用して VSCode のテーマを作って、Marketplace に公開するところまでやってみました。&lt;/p&gt;
+&lt;p&gt;ピンク率高めのかわいいダークテーマが欲しいなーと思ってたので、そういうイメージで作ってみました。少し紫がかったブラックを背景色にしたことで、甘くなりすぎず、可読性も保てて結構いい感じになったんじゃないかなーと思います ✨&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=Shin-tech25.kawaii-theme&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;今回作成したテーマの Marketplace ページはこちらから&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;今回の記事では、&lt;strong&gt;Marketplace に自作の拡張機能を公開する方法&lt;/strong&gt;についてまとめておきたいと思います。テーマの開発方法については今回の記事で触れませんので、そっちを詳しく知りたい方は&lt;a href=&quot;https://code.visualstudio.com/api/references/theme-color&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;公式ガイド&lt;/a&gt;を見てくださいね！&lt;/p&gt;
+&lt;h2 id=&quot;まずは-azure-devops-のアカウント作成--アクセストークンを取得&quot;&gt;まずは Azure DevOps のアカウント作成 &amp;#x26; アクセストークンを取得&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://dev.azure.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Azure DevOps&lt;/a&gt;でアカウントを作成してログインします。&lt;/p&gt;
+&lt;p&gt;ログインしたら管理画面右上の自分のアイコン部分をクリックして、&lt;code class=&quot;language-text&quot;&gt;Security&lt;/code&gt;を選択します。&lt;/p&gt;
+&lt;p&gt;すると、Personal Access Token ページが表示されるので、&lt;code class=&quot;language-text&quot;&gt;+ New Token&lt;/code&gt;をクリックして新しいアクセストークンを作成します。この時に注意するのは、以下ふたつの項目です。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Scopes&lt;/strong&gt;は&lt;strong&gt;Full Access&lt;/strong&gt;を設定しておく事&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Organization&lt;/strong&gt;は&lt;strong&gt;All accessible organizations&lt;/strong&gt;を設定しておく事&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;このふたつは気をつけないと後々エラーが出るので&lt;strong&gt;絶対に確認しましょう！！！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;後は適当な名前をつけて、&lt;code class=&quot;language-text&quot;&gt;create&lt;/code&gt;ボタンをクリックするとアクセストークンが表示されるので、どこかにメモしておいてください。このトークンは一度画面を閉じてしまうと&lt;strong&gt;後から確認することができません。&lt;/strong&gt;ここでメモしておくのを忘れないように気をつけましょう ✨&lt;/p&gt;
+&lt;h2 id=&quot;vsce-のインストールと設定&quot;&gt;vsce のインストールと設定&lt;/h2&gt;
+&lt;p&gt;Marketplace に登録するのに&lt;code class=&quot;language-text&quot;&gt;vsce&lt;/code&gt;というツールが必要になるので、先にインストールと Publisher の設定を済ませておきます。&lt;/p&gt;
+&lt;h3 id=&quot;vsce-をインストール&quot;&gt;vsce をインストール&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm install -g vsce&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;publisher-の設定&quot;&gt;Publisher の設定&lt;/h3&gt;
+&lt;p&gt;この途中で、さっきメモしたアクセストークンを聞かれるので入力してください。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;vsce create-publisher Publisher名
+vsce login Publisher名&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;publisher 名&lt;/strong&gt;の部分はお好きな名前に変更してください。&lt;/p&gt;
+&lt;h2 id=&quot;marketplace-に登録するのに必要なファイルを用意する&quot;&gt;Marketplace に登録するのに必要なファイルを用意する&lt;/h2&gt;
+&lt;p&gt;Marketplace に登録するには以下のファイルが必要になります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;アイコン画像&lt;/li&gt;
+&lt;li&gt;package.json&lt;/li&gt;
+&lt;li&gt;README.md&lt;/li&gt;
+&lt;li&gt;LICENSE.md&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;README と LICENSE は、普段 github を使っている方ならなんとなく書き方はわかるかと思いますので、説明を省略します。&lt;/p&gt;
+&lt;p&gt;注意する必要があるのは、&lt;strong&gt;package.json&lt;/strong&gt;の内容です。最低限以下の記述は必須となります。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;  &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;theme-no-namae&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;displayName&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;テーマの名前&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;1.0.0&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;publisher&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Publisher名&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;テーマの説明&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;icon&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;アイコン画像.png&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;engines&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;vscode&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;*&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;galleryBanner&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;color&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;#353042&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;theme&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;dark&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;重要なのは&lt;strong&gt;publisher&lt;/strong&gt;の部分です。&lt;strong&gt;先ほど vsce の設定で指定した名前(publisher 名)&lt;/strong&gt;と同じ名前にしておかないと、エラーがでて公開が完了しませんので注意してください！&lt;/p&gt;
+&lt;p&gt;その他にも必須ではありませんが、カテゴリーやタグなどエクステンションのメタ情報も package.json から設定できます。詳しくは&lt;a href=&quot;https://github.com/Shin-tech25/KawaiiTheme&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;今回作成したテーマの github ページ&lt;/a&gt;を参考にしてみてください！&lt;/p&gt;
+&lt;h2 id=&quot;marketplace-に公開&quot;&gt;Marketplace に公開&lt;/h2&gt;
+&lt;p&gt;ここまでできたら、package.json が置いてあるフォルダに移動して以下の vsce コマンドを実行しましょう！&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;vsce publish&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これで Marketplace に公開されているのが確認できたらリリース完了です！お疲れ様でした 🎉&lt;/p&gt;
+&lt;h2 id=&quot;追記&quot;&gt;追記&lt;/h2&gt;
+&lt;p&gt;全然関係ないんですが、テーマを新しくしたついでにエディタのフォントも&lt;a href=&quot;https://github.com/tonsky/FiraCode&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Fira Code&lt;/a&gt;に変更してみました 😄&lt;/p&gt;
+&lt;p&gt;コーディング用途に特化したフォントで、コーディングでよく使うコード(&lt;code class=&quot;language-text&quot;&gt;&amp;gt;=&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;==&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;!=&lt;/code&gt;など)が&lt;strong&gt;合字&lt;/strong&gt;になり個人的にはめっちゃ読みやすくなったのでおすすめです 🌈&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Gatsby + Markdownでブログを作り直しました]]></title><description><![CDATA[元々 Gatsby + Contentful + Netlify という構成でこのブログを運営していたのですが、記事を書いていくうちに普段から愛用している Markdown エディタで記事を書きたい気持ちが強くなってきたので、Contentful を辞めて Markdown…]]></description><link>https://Shin-tech25.netlify.app/gatsby-blog-with-markdown/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/gatsby-blog-with-markdown/</guid><pubDate>Thu, 12 Sep 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;元々 Gatsby + Contentful + Netlify という構成でこのブログを運営していたのですが、記事を書いていくうちに&lt;a href=&quot;https://www.typora.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;普段から愛用している Markdown エディタ&lt;/a&gt;で記事を書きたい気持ちが強くなってきたので、Contentful を辞めて Markdown ファイルをコンテンツソースとして利用する構成に変更しました。&lt;/p&gt;
+&lt;p&gt;今回の記事ではこのブログを制作するのに使った&lt;a href=&quot;https://github.com/gatsbyjs/gatsby-starter-blog&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;スターターセット&lt;/a&gt;のコードを見ながら、Gatsby の基礎的な部分を勉強していこうと思います。&lt;/p&gt;
+&lt;h2 id=&quot;gatsby-はスターターライブラリが豊富！&quot;&gt;Gatsby はスターターライブラリが豊富！&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.gatsbyjs.org/starters/?v=2&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Gatsby ではたくさんのスターターライブラリが公開されています。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以前はデフォルトのスターターセットからスタートしたんですが、今回はここから自分が作りたいサイトに近い構成のものを選択することにしました。今回は Markdown をコンテンツソースとして利用するブログサイトを作りたいので、&lt;a href=&quot;https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-blog/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;gatsby-starter-blog&lt;/a&gt;というスターターセットを選びます。&lt;/p&gt;
+&lt;p&gt;ターミナルから作業フォルダに移動して、以下のコマンドを実行してください。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;gatsby new gatsby-starter-blog https://github.com/gatsbyjs/gatsby-starter-blog&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ダウンロードが完了したら、&lt;strong&gt;gatsby-starter-blog&lt;/strong&gt;フォルダに移動して、&lt;code class=&quot;language-text&quot;&gt;yarn start&lt;/code&gt;してください。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;localhost:8000&lt;/strong&gt;にアクセスして、無事にブログ画面が表示されていれば準備完了です&lt;img class=&quot;emoji-icon&quot; alt=&quot;emoji-tada&quot; data-icon=&quot;emoji-tada&quot; style=&quot;display: inline; margin: 0; margin-top: 0px; margin-right: 3px; margin-left: 3px; position: relative; top: 5px; width: 20px&quot; src=&quot;data:image/png;base64, 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&quot; title=&quot;emoji-tada&quot;&gt;&lt;/p&gt;
+&lt;p&gt;この時点で既にトップページ(記事一覧ページ)と記事ページがあるので、そこで使われている React のコードや GraphQL のクエリを見ることで、どのようにして Markdown のデータを、React コンポーネントで取得し、表示しているのかがなんとなくわかるのではないかなと思います。&lt;/p&gt;
+&lt;p&gt;具体的にどういう部分を見ていけばいいのかをまとめてみます。&lt;/p&gt;
+&lt;h2 id=&quot;gatsby-ブログ向けの-markdown-の書き方--yaml-front-matter-&quot;&gt;Gatsby ブログ向けの Markdown の書き方 ( YAML Front-matter )&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;content/blog&lt;/strong&gt;の中に記事データがあるのでどういう形で書かれているのか見てみます。&lt;/p&gt;
+&lt;p&gt;Contentful ではデータベース構造を管理画面から編集することができましたが、Markdown をコンテンツソースとする場合はタイトルや日付などといった記事に関するデータを、どこでどのようにして持つんだろう、というのが疑問だったんですが、これは&lt;strong&gt;YAML という形式で Markdown ファイルの冒頭部分にメタ情報を書くという方法で解決されているようです。&lt;/strong&gt;つまり記事データの構造はどこにも定義されておらず、記事ごとにメタ情報を設定するという形になるようです。&lt;/p&gt;
+&lt;p&gt;この YAML で書かれたメタ情報ブロックを&lt;strong&gt;Front-matter&lt;/strong&gt;と言います。以下の部分です。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;markdown&quot;&gt;&lt;pre class=&quot;language-markdown&quot;&gt;&lt;code class=&quot;language-markdown&quot;&gt;&lt;span class=&quot;token hr punctuation&quot;&gt;---&lt;/span&gt;
+title: New Beginnings
+date: &quot;2015-05-28T22:40:32.169Z&quot;
+&lt;span class=&quot;token title important&quot;&gt;description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&quot;token title important&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;##&lt;/span&gt; ここから下に本文&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;カテゴリーやサムネイルなどを持たせたい場合はこのブロックの中に追加していくことになります。&lt;/p&gt;
+&lt;p&gt;デフォルトの状態では、 &lt;strong&gt;title, date, description&lt;/strong&gt; の 3 つの項目が設定されています。このブログの場合はタグページを作りたかったので、&lt;strong&gt;tags&lt;/strong&gt;という項目を追加したりしました。&lt;/p&gt;
+&lt;h2 id=&quot;markdown-をコンテンツソースとする場合のプラグイン設定-gatsby-configjs&quot;&gt;Markdown をコンテンツソースとする場合のプラグイン設定 (gatsby-config.js)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;gatsby-config.js&lt;/strong&gt;の中では、利用するプラグインの定義・設定を行ったり、サイトのメタデータの定義を行います。&lt;/p&gt;
+&lt;p&gt;Markdown をコンテンツソースとして扱う為には、&lt;code class=&quot;language-text&quot;&gt;gatsby-source-filesystem&lt;/code&gt;というプラグインが必須です。今回使用したスターターセットでは最初からこのプラグインのインストールと gatsby-config.js での設定が終わった状態になっていますが、一応パスなどを確認する為に見ておきましょう。gatsby-config.js の plugins の中の以下の部分がそれに該当します。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  resolve&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;gatsby-source-filesystem&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  options&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    path&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;__dirname&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;/content/blog&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;blog&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;gatsby-ルーティングの基本-srcpages&quot;&gt;Gatsby ルーティングの基本 (src/pages)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;src/pages&lt;/strong&gt;がルーティングの基本になるディレクトリです。&lt;/p&gt;
+&lt;p&gt;このディレクトリ内に置かれた js ファイルは、ファイル名をパスとしてページが生成されます。&lt;/p&gt;
+&lt;p&gt;今回のスターターセットの場合は、トップページ(index.js)と 404 ページ(404.js)がここに置いてあります。&lt;/p&gt;
+&lt;p&gt;index.js を見てみると、ページの最後に GraphQL のクエリがあります。&lt;strong&gt;このクエリを介して取得したデータは、その直前で&lt;code class=&quot;language-text&quot;&gt;export default&lt;/code&gt;された React コンポーネントに data という prop として渡っています。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;その index.js の中で定義されている BlogIndex コンポーネントの内容をみると、そうやって props に渡されたデータを利用して、記事の一覧を表示させているのがわかると思います。&lt;/p&gt;
+&lt;h2 id=&quot;記事ページ-gatsby-nodejs&quot;&gt;記事ページ (gatsby-node.js)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;gatsby-node.js&lt;/strong&gt;から&lt;a href=&quot;https://www.gatsbyjs.org/docs/node-apis/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Gatsby Node APIs&lt;/a&gt;とのやりとりをします。このスターターセットの場合は、Markdown ファイルを元に動的にページを生成する為の処理( createPages )をここに記述しています。どういう処理が行われているか順番に見てみます。&lt;/p&gt;
+&lt;h3 id=&quot;markdown-ファイルを全て取得&quot;&gt;Markdown ファイルを全て取得&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;graphql&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;
+    {
+      allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: DESC }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
+          }
+        }
+      }
+    }
+  &lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ここでは、date(日付)を基準に desc(降順)に並び替えて、1000 件を上限として、Markdown ファイルを全件取得しています。ここで取得している項目は&lt;code class=&quot;language-text&quot;&gt;slug&lt;/code&gt;と&lt;code class=&quot;language-text&quot;&gt;title&lt;/code&gt;で、対象となるディレクトリは&lt;strong&gt;gatsby-config.js&lt;/strong&gt;で指定されたパスです。&lt;/p&gt;
+&lt;h3 id=&quot;全記事分のページを生成する&quot;&gt;全記事分のページを生成する&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; posts &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; result&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;allMarkdownRemark&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;edges
+posts&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;post&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; index&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; previous &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; index &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; posts&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; posts&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;index &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;node
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; next &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; index &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; posts&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;index &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;node
+
+  &lt;span class=&quot;token function&quot;&gt;createPage&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    path&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; post&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;node&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;fields&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;slug&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    component&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; blogPost&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    context&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      slug&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; post&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;node&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;fields&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;slug&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      previous&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      next&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+exports&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function-variable function&quot;&gt;onCreateNode&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; node&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; actions&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; getNode &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; createNodeField &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; actions
+
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;node&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;internal&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;type &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;MarkdownRemark&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; value &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;createFilePath&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; node&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; getNode &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;createNodeField&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;slug&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      node&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      value&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;GraphQL で取得したデータが&lt;code class=&quot;language-text&quot;&gt;result.data.allMarkDownRemark.edges&lt;/code&gt;に入っているので、これを&lt;code class=&quot;language-text&quot;&gt;posts&lt;/code&gt;という定数に入れて、ループで回し、全記事分の静的ページを生成しています。ここで createPage 関数というページを生成する関数がでてきます。この関数は&lt;strong&gt;path&lt;/strong&gt;と&lt;strong&gt;component&lt;/strong&gt;と&lt;strong&gt;context&lt;/strong&gt;を引数に持ちます。&lt;/p&gt;
+&lt;p&gt;path はページのスラッグになる部分で、component は適用されるテンプレートで、context はテンプレートのコンポーネントに渡すデータです。ここでは slug を記事ページ用のテンプレートに渡し、それを元に記事ページ用のテンプレートから記事データを特定し取得できるようにしているようです。&lt;/p&gt;
+&lt;p&gt;記事ページ用のテンプレートコンポーネントでのクエリは以下のようになっています。&lt;/p&gt;
+&lt;h3 id=&quot;srctemplatesblog-postjs&quot;&gt;src/templates/blog-post.js&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; pageQuery &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; graphql&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;
+  query BlogPostBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        title
+        author
+      }
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      excerpt(pruneLength: 160)
+      html
+      frontmatter {
+        title
+        date(formatString: &quot;MMMM DD, YYYY&quot;)
+        description
+      }
+    }
+  }
+&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;同じ要領でタグやカテゴリーを全件取得して、ループで回して createPage 関数を実行すればタグページやカテゴリーページが作れますよね！なのでこの部分はよく見ておきましょう&lt;img class=&quot;emoji-icon&quot; alt=&quot;emoji-sparkles&quot; data-icon=&quot;emoji-sparkles&quot; style=&quot;display: inline; margin: 0; margin-top: 0px; margin-right: 3px; margin-left: 3px; position: relative; top: 5px; width: 20px&quot; src=&quot;data:image/png;base64, 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&quot; title=&quot;emoji-sparkles&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;感想&quot;&gt;感想&lt;/h2&gt;
+&lt;p&gt;Gatsby でブログを作るってなった時は、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;複数人で更新する事が想定される&lt;/li&gt;
+&lt;li&gt;github の使い方や Markdown の書き方がわからない人が更新する事が想定される&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;このいずれかの条件に当てはまる場合のみ、Contentful や Netlify CMS や WordPress などをバックエンドとして使うという選択肢を取ればいいのかなと思いました。&lt;/p&gt;
+&lt;p&gt;自分一人で更新するブログで、日頃から github や Markdown をよく使っている場合には、Markdown をコンテンツソースとして利用する方がシンプルだし手軽だと思います。&lt;/p&gt;
+&lt;p&gt;ブラウザから管理画面にログインしてブラウザ上でブログを書くより、いつも使っている Markdown エディタで記事を書いて、書き終わったら github のリポジトリにプッシュするだけで更新されるようにしておけば、ブログを更新する事に対する精神的なハードルがだいぶ下がるな〜って感じました〜&lt;/p&gt;
+&lt;p&gt;あと、&lt;a href=&quot;https://github.com/Shin-tech25/Shin-tech25-gatsby-blog&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;このブログのコードは Github で公開してます！&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Gatsby でブログを作ってみたい方は是非参考にしてみてください&lt;img class=&quot;emoji-icon&quot; alt=&quot;emoji-blush&quot; data-icon=&quot;emoji-blush&quot; style=&quot;display: inline; margin: 0; margin-top: 0px; margin-right: 3px; margin-left: 3px; position: relative; top: 5px; width: 20px&quot; src=&quot;data:image/png;base64, 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&quot; title=&quot;emoji-blush&quot;&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Sass(SCSS)の関数をstyled-componentsでも使いたい]]></title><description><![CDATA[Sass(SCSS)でよく使う関数を styled-components でも使いたくて、いろいろ調べてみました。 まずは自力でなんとかしてみる   など色に関わる sass…]]></description><link>https://Shin-tech25.netlify.app/sass-styled-components/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/sass-styled-components/</guid><pubDate>Sun, 11 Aug 2019 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Sass(SCSS)でよく使う関数を styled-components でも使いたくて、いろいろ調べてみました。&lt;/p&gt;
+&lt;h2 id=&quot;まずは自力でなんとかしてみる&quot;&gt;まずは自力でなんとかしてみる&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;rgba&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;lighten&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;darken&lt;/code&gt;など色に関わる sass 関数を使いたい場面が出てきた為、以下のような関数を定義して一箇所にまとめておき、必要な場面で呼び出す、というような事をしていました。&lt;/p&gt;
+&lt;h3 id=&quot;rgba-function&quot;&gt;rgba function&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;rgba&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;hex&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; alpha &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; r &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; hex&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token regex&quot;&gt;/^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; c &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;r&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    c &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; r&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;parseInt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  r &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; hex&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token regex&quot;&gt;/^#([0-9a-f])([0-9a-f])([0-9a-f])$/i&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;r&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    c &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; r&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x11&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;parseInt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;rgba(&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;alpha&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;rgba-function-呼び出し&quot;&gt;rgba function 呼び出し&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; color &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;rgba&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;#999999&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;lighten-function-と-darken-function&quot;&gt;lighten function と darken function&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// lighten //&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;lighten&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;hex&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; amount &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; amt &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; amount &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; temp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getColor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hex&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; amt&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; temp
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// darken //&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;darken&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;hex&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; amount &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; amt &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;amount &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; temp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getColor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hex&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; amt&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; temp
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 共通 //&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;getColor&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;hex&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; amt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; usePound &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hex&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    hex &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; hex&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    usePound &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; num &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;parseInt&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hex&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; r &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;num &lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; amt
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;r &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    r &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;r &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    r &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; b &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;num &lt;span class=&quot;token operator&quot;&gt;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x00ff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; amt
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;b &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    b &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;b &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    b &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; g &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;num &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0x0000ff&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; amt
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;g &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    g &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;g &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    g &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;usePound &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;#&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;g &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;b &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;r &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;lighten--darken-呼び出し&quot;&gt;lighten &amp;#x26; darken 呼び出し&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; lightenColor &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;lighten&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;#999999&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; darkenColor &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;darken&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;#999999&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;結論-そんなことしなくても-polished-を使えばよかった！&quot;&gt;結論: そんなことしなくても polished を使えばよかった！&lt;/h2&gt;
+&lt;p&gt;とりあえずは上記の方法で解決したんですが、よく考えたらそういうライブラリありそうだなと思って調べてみたらやっぱりありました！&lt;a href=&quot;https://github.com/styled-components/polished&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;polished&lt;/a&gt;というライブラリで、様々な Sass の便利な機能が styled-components で使えるようになります。　&lt;a href=&quot;https://polished.js.org/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ドキュメントはこちらから！&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;styled-components のチームでメンテナンスしてるみたいです。もっと早くに知りたかった 😭&lt;/p&gt;
+&lt;h3 id=&quot;polished-インストール&quot;&gt;polished インストール&lt;/h3&gt;
+&lt;p&gt;yarn or npm でインストール&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;yarn add polished --dev&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;polished-を使ってみる&quot;&gt;polished を使ってみる&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; rgba&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; darken&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; lighten &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;polished&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; Style &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; styled&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;div&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;
+  h1 {
+    color: rgba(&quot;#000&quot;, 0.5);
+  }
+  h2 {
+    color: lighten(0.5 &quot;#000&quot;);
+  }
+  h3 {
+    color: darken(0.5, &quot;#000&quot;);
+  }
+&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;rgba ではカラーコードが第一引数にきて、darken と lighten ではカラーコードが第二引数にくるみたいですね…！ちょっとややこしい…？&lt;/p&gt;
+&lt;p&gt;謎な部分もあるけど、色関連以外にもいろんな機能が網羅されててめっちゃ便利そうなので今後styled-componentsを使う時は絶対セットで入れると思います！おすすめ〜&lt;/p&gt;</content:encoded></item><item><title><![CDATA[【styled-components】keyframesにpropsを渡す方法]]></title><description><![CDATA[React で styled-components を使っている時に、keyframes に props を渡す方法です。
+よく忘れるので忘備録代わりにメモしておきます ✍️ やりたいこと (これは動きません) 解決策: keyframes を返す関数を定義する Wrapper…]]></description><link>https://Shin-tech25.netlify.app/styled-components-keyframes/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/styled-components-keyframes/</guid><pubDate>Tue, 06 Aug 2019 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;React で styled-components を使っている時に、keyframes に props を渡す方法です。
+よく忘れるので忘備録代わりにメモしておきます ✍️&lt;/p&gt;
+&lt;h2 id=&quot;やりたいこと-これは動きません&quot;&gt;やりたいこと (これは動きません)&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; rotate &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; keyframes&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    // ここでpropsを使いたい... //
+    transform: rotate(&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;rotation&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;);
+  }
+&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; Wrapper &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; styled&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;div&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;
+  &amp;amp;.rotate {
+    animation: &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;rotate&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt; 0.4s ease forwards;
+  }
+&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;解決策-keyframes-を返す関数を定義する&quot;&gt;解決策: keyframes を返す関数を定義する&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;rotate&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token parameter&quot;&gt;props&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; keyframes&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;rotation&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;);
+    }
+  &lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;wrapper-内で-props-を渡して呼び出し&quot;&gt;Wrapper 内で props を渡して呼び出し&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; Wrapper &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; styled&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;div&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;
+  &amp;amp;.rotate {
+    animation: &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;props&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;rotate&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;deg&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt; 0.4s ease forwards;
+  }
+&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;done&quot;&gt;DONE🎉&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[Firebaseでbasic認証をかける方法]]></title><description><![CDATA[ポートフォリオをホスティングするのにbasic認証をかけたいなと思ったんですが、Netlifyの無料プランでは無理みたいだったので、はじめてFirebaseを使ってみました デプロイまでの手順や、つまったところをメモしておこうと思います。 デプロイまでの手順 firebase…]]></description><link>https://Shin-tech25.netlify.app/firebase-basic-authorization/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/firebase-basic-authorization/</guid><pubDate>Tue, 09 Jul 2019 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;ポートフォリオをホスティングするのにbasic認証をかけたいなと思ったんですが、Netlifyの無料プランでは無理みたいだったので、はじめてFirebaseを使ってみました&lt;img class=&quot;emoji-icon&quot; alt=&quot;emoji-fire&quot; data-icon=&quot;emoji-fire&quot; style=&quot;display: inline; margin: 0; margin-top: 0px; margin-right: 3px; margin-left: 3px; position: relative; top: 5px; width: 20px&quot; src=&quot;data:image/png;base64, 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&quot; title=&quot;emoji-fire&quot;&gt;&lt;/p&gt;
+&lt;p&gt;デプロイまでの手順や、つまったところをメモしておこうと思います。&lt;/p&gt;
+&lt;h2 id=&quot;デプロイまでの手順&quot;&gt;デプロイまでの手順&lt;/h2&gt;
+&lt;h3 id=&quot;firebaseにアカウント登録プロジェクトを作っておく&quot;&gt;firebaseにアカウント登録&amp;#x26;プロジェクトを作っておく&lt;/h3&gt;
+&lt;p&gt;アカウント登録してから、トップページからプロジェクトを追加しておきます。&lt;/p&gt;
+&lt;h3 id=&quot;firebase-toolsをインストール&quot;&gt;firebase-toolsをインストール&lt;/h3&gt;
+&lt;p&gt;npm経由でfirebase-toolsをインストールします。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ npm install -g firebase-tools&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;firebaseにログイン&quot;&gt;firebaseにログイン&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ firebase login&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ブラウザが立ち上がるので認証ボタンをクリック！これでログイン完了です。&lt;/p&gt;
+&lt;h3 id=&quot;firebaseプロジェクトの初期化&quot;&gt;firebaseプロジェクトの初期化&lt;/h3&gt;
+&lt;p&gt;適当にフォルダを作ってそこにターミナルで移動してから、firebaseプロジェクトの初期化をします。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ firebase init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;FunctionsとHostingにスペースキーでチェックを入れます。&lt;/p&gt;
+&lt;p&gt;いろいろ聞かれますが、基本はデフォルトのままでOK。&lt;/p&gt;
+&lt;p&gt;プロジェクトを聞かれた時に、最初にFirebaseサイトから追加したプロジェクトを選択します。&lt;/p&gt;
+&lt;h3 id=&quot;ファイルを書き換える&quot;&gt;ファイルを書き換える&lt;/h3&gt;
+&lt;p&gt;以下の内容にファイルを書き換えます。&lt;/p&gt;
+&lt;h4 id=&quot;functionsindexjs&quot;&gt;functions/index.js&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; functions &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;firebase-functions&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; express &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;express&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; basicAuth &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;basic-auth-connect&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; app &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+app&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;/*&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;basicAuth&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;user&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; password&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; user &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;username&apos;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; password &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;password&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+app&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;express&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;__dirname &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/static/&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+exports&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;app &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; functions&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;https&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;onRequest&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;app&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;firebasejson&quot;&gt;firebase.json&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;hosting&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;public&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;public&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;rewrites&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;source&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;**&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token property&quot;&gt;&quot;function&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;app&quot;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;ignore&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;token string&quot;&gt;&quot;firebase.json&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token string&quot;&gt;&quot;**/.*&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token string&quot;&gt;&quot;**/node_modules/**&quot;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;コマンドから必要なプラグインのインストール&quot;&gt;コマンドから必要なプラグインのインストール&lt;/h3&gt;
+&lt;p&gt;functionsフォルダに移動してから、必要なプラグインをインストールします。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ cd functions
+$ npm install --save express
+$ npm install --save basic-auth-connect&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;publicフォルダ内のファイルを全て削除して、staticフォルダを追加&quot;&gt;Publicフォルダ内のファイルを全て削除して、staticフォルダを追加&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;publicフォルダ内が空だった時、独自の静的ファイル(static)のホスティングを行う&lt;/strong&gt;という設定を上記のfirebase.jsonとfunctions/index.js内でしているので、publicフォルダ内を空っぽにして、functionsフォルダの中にstaticフォルダを作って、staticフォルダ以下にホストしたいファイルを置いておきます。&lt;/p&gt;
+&lt;h3 id=&quot;デプロイする&quot;&gt;デプロイする&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;firebase deploy&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;しばらく待って、Deploy complete!が表示されればデプロイ完了です🎉&lt;/p&gt;
+&lt;h2 id=&quot;詰まったところ&quot;&gt;詰まったところ&lt;/h2&gt;
+&lt;h3 id=&quot;1-deployが失敗するtypeerror-cannot-read-property-wanted-of-undefined&quot;&gt;1: deployが失敗する(TypeError: Cannot read property ‘wanted’ of undefined)&lt;/h3&gt;
+&lt;p&gt;手順通りにデプロイを行いましたが、&lt;code class=&quot;language-text&quot;&gt;TypeError: Cannot read property &amp;#39;wanted&amp;#39; of undefined&lt;/code&gt;というエラーがでてしまい、デプロイが完了しませんでした。&lt;/p&gt;
+&lt;p&gt;私の場合はnpmを最新バージョン(6.10.0)にアップグレードしていたのが原因で、6.9.2にダウングレードすると問題なくデプロイが完了しました。以下のコマンドでダウングレードできます。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ npm install -g npm@6.9.2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;あとデプロイ時にエラーが出た場合、&lt;code class=&quot;language-text&quot;&gt;firebase-debug.log&lt;/code&gt;というファイルが同階層に生成されて、その中に詳しいエラーの原因が書かれているので、何かエラーが出た場合はこちらを参考にするとよさそうです。&lt;/p&gt;
+&lt;h3 id=&quot;2-cannot-getが表示される&quot;&gt;2: CANNOT GET/が表示される&lt;/h3&gt;
+&lt;p&gt;functionsフォルダと同じ階層にstaticフォルダを作っていたのが原因でした😱&lt;/p&gt;
+&lt;p&gt;functions/index.js内の&lt;code class=&quot;language-text&quot;&gt;__dirname&lt;/code&gt;はfunctionsフォルダまでの階層を表しているので、&lt;strong&gt;functionsフォルダの中に&lt;/strong&gt;staticフォルダを置くように気をつけましょう！(自戒)&lt;/p&gt;
+&lt;h2 id=&quot;参考&quot;&gt;参考&lt;/h2&gt;
+&lt;p&gt;以下の記事を参考にさせていただきました🙏&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/567000/items/65f55eda8d7c6df09138&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://qiita.com/567000/items/65f55eda8d7c6df09138&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/ohana/items/f334c096727740f0df4a&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://qiita.com/ohana/items/f334c096727740f0df4a&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[GatsbyJS + Contentful + Netlifyでブログ作ってみた]]></title><description><![CDATA[静的サイトジェネレーターと Headless CMS を使ったブログ開発に興味があったので、一番情報が多そうだった Gatsby + Contentful + Netlify の組み合わせで挑戦してみることにしました。 完成品はこのブログです！今回の記事では Gatsby…]]></description><link>https://Shin-tech25.netlify.app/gatsby-contentful-netlify-blog/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/gatsby-contentful-netlify-blog/</guid><pubDate>Thu, 04 Jul 2019 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;静的サイトジェネレーターと Headless CMS を使ったブログ開発に興味があったので、一番情報が多そうだった Gatsby + Contentful + Netlify の組み合わせで挑戦してみることにしました。&lt;/p&gt;
+&lt;p&gt;完成品はこのブログです！今回の記事では Gatsby + Contentful で開発を始めるまでの環境構築の部分をまとめておきたいと思います。&lt;/p&gt;
+&lt;h2 id=&quot;それぞれが担う役割&quot;&gt;それぞれが担う役割&lt;/h2&gt;
+&lt;h3 id=&quot;gatsby&quot;&gt;Gatsby&lt;/h3&gt;
+&lt;p&gt;React製の静的サイトジェネレーターです。フロントエンド担当 🙋‍♀️&lt;/p&gt;
+&lt;p&gt;GraphQLを使ってContentfulやWordPressなどの様々なコンテンツソースにアクセスできます。&lt;/p&gt;
+&lt;h3 id=&quot;contentful&quot;&gt;Contentful&lt;/h3&gt;
+&lt;p&gt;Headless CMSと呼ばれるもので、バックエンド担当 🙋‍♀️&lt;/p&gt;
+&lt;p&gt;Headless CMSとはコンテンツの構造とデータ自体の管理を行い、そのデータへのAPIを配信してくれるものです。&lt;/p&gt;
+&lt;p&gt;バックエンドをHeadless CMSに任せることでフロントエンドとバックエンドを完全に分離する事ができるので、フロント側では自分がいつも使っているフレームワークや環境を用いて開発を行う事が可能になります 🎉&lt;/p&gt;
+&lt;h3 id=&quot;netlify&quot;&gt;Netlify&lt;/h3&gt;
+&lt;p&gt;ホスティングするところです 🙋‍♀️&lt;/p&gt;
+&lt;p&gt;build hooks を追加できるので、NetlifyとContentfulにwebhookを設定し、紐付けすることでContentfulから記事を Publishすると自動で githubのリポジトリにプッシュして、Netlifyへのデプロイを実行する、という設定が簡単に追加できるということなので選びました！&lt;/p&gt;
+&lt;h2 id=&quot;制作までの流れ&quot;&gt;制作までの流れ&lt;/h2&gt;
+&lt;h3 id=&quot;gatsby-をインストール&quot;&gt;Gatsby をインストール&lt;/h3&gt;
+&lt;p&gt;npmでgatsby-cliをインストールします。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ npm install --global gatsby-cli&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;gatsbyアプリを作成&quot;&gt;Gatsbyアプリを作成&lt;/h3&gt;
+&lt;p&gt;create-react-app みたいな感じで、コマンド一つで簡単にプロジェクトの作成ができます。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ gatsby new my-gatsby-blog&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これで my-gatsby-blog という名前のフォルダが作成されます。&lt;/p&gt;
+&lt;h3 id=&quot;開発用サーバーを立ち上げる&quot;&gt;開発用サーバーを立ち上げる&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ cd my-gatsby-blog
+$ gatsby develop&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これでブラウザから&lt;code class=&quot;language-text&quot;&gt;localhost:8000&lt;/code&gt;にアクセスしてスタートページが表示されていればGatsby側の開発準備は完了です。&lt;/p&gt;
+&lt;h3 id=&quot;contentfulでスペースとコンテンツモデルの作成&quot;&gt;Contentfulでスペースとコンテンツモデルの作成&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://app.contentful.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://app.contentful.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Contentful のユーザー登録を済ませて管理画面にログインしたら、ブログ用のスペースと、コンテンツモデルを作成します。&lt;/p&gt;
+&lt;p&gt;割と直感的に操作できるので詳しい説明は省きますが、うちのコンテンツモデルはこんな感じです。&lt;/p&gt;
+&lt;p&gt;デフォルトの blog 用コンテンツモデルからほとんど変更してないと思います。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;screenshot.png&quot; alt=&quot;スクリーンショット&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;api-アクセストークンの取得&quot;&gt;API アクセストークンの取得&lt;/h3&gt;
+&lt;p&gt;Contentful管理画面からSetting→API keys&lt;/p&gt;
+&lt;p&gt;画面右側のADD API Keysボタンから新しいキーを追加し、space IDとaccess tokenをメモしておきます✍️&lt;/p&gt;
+&lt;h3 id=&quot;gatsby-アプリとcontentfulの紐づけ&quot;&gt;Gatsby アプリとContentfulの紐づけ&lt;/h3&gt;
+&lt;p&gt;データソースに Contentful を使う為のプラグイン&lt;a href=&quot;https://www.gatsbyjs.org/packages/gatsby-source-contentful/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;gatsby-source-contentful&lt;/a&gt;をインストールしてから、&lt;strong&gt;gatsby-config.js&lt;/strong&gt;に以下の記述を追加します&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+  plugins&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      resolve&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;gatsby-source-contentful&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      options&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        spaceId&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;スペースID&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        accessToken&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;アクセストークン&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これでgatsbyからcontentfulのデータソースへアクセスする準備ができました 🎉&lt;/p&gt;
+&lt;h2 id=&quot;contentfulで記事をpublishしたら、netlifyのデプロイを実行する設定&quot;&gt;Contentfulで記事をPublishしたら、Netlifyのデプロイを実行する設定&lt;/h2&gt;
+&lt;p&gt;こちらの方法に関しては&lt;a href=&quot;https://hyme.site/blog/posts/effective-public-flow/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;こちらのブログ&lt;/a&gt;に詳しく手順が書いてあったので、参考にさせていただきました！&lt;/p&gt;
+&lt;h2 id=&quot;おわり〜&quot;&gt;おわり〜🎉&lt;/h2&gt;
+&lt;p&gt;まだ最低限の機能しかないのでこれからぼちぼちいろんな機能を追加していけたらなとおもいます✨&lt;/p&gt;
+&lt;h2 id=&quot;追記&quot;&gt;追記&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;/gatsby-blog-with-markdown/&quot;&gt;Contentful辞めました&lt;img class=&quot;emoji-icon&quot; alt=&quot;emoji-joy&quot; data-icon=&quot;emoji-joy&quot; style=&quot;display: inline; margin: 0; margin-top: 0px; margin-right: 3px; margin-left: 3px; position: relative; top: 5px; width: 20px&quot; src=&quot;data:image/png;base64, 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&quot; title=&quot;emoji-joy&quot;&gt;&lt;/a&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
