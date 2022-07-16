@@ -118,7 +118,7 @@ const GlobalStyle = createGlobalStyle`
     background: var(--background);
     a {
       color: var(--text);
-    } 
+    }
   }
   * {
     box-sizing: boreder-box;
@@ -143,7 +143,7 @@ const GlobalStyle = createGlobalStyle`
     background: none;
     line-height: 1.5;
     font-size: 16px;
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
     &:focus {
       border: none;
       outline: none;
@@ -156,7 +156,7 @@ const GlobalStyle = createGlobalStyle`
   /* ===============================================
   # smart phone
   =============================================== */
-  @media screen and (max-width: 780px) { 
+  @media screen and (max-width: 780px) {
     html, body {
       font-size: 15px;
     }
@@ -168,7 +168,7 @@ const GlobalStyle = createGlobalStyle`
   /* ===============================================
   # pc
   =============================================== */
-  @media screen and (min-width: 781px) { 
+  @media screen and (min-width: 781px) {
     .sp {
       display: none !important;
     }
