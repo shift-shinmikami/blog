@@ -1,3 +1,3 @@
 # My gatsby blog
 
-[https://diff001a.netlify.app](https://diff001a.netlify.app)
+[https://Shin-tech25.netlify.app](https://Shin-tech25.netlify.app)

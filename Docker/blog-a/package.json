@@ -1,9 +1,9 @@
 {
-  "name": "diff001-blog",
+  "name": "shintech25-blog",
   "private": true,
   "description": "My blog powered by gatsby",
   "version": "0.1.0",
-  "author": "diff001a <diff001a@gmail.com>",
+  "author": "Shin-tech25 <Shin-tech25@gmail.com>",
   "dependencies": {
     "gatsby": "^2.15.14",
     "gatsby-image": "^2.2.18",
@@ -41,7 +41,7 @@
   "devDependencies": {
     "prettier": "^1.18.2"
   },
-  "homepage": "https://diff001a.netlify.app/",
+  "homepage": "https://Shin-tech25.netlify.app/",
   "keywords": [
     "gatsby"
   ],
@@ -49,7 +49,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/diff001a/my-gatsby-blog"
+    "url": "git+https://github.com/Shin-tech25/my-gatsby-blog"
   },
   "scripts": {
     "build": "gatsby build",

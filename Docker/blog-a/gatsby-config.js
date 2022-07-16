@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `diff001a's blog`,
-    author: `diff001a`,
+    title: `Shin-tech25's blog`,
+    author: `Shin-tech25`,
     description: `A blog powered by Gatsby`,
-    siteUrl: `https://diff001a.netlify.app/`,
+    siteUrl: `https://Shin-tech25.netlify.app/`,
     social: {
-      twitter: `diff001a`,
-      github: `diff001a`,
+      twitter: `Shin-tech25`,
+      github: `Shin-tech25`,
     },
   },
   plugins: [
@@ -36,7 +36,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://diff001a.netlify.app/`,
+        siteUrl: `https://Shin-tech25.netlify.app/`,
       },
     },
     {
@@ -101,7 +101,7 @@ module.exports = {
           {
             resolve: `gatsby-plugin-disqus`,
             options: {
-              shortname: `https-diff001a-netlify-app`,
+              shortname: `https-Shin-tech25-netlify-app`,
             },
           },
           `gatsby-remark-copy-linked-files`,
@@ -170,7 +170,7 @@ module.exports = {
             }
           `,
             output: "/rss.xml",
-            title: "diff001a's RSS Feed",
+            title: "Shin-tech25's RSS Feed",
           },
         ],
       },
@@ -178,7 +178,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `diff001a's blog`,
+        name: `Shin-tech25's blog`,
         short_name: `GatsbyJS`,
         start_url: `/`,
         background_color: `#ffffff`,

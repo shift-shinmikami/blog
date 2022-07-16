@@ -59,7 +59,7 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
   return (
     <Layout location={location} title={siteTitle} description={siteDescription}>
-      <SEO title="diff001a's blog" />
+      <SEO title="Shin-tech25's blog" />
       <Polygon
         height="400px"
         background="linear-gradient(45deg, #7bc6e2 0%, #fdb6c6 50%, #ffbe74 100%)"

@@ -95,7 +95,7 @@ const Footer = () => {
             ""
           )}
           <a
-            href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fdiff001a.netlify.com%2Frss.xml"
+            href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2FShin-tech25.netlify.com%2Frss.xml"
             target="_blank"
             rel="noopener noreferrer"
           >
