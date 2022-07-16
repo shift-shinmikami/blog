@@ -20,6 +20,25 @@ nav ul {
   list-style: none;
 }
 
+blockquote {
+  position: relative;
+  margin: 2em 0;
+  padding: 1.2em;
+  font-size: .9em;
+  background: #DFDFDF;
+}
+
+blockquote:before {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  content: '“';
+  font-size: 4em;
+  color: #FFF;
+  font-family: "ＭＳ Ｐゴシック", sans-serif;
+}
+
+/*
 blockquote, q {
   quotes: none;
 }
@@ -28,6 +47,7 @@ blockquote:before, blockquote:after, q:before, q:after {
   content: "";
   content: none;
 }
+*/
 
 a {
   margin: 0;

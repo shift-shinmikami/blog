@@ -80,9 +80,9 @@ function setColor() {
 #  font setting
 =============================================== */
 const font = css`
-  font-family: -apple-system, system-ui, "Helvetica Neue", "Segoe UI",
+  font-family: メイリオ, -apple-system, system-ui, "Helvetica Neue", "Segoe UI",
     "Hiragino Kaku Gothic ProN", "Hiragino Sans", "ヒラギノ角ゴ ProN W3", Arial,
-    メイリオ, Meiryo, sans-serif;
+     Meiryo, sans-serif;
   word-wrap: break-word;
   word-break: break-all;
   -moz-font-feature-settings: "palt";
@@ -94,7 +94,7 @@ const font = css`
   text-rendering: auto;
   -webkit-text-stroke: 1px transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.10rem;
   font-weight: 400;
   color: var(--text);
 `
