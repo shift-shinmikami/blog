@@ -101,9 +101,9 @@ export const pageQuery = graphql`
         description
       }
     }
-    avatar: file(absolutePath: { regex: "/welcome-squid.jpg/" }) {
+    avatar: file(absolutePath: { regex: "/iias-owl.jpg/" }) {
       childImageSharp {
-        fixed(width: 150, height: 150) {
+        fixed(width: 120, height: 120) {
           ...GatsbyImageSharpFixed
         }
       }

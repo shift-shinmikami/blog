@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import toni from "../../images/welcome-squid.jpg"
+import toni from "../../images/iias-owl.jpg"
 
 function SEO({
   description,

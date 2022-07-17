@@ -69,7 +69,7 @@ const Style = styled.div`
 const Polygon = props => {
   const data = useStaticQuery(graphql`
     query AuthQuery {
-      avatar: file(absolutePath: { regex: "/welcome-squid.jpg/" }) {
+      avatar: file(absolutePath: { regex: "/iias-owl.jpg/" }) {
         childImageSharp {
           fixed(width: 80, height: 80) {
             ...GatsbyImageSharpFixed
