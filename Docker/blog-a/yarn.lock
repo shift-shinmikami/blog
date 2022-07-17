@@ -5391,6 +5391,13 @@
   "resolved" "https://registry.npmjs.org/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz"
   "version" "1.0.1"
 
+"gatsby-awesome-pagination@^0.3.8":
+  "integrity" "sha512-Bnf2rncqjyhQeye8w+OVK8wmgu/Y77HI8Po05oEqbCSd+fMd0uGDv6ZhKH7UU/xcTv2cbJm7ie+Px9t41ngAxg=="
+  "resolved" "https://registry.npmjs.org/gatsby-awesome-pagination/-/gatsby-awesome-pagination-0.3.8.tgz"
+  "version" "0.3.8"
+  dependencies:
+    "lodash" "^4.17.21"
+
 "gatsby-cli@^2.7.47":
   "integrity" "sha512-dDVrbTjxzUwugOnnI/MDFZruYie5KW+t+XmLrG2L4ZjKBrAT6G2wsiPS+NwHiConqfTx67xoFAp54++C8+iWXg=="
   "resolved" "https://registry.npmjs.org/gatsby-cli/-/gatsby-cli-2.7.47.tgz"
@@ -5797,7 +5804,7 @@
     "semver" "^5.7.1"
     "sharp" "^0.23.0"
 
-"gatsby@^2.0.0", "gatsby@^2.0.100", "gatsby@^2.0.32", "gatsby@^2.0.33", "gatsby@^2.12.0", "gatsby@^2.15.14", "gatsby@^2.2.0", "gatsby@^2.4.0", "gatsby@>2.0.0-alpha":
+"gatsby@^2.0.0", "gatsby@^2.0.100", "gatsby@^2.0.32", "gatsby@^2.0.33", "gatsby@^2.12.0", "gatsby@^2.15.14", "gatsby@^2.2.0", "gatsby@^2.4.0", "gatsby@>=2.0.0", "gatsby@>2.0.0-alpha":
   "integrity" "sha512-/kSYUldRaVxD1e6WEQYfu1Gj8GMyYAt+Apw2Dm6HVanotf30mLmQulQSZKVd4ObBeXSHJWGaUn1kx7tbEZ+tHQ=="
   "resolved" "https://registry.npmjs.org/gatsby/-/gatsby-2.15.14.tgz"
   "version" "2.15.14"
@@ -8070,10 +8077,10 @@
   "resolved" "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz"
   "version" "4.5.0"
 
-"lodash@^4.11.1", "lodash@^4.15.0", "lodash@^4.17.10", "lodash@^4.17.11", "lodash@^4.17.12", "lodash@^4.17.13", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.4", "lodash@^4.17.5", "lodash@^4.3.0":
-  "integrity" "sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A=="
-  "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.15.tgz"
-  "version" "4.17.15"
+"lodash@^4.11.1", "lodash@^4.15.0", "lodash@^4.17.10", "lodash@^4.17.11", "lodash@^4.17.12", "lodash@^4.17.13", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.21", "lodash@^4.17.4", "lodash@^4.17.5", "lodash@^4.3.0":
+  "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
+  "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
+  "version" "4.17.21"
 
 "log-update@^3.0.0":
   "integrity" "sha512-YSKm5n+YjZoGZT5lfmOqasVH1fIH9xQA9A81Y48nZ99PxAP62vdCCtua+Gcu6oTn0nqtZd/LwRV+Vflo53ZDWA=="
@@ -10608,7 +10615,7 @@
     "exenv" "^1.2.1"
     "shallowequal" "^1.0.1"
 
-"react@^0.13.0 || ^0.14.0 || ^15.0.0 || ^16.0.0", "react@^0.14.0 || ^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0", "react@^16.0.0", "react@^16.4.2", "react@^16.8.2", "react@^16.8.5", "react@^16.9.0", "react@>= 16.3.0", "react@>=15.0.0", "react@>=16.8.0", "react@15.x || 16.x || 16.4.0-alpha.0911da3":
+"react@^0.13.0 || ^0.14.0 || ^15.0.0 || ^16.0.0", "react@^0.14.0 || ^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0", "react@^16.0.0", "react@^16.4.2", "react@^16.8.2", "react@^16.8.5", "react@^16.9.0", "react@>= 16.3.0", "react@>=15.0.0", "react@>=16.0.0", "react@>=16.8.0", "react@15.x || 16.x || 16.4.0-alpha.0911da3":
   "integrity" "sha512-+7LQnFBwkiw+BobzOF6N//BdoNw0ouwmSJTEm9cglOOmsg/TMiFHZLe2sEoN5M7LgJTj9oHH0gxklfnQe66S1w=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.9.0.tgz"
   "version" "16.9.0"

@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import Blog from "../components/blog"
 import Polygon from "../components/polygon"
 import Image from "gatsby-image"
+import Pagination from "../components/pagination"
 
 /* ===============================================
 #  page component
@@ -53,7 +54,7 @@ const Wrapper = styled.div`
   }
 `
 
-const BlogIndex = ({ data, location }) => {
+const BlogIndex = ({ data, location, pageContext }) => {
   const siteTitle = data.site.siteMetadata.title
   const siteDescription = data.site.siteMetadata.description
   const posts = data.allMarkdownRemark.edges
@@ -87,6 +88,7 @@ const BlogIndex = ({ data, location }) => {
           })}
         </div>
       </Wrapper>
+      <Pagination pageContext={pageContext} />
     </Layout>
   )
 }
@@ -94,7 +96,7 @@ const BlogIndex = ({ data, location }) => {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query {
+  query($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
@@ -110,7 +112,8 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 1000
+      skip: $skip
+      limit: $limit
     ) {
       edges {
         node {
