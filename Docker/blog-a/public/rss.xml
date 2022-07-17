@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 17 Jul 2022 06:02:31 GMT</lastBuildDate><item><title><![CDATA[D3.js x React.js 基礎]]></title><description><![CDATA[D3 について React について なぜ D3 と React を組み合わせるのか Victory のデータを CSV で読み込む D3.js と React.js を組み合わせたデータ可視化については様々な文献がある一方、難易度が高く理解し難いのが現状です。
+Youtube…]]></description><link>https://Shin-tech25.netlify.app/react-d3-basic/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/react-d3-basic/</guid><pubDate>Sun, 17 Jul 2022 05:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;d3-について&quot;&gt;D3 について&lt;/h1&gt;
+&lt;h1 id=&quot;react-について&quot;&gt;React について&lt;/h1&gt;
+&lt;h1 id=&quot;なぜ-d3-と-react-を組み合わせるのか&quot;&gt;なぜ D3 と React を組み合わせるのか&lt;/h1&gt;
+&lt;h1 id=&quot;victory-のデータを-csv-で読み込む&quot;&gt;Victory のデータを CSV で読み込む&lt;/h1&gt;
+&lt;p&gt;D3.js と React.js を組み合わせたデータ可視化については様々な文献がある一方、難易度が高く理解し難いのが現状です。
+Youtube で分かりやすいビデオを見つけることが出来ましたため共有したいと思います。&lt;/p&gt;
+&lt;p&gt;
+          &lt;div
+            class=&quot;gatsby-resp-iframe-wrapper&quot;
+            style=&quot;padding-bottom: 50%; position: relative; height: 0; overflow: hidden;margin-bottom: 1.0725rem&quot;
+          &gt;
+            &lt;div&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/OacqgtI30pk&quot; style=&quot;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          &quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;/p&gt;
+&lt;p&gt;詳細は動画で説明されているため割愛させていただくことにして、エッセンスだけ抜き出して説明します。&lt;/p&gt;
+&lt;p&gt;元々の index.js のファイルは以下のようです。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; useState &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;react&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ReactDOM &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;react-dom&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; VictoryBar&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; VictoryChart &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Victory&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; quarter&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; earnings&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;13000&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; quarter&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;b&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; earnings&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;16500&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; quarter&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;c&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; earnings&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;14250&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; quarter&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;d&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; earnigns&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;19000&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;VictoryChart
+    style&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; tickLabels&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; fontSize&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;120&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    width&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;960&quot;&lt;/span&gt;
+    height&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;500&quot;&lt;/span&gt;
+    domainPadding&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    padding&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; top&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; bottom&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; left&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; right&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;VictoryBar data&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; x&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;quarter&quot;&lt;/span&gt; y&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;earnings&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;VictoryChart&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; rootElement &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;root&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+ReactDOM&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;App &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; rootElement&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;CSV からデータを読み取るようにした場合は以下のようになります。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; useState&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; useEffect &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; ReactDOM &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react-dom&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;csv&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;d3&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; VictoryBar&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; VictoryChart &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Victory&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token parameter&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;population &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;population&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setData&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token function&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;csv&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;data.csv&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; row&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;setData&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;VictoryChart
+      style&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;tickLabels&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;fontSize&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;120&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      width&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;960&apos;&lt;/span&gt;
+      height&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;500&apos;&lt;/span&gt;
+      domainPadding&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      padding&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;top&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; bottom&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; left&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; right&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;VictoryBar data&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; x&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;country&quot;&lt;/span&gt; y&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;population&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;VictoryChart&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; rootElement &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;root&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  ReactDOM&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;App &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; rootElement&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ポイントとしては&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;d3 のライブラリ読み込み&lt;/li&gt;
+&lt;li&gt;csv の raw データを setData()で渡す&lt;/li&gt;
+&lt;li&gt;データを渡す場合には第２引数が空配列の初回実行 useEffect を用いる&lt;/li&gt;
+&lt;li&gt;データパース関数も別で用意して、d3.csv()の第２引数に渡す。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上の４点かなと思います。&lt;/p&gt;
+&lt;p&gt;D3.js と React.js の組み合わせはデータビジュアライゼーションに置いて非常にポテンシャルが高いと感じておりますので今後も継続して勉強していく予定です。&lt;/p&gt;
+&lt;p&gt;また何か考えたことや分かったことあったらアップしていきます。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[React Hooks 基礎]]></title><description><![CDATA[フックとは何か React のバージョン 16.8.0 で追加された機能であり、簡潔に言ってしまえば関数コンポーネントで利用できる関数のこと。
+React には様々な機能を持つフックが組み込まれており、それらを利用すれば関数コンポーネントで state…]]></description><link>https://Shin-tech25.netlify.app/react-hooks-basic/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/react-hooks-basic/</guid><pubDate>Sun, 17 Jul 2022 03:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;フックとは何か&quot;&gt;フックとは何か&lt;/h2&gt;
+&lt;p&gt;React のバージョン 16.8.0 で追加された機能であり、簡潔に言ってしまえば関数コンポーネントで利用できる関数のこと。
+React には様々な機能を持つフックが組み込まれており、それらを利用すれば関数コンポーネントで state 管理などを行うことが出来る。&lt;/p&gt;
+&lt;p&gt;フックを利用することで以下のようなメリットがあります。&lt;/p&gt;
+&lt;p&gt;・同等の機能を実装する場合、クラスコンポーネントよりもコード量が少なくなる。
+・ロジックを分離することができるため、ロジックの再利用やテストがしやすい。&lt;/p&gt;
+&lt;p&gt;公式ドキュメントのフックの解説は難解に感じると思いますが、誤解を恐れず、簡潔に言うとフックはただの関数です。
+「関数コンポーネントで利用できる便利な関数」ぐらいな認識で良いと思います。&lt;/p&gt;
+&lt;h2 id=&quot;usestate&quot;&gt;useState&lt;/h2&gt;
+&lt;p&gt;state と state 更新関数を返すフック。
+このフックを利用することで、コンポーネント内で state 管理を行うことができます。
+state の特徴として、値が更新されれば再レンダーされます。&lt;/p&gt;
+&lt;h3 id=&quot;usestate-の構文&quot;&gt;useState の構文&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;state&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; state更新関数&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;stateの初期値&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;次の例では、useState にオブジェクトを持っています。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; useState &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;react&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;vote&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setVote&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; kinoko&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; takenoko&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;voteKinoko&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;setVote&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;vote&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; kinoko&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; vote&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;kinoko &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;voteTakenoko&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function&quot;&gt;setVote&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;vote&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; takenoko&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; vote&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;takenoko &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;きのこ&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;vote&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;kinoko&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;p&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;たけのこ&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;vote&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;takenoko&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;p&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;button onClick&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;voteKinoko&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;きのこ&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;button&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;button onClick&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;voteTakenoko&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;たけのこ&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;button&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;useeffect&quot;&gt;useEffect&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;useEffect()&lt;/code&gt;は、コンポーネントに副作用を追加するフックです。
+副作用は、次のような処理を実行する関数です。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;React から生成された DOM の変更&lt;/li&gt;
+&lt;li&gt;API との通信&lt;/li&gt;
+&lt;li&gt;非同期処理&lt;/li&gt;
+&lt;li&gt;console.log&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;「副作用」のイメージが掴みづらいかもしれませんが、「コンポーネントのレンダー後かアンマウント後に何らかの処理を実行させたい時に&lt;code class=&quot;language-text&quot;&gt;useEffect()&lt;/code&gt;を利用する」という認識で問題ないかと思います。&lt;/p&gt;
+&lt;h3 id=&quot;useeffect-の構文&quot;&gt;useEffect の構文&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;副作用&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 依存配列&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;依存配列は、副作用が依存している値が格納された配列です。引数の渡し方によって副作用が実行されるタイミングは異なります。&lt;/p&gt;
+&lt;h3 id=&quot;使用例&quot;&gt;使用例&lt;/h3&gt;
+&lt;h4 id=&quot;第２引数なし（毎回実行）&quot;&gt;第２引数なし（毎回実行）&lt;/h4&gt;
+&lt;p&gt;次のように副作用だけ渡すと、コンポーネントがレンダーされた後に副作用は毎回実行されます。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;completed render&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;依存配列あり&quot;&gt;依存配列あり&lt;/h4&gt;
+&lt;p&gt;useEffect の第２引数には、副作用が依存している値を配列で渡すことが出来ます。
+副作用が依存している値を指定すれば、その値が更新された時だけ副作用が実行されます。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;message&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;message&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;初回のみ実行&quot;&gt;初回のみ実行&lt;/h4&gt;
+&lt;p&gt;第２引数に空配列（[]）を指定すれば、コンポーネントがレンダーされた後に一度だけ副作用が実行されます。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;completed render&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;useref&quot;&gt;useRef&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;useRef()&lt;/code&gt;は、ref オブジェクト（React.createRef の戻り値）を返すフックです。&lt;/p&gt;
+&lt;p&gt;ref オブジェクトを利用することで、DOM の参照や、コンポーネント内で値を保持できます。&lt;/p&gt;
+&lt;p&gt;「値を保持する」という点に関しては、&lt;code class=&quot;language-text&quot;&gt;useState&lt;/code&gt;と同じです。&lt;/p&gt;
+&lt;p&gt;しかし、&lt;code class=&quot;language-text&quot;&gt;useState&lt;/code&gt;とは異なり、&lt;code class=&quot;language-text&quot;&gt;useRef&lt;/code&gt;で生成した値を更新してもコンポーネントは再レンダーされない。&lt;/p&gt;
+&lt;p&gt;そのため、レンダーには関係ない&lt;code class=&quot;language-text&quot;&gt;state&lt;/code&gt;を扱いたい時（コンポーネント内で値を保持したいが、値を更新してもコンポーネントを再レンダーしたくない時）などに利用します。&lt;/p&gt;
+&lt;h3 id=&quot;useref-の構文&quot;&gt;useRef の構文&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; ref オブジェクト &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useRef&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;初期値&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;useRef の引数に渡した値が、ref オブジェクトの current プロパティの値になります。&lt;/p&gt;
+&lt;p&gt;そのため、次のように useRef に 0 を渡せば、ref オブジェクトの curret プロパティの値は 0 になります。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; count &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useRef&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;//-&gt; 0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;current プロパティの値を更新したい時は、次のように更新することができます。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;count&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; count&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;使用例-1&quot;&gt;使用例&lt;/h3&gt;
+&lt;h4 id=&quot;dom-の参照&quot;&gt;DOM の参照&lt;/h4&gt;
+&lt;p&gt;useRef で DOM を参照したい場合、作成した ref オブジェクトを HTML 要素の ref 属性に指定する必要があります。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; inputEl &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useRef&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;input ref&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;inputEl&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; type&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;このようにすることで、&lt;code class=&quot;language-text&quot;&gt;inputEl.current&lt;/code&gt;で DOM を参照することが出来ます。&lt;/p&gt;
+&lt;p&gt;次の例では、&lt;code class=&quot;language-text&quot;&gt;prevCountRef.current&lt;/code&gt; に&lt;code class=&quot;language-text&quot;&gt;count&lt;/code&gt;の値を設定する処理内容を&lt;code class=&quot;language-text&quot;&gt;useEffect&lt;/code&gt;に記述しています。
+button onClick によって&lt;code class=&quot;language-text&quot;&gt;count&lt;/code&gt;は更新されます。これによってコンポーネントは再レンダリングした後に前回の count の値を prevCountRef に代入します。
+※実際には、レンダリングの方が useEffect の処理より先のため、前回の count の値と更新された count の値を比較した後に prevCountRef.current が更新されます。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; useState&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; useEffect&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; useRef &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;react&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setCount&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; prevCountRef &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useRef&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;token function&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    prevCountRef&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; count
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+        現在のcount&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;、前回のcount&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;prevCountRef&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;p&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;前回のcountより&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;prevCountRef&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; count &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;小さい&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;大きい&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;p&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;button onClick&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;次のサンプルコードでは、useRef で ref オブジェクトを作成し、それを HTML 要素の ref 属性に指定して DOM を参照しています。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; useRef &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;react&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; inputEl &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useRef&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;onClick&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;inputEl&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;
+
+    inputEl&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;current&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;focus&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;input ref&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;inputEl&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; type&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;button onClick&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;onClick&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;input 要素をフォーカスする&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;button&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;usememo&quot;&gt;useMemo&lt;/h2&gt;
+&lt;p&gt;React では、不要な再計算やコンポーネントの再レンダーを抑えることが、パフォーマンス最適化の基本的な戦略となります。&lt;/p&gt;
+&lt;p&gt;それらを実現するための手段として、React.memo、useCallback、useMemo を利用します。
+React.memo、useCallback の解説は割愛させていただきます。&lt;/p&gt;
+&lt;h3 id=&quot;usememo-の構文&quot;&gt;useMemo の構文&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;useMemo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; 値を計算するロジック&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 依存配列&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;依存配列は、値を計算するロジックが依存している値（値の計算に必要な値）が格納された配列です。
+例えば、count という変数の値を２倍にした値をメモ化したい場合は次のようになります。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useMemo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; count &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;依存している値が更新されれば、値が再計算されます。&lt;/p&gt;
+&lt;h4 id=&quot;使用例-2&quot;&gt;使用例&lt;/h4&gt;
+&lt;p&gt;次のサンプルコードでは、useMemo を利用して不要な再計算をスキップしています。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; useState&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; useMemo &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;react&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;count1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setCount1&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;count2&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setCount2&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token parameter&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; count &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; doubledCount &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useMemo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;count2&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;count2&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;h2&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Increment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;fast&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;h2&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;Counter&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;cuont1&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;p&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;button onClick&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setCount1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;count1 &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Increment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;fast&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;button&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;h2&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Increment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;slow&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;h2&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+        Counter&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;count2&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;doubledCount&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;p&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;button onClick&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setCount2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;count2 &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Increment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;slow&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;button&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[JavaScriptによる配列操作]]></title><description><![CDATA[概要 フロントエンド開発で JavaScript を触る機会が増えてきたため、勉強も兼ねて配列操作方法をまとめました。
+このページでは、JavaScript で用いる配列操作関数である、、、、、を学ぶことができます。 それぞれの関数の使い方 map…]]></description><link>https://Shin-tech25.netlify.app/JavaScript-Array-Manipulation/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/JavaScript-Array-Manipulation/</guid><pubDate>Sun, 17 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;概要&quot;&gt;概要&lt;/h1&gt;
+&lt;p&gt;フロントエンド開発で JavaScript を触る機会が増えてきたため、勉強も兼ねて配列操作方法をまとめました。
+このページでは、JavaScript で用いる配列操作関数である、&lt;code class=&quot;language-text&quot;&gt;map()&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;filter()&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;forEach()&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;find()&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;findIndex()&lt;/code&gt;を学ぶことができます。&lt;/p&gt;
+&lt;h1 id=&quot;それぞれの関数の使い方&quot;&gt;それぞれの関数の使い方&lt;/h1&gt;
+&lt;h2 id=&quot;map&quot;&gt;map()&lt;/h2&gt;
+&lt;p&gt;配列のメソッドとして実行し、返り値として結果からなる新しい配列を返すのが特徴です。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;新しい配列&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;古い配列&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;処理内容&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;例えば、以下の例では 1~5 の数字が入った配列をもとに、2 倍して新たな配列を返しています。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; numbers &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; newNumbers &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; numbers&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; number &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// 出力&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;newNumbers&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// [2, 4, 6, 8, 10]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;また、次の例のように、第一引数をアンダースコア&lt;code class=&quot;language-text&quot;&gt;_&lt;/code&gt;で表現し、第二引数（インデックス）の値に従って処理を行うことも可能です。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; array2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; map2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; array2&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;_&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; i&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; _ &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; i&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// array2 = [ 1, 8, 27, 64 ]&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;map2&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;どんな時に使う？&quot;&gt;どんな時に使う？&lt;/h3&gt;
+&lt;h2 id=&quot;filter&quot;&gt;filter()&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;filter()&lt;/code&gt;は、&lt;code class=&quot;language-text&quot;&gt;map()&lt;/code&gt;と似ていて、配列のメソッドとして実行し、特定の条件を満たす要素だけを取り出す関数です。&lt;/p&gt;
+&lt;p&gt;配列の中から奇数だけを取り出す&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; data &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; value &lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;result&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;foreach&quot;&gt;forEach()&lt;/h2&gt;
+&lt;h2 id=&quot;find&quot;&gt;find()&lt;/h2&gt;
+&lt;h2 id=&quot;findindex&quot;&gt;findIndex()&lt;/h2&gt;
+&lt;h1 id=&quot;まとめ&quot;&gt;まとめ&lt;/h1&gt;
+&lt;h1 id=&quot;参考&quot;&gt;参考&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://zenn.dev/yuji6523/articles/24ae6dbcc791b5&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;【JS】配列操作まとめ（map, filter, forEach, find, findIndex）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ja.stackoverflow.com/questions/65430/%E3%82%A2%E3%83%B3%E3%83%80%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%81%BF%E3%81%AE%E5%A4%89%E6%95%B0%E3%81%AE%E6%84%8F%E5%91%B3&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt; アンダーバーのみの変数の意味 &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[山口周著「知的戦闘力を高める独学の技法」を読んで]]></title><description><![CDATA[…]]></description><link>https://Shin-tech25.netlify.app/book-review-howto-learn/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/book-review-howto-learn/</guid><pubDate>Thu, 14 Jul 2022 06:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
+&lt;p&gt;社会人には独学が必須と言えます。その根拠と、独学の方法論について筆者の見解が述べられていて、示唆深い本になっています。概念的なビジネス本でしたが、私としては良い気づきを得ることが出来ましたので記事にしました。&lt;/p&gt;
+&lt;h2 id=&quot;なぜ今独学が今必要なのか？&quot;&gt;なぜ今独学が今必要なのか？&lt;/h2&gt;
+&lt;p&gt;「なぜ今独学が必要なのか」の根拠を 4 つほど提示されています。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;知識の不良債権化&lt;/li&gt;
+&lt;li&gt;産業蒸発の時代&lt;/li&gt;
+&lt;li&gt;人生三毛作&lt;/li&gt;
+&lt;li&gt;クロスオーバー人材&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;簡単にまとめると、価値のある知識は常にアップデートされ続け、仕事内容はより効率化され創造的になり、寿命は長くなり、一方で学校教育はじめ社会システムは専門家を養成するように出来ているが、本当に今必要なのは領域を跨いだ知識の掛け算（＝クロスオーバー）である、ということです。&lt;/p&gt;
+&lt;h2 id=&quot;独学の方法論&quot;&gt;独学の方法論&lt;/h2&gt;
+&lt;p&gt;独学の方法論と言うと、単に読書術とかの浅いハウツーになりがちですが、この本ではより概念的、本質的なことが述べられているので参考になりました。&lt;/p&gt;
+&lt;p&gt;独学には、大きく 4 つのステップがあると述べられています。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;戦略: どのようなテーマについて知的戦闘力を高めようとしているのか、その方向性を考えること&lt;/li&gt;
+&lt;li&gt;インプット: 戦略の方向性に基づいて、本やその他の情報ソースから情報をインプットすること&lt;/li&gt;
+&lt;li&gt;抽象化・構造化: インプットした知識を抽象化したり、他のものと結びつけたりすることで、自分なりのユニークな示唆・洞察・気づきを生み出すこと&lt;/li&gt;
+&lt;li&gt;ストック: 獲得した知識と、抽象化・構造化によって得られた示唆や洞察をセットとして保存し、必要に応じて引き出せるように整理しておくこと。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一般的には、 「2. インプット」に目が行きがちですが、「なぜ、何を、どのように」インプットするのか、加えて「アウトプットし易い形にストックし整理する」という価値発揮に必要なプロセスまで丁寧に述べられていました。この辺りは、特にコンサルティングなどを行っているビジネスマンなら分かるかなと思いました。&lt;/p&gt;
+&lt;p&gt;私に関して言うならば、まず戦略は「ビジネスマンとして自由を獲得するためにシステム実装に強くなる」となり、インプットは「業務はじめ業務外での勉強、電子書籍や参考動画など何でも」となり、抽象化・構造化とストックは「このブログでのアウトプット」となります。ブログは検索やタグ付けなどもっと機能面での拡張が必要ですね・・・。GatsbyJS で実装していますので後々実装していこうと思います。&lt;/p&gt;
+&lt;h2 id=&quot;この本で繰り返し注意されていること&quot;&gt;この本で繰り返し注意されていること&lt;/h2&gt;
+&lt;p&gt;「教養主義に陥るな」と何度も述べられています。この本はあくまでもビジネスマンがビジネスで理論武装して価値発揮するための手段として読むものです。調べて出てくる浅い知識はビジネスにおける差異化には繋がらないわけです。論語の下りや、“Knowing is becoming obsolete.”など、その辺りたくさん例を用いて解説してあります。&lt;/p&gt;
+&lt;p&gt;ここで一つの引用をしようと思います。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ショーペンハウエル『知性について』&lt;/p&gt;
+&lt;p&gt;「知は力なり」。とんでもない。
+きわめて多くの知識を身に着けていても、
+少しの力を持ってない人もあるし、
+逆に、なけなしの知識しかなくても、
+最高の威力を揮う人もある。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;問いを立てることの重要性&quot;&gt;問いを立てることの重要性&lt;/h2&gt;
+&lt;p&gt;沢山の浅い知識は無意味、では何が重要か。その答えは「自分なりの問いを持つこと」だと述べられていました。情報がオーバーフローしている現代社会において、この主張は示唆深いです。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;レオナルド・ダ・ヴィンチ（1452 ～ 1519）芸術家&lt;/p&gt;
+&lt;p&gt;食欲がないのに食べると健康を害すのと同じように、欲求を伴わない勉強はむしろ記憶を損なう&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;参考古典のラベリング、紹介&quot;&gt;参考古典のラベリング、紹介&lt;/h2&gt;
+&lt;p&gt;知識は不良債権化しますが、古典名著などずっと残ってきた書物にはほぼ普遍的に価値があるため読んでおいて損はないだろう、という趣旨が述べられています。これについては同感で、ベストセラーや最近流行ったビジネス書を 10 冊読むより、古典名著を 1 冊読もう、ということですね（・・・実践出来てないですが。。）。&lt;/p&gt;
+&lt;p&gt;後半で、教養を得るために最低でもこれらの本は読んでおいた方が良いよね、という共通項としての参考本が並べて紹介されています。「最低でも」と書きましたが、実際には結構多いな、と感じたところです。以下に記載します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;歴史&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;歴史とは何か E.H. カー&lt;/li&gt;
+&lt;li&gt;図説 世界の歴史 J.M. ロバーツ&lt;/li&gt;
+&lt;li&gt;歴史家の自画像 阿部謹也&lt;/li&gt;
+&lt;li&gt;銃・病原菌・鉄 ジャレド・ダイアモンド&lt;/li&gt;
+&lt;li&gt;&amp;#x3C;普及版&gt; 地中海 フェルナン・ブローデル&lt;/li&gt;
+&lt;li&gt;新装版 大英帝国衰亡史 中西輝政&lt;/li&gt;
+&lt;li&gt;エーゲ 永遠回帰の海 立花隆&lt;/li&gt;
+&lt;li&gt;中世の秋 ホイジンガ&lt;/li&gt;
+&lt;li&gt;サピエンス全史 ユヴァル・ノア・ハラリ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;経済学&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;マンキュー経済学 I II ミクロ編 N・グレゴリー・マンキュー&lt;/li&gt;
+&lt;li&gt;日本人のための経済原論 小室直樹&lt;/li&gt;
+&lt;li&gt;エンデの遺言 根源からお金を問うこと 河邑 厚徳&lt;/li&gt;
+&lt;li&gt;経済学の考え方 宇沢弘文&lt;/li&gt;
+&lt;li&gt;共産党宣言 マルクス・エンゲルス&lt;/li&gt;
+&lt;li&gt;プロテスタンティズムの倫理と資本主義の精神 マックス・ヴェーバー&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;哲学&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;世界十五大哲学 大井 正, 寺沢 恒信&lt;/li&gt;
+&lt;li&gt;寝ながら学べる構造主義 内田 樹&lt;/li&gt;
+&lt;li&gt;哲学大図鑑 ウィル・バッキンガム&lt;/li&gt;
+&lt;li&gt;竹田教授の哲学講義 21 講 21 世紀を読み解く 竹田青嗣&lt;/li&gt;
+&lt;li&gt;新訳 弓と禅 オイゲン・ヘリゲル&lt;/li&gt;
+&lt;li&gt;バカの壁 養老 孟司&lt;/li&gt;
+&lt;li&gt;史上最強の哲学入門 飲茶&lt;/li&gt;
+&lt;li&gt;理性の限界 不可能性・不確定性・不完全性 高橋昌一郎&lt;/li&gt;
+&lt;li&gt;自由からの逃走 エーリヒ・フロム&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;経営学&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;競争優位の戦略 M.E.ポーター&lt;/li&gt;
+&lt;li&gt;企業戦略論 ジェイ・B・バーニー&lt;/li&gt;
+&lt;li&gt;コトラー＆ケラーのマーケティング・マネジメント Philip Kotler (著), Kevin Lane Keller (著)&lt;/li&gt;
+&lt;li&gt;イノベーションの普及 エベレット・ロジャーズ (著)&lt;/li&gt;
+&lt;li&gt;イノベーションのジレンマ クレイトン・クリステンセン (著)&lt;/li&gt;
+&lt;li&gt;コーポレートファイナンス リチャード・A・ブリーリー他&lt;/li&gt;
+&lt;li&gt;戦略の経済学 デイビッド・ベサンコ他&lt;/li&gt;
+&lt;li&gt;【新版】組織行動のマネジメント スティーブン P.ロビンス&lt;/li&gt;
+&lt;li&gt;キャズム ジェフリー・ムーア&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;心理学&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;心理学大図鑑 キャサリン・コーリン&lt;/li&gt;
+&lt;li&gt;現代心理学 I P.G. ジンバルドー&lt;/li&gt;
+&lt;li&gt;ファスト＆スロー ダニエル・カーネマン&lt;/li&gt;
+&lt;li&gt;影響力の武器「第三版」 ロバート・B・チャルディーニ&lt;/li&gt;
+&lt;li&gt;フロー体験 喜びの現象学 M. チクセントミハイ&lt;/li&gt;
+&lt;li&gt;社会心理学講義 小坂井敏晶&lt;/li&gt;
+&lt;li&gt;セラピスト 最相葉月&lt;/li&gt;
+&lt;li&gt;昔話の深層 河合隼雄&lt;/li&gt;
+&lt;li&gt;ポジティブ心理学の挑戦 マーティン・セリグマン&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;音楽&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;音楽の基礎&lt;/li&gt;
+&lt;li&gt;小澤征爾さんと、音楽について話をする 小澤征爾 (著), 村上春樹 (著)&lt;/li&gt;
+&lt;li&gt;東京大学のアルバート・アイラー 東大ジャズ講義録・歴史編&lt;/li&gt;
+&lt;li&gt;音楽&lt;/li&gt;
+&lt;li&gt;音楽機械論&lt;/li&gt;
+&lt;li&gt;西洋音楽史「クラシック」の黄昏&lt;/li&gt;
+&lt;li&gt;阿久悠神話解体 歌謡曲の日本語&lt;/li&gt;
+&lt;li&gt;谷川俊太郎が聞く、武満徹の素顔&lt;/li&gt;
+&lt;li&gt;マイルス・デイビス自叙伝&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;脳科学&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;進化しすぎた脳 中高生と語る「大脳生理学の」最前線&lt;/li&gt;
+&lt;li&gt;最新脳科学で読み解く 脳のしくみ&lt;/li&gt;
+&lt;li&gt;脳科学の教科書 こころ編&lt;/li&gt;
+&lt;li&gt;脳科学の教科書 神経編&lt;/li&gt;
+&lt;li&gt;&amp;#x3C;わたし&gt;は脳に操られているのか&lt;/li&gt;
+&lt;li&gt;EQ こころの知能指数&lt;/li&gt;
+&lt;li&gt;&amp;#x3C;わたし&gt;はどこにあるのか ガザニガ脳科学講義&lt;/li&gt;
+&lt;li&gt;デカルトの誤り 情動、理性、人間の脳&lt;/li&gt;
+&lt;li&gt;脳科学は人格を変えられるか？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文学&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;高慢と偏見 ジェーン・オースティン&lt;/li&gt;
+&lt;li&gt;嵐が丘 エミリー・ブロンテ&lt;/li&gt;
+&lt;li&gt;罪と罰 ドストエフスキー&lt;/li&gt;
+&lt;li&gt;変身 フランツ・カフカ&lt;/li&gt;
+&lt;li&gt;ボヴァリー夫人 フローベール&lt;/li&gt;
+&lt;li&gt;人形の家 イプセン&lt;/li&gt;
+&lt;li&gt;一九八四年「新約版」 ジョージ・オーウェル&lt;/li&gt;
+&lt;li&gt;楽園の道 マリオ・バルガス＝リョサ&lt;/li&gt;
+&lt;li&gt;オン・ザ・ロード ジャック・ケルアック&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;詩&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;地獄の季節 ランポオ&lt;/li&gt;
+&lt;li&gt;誌のこころを読む 茨木のり子&lt;/li&gt;
+&lt;li&gt;詩ってなんだろう 谷川俊太郎&lt;/li&gt;
+&lt;li&gt;繰り返し読みたい日本の名詞 - ○○&lt;/li&gt;
+&lt;li&gt;中原中也詩集 - 中原中也&lt;/li&gt;
+&lt;li&gt;みだれ髪 - 与謝野晶子&lt;/li&gt;
+&lt;li&gt;ヘッセ詩集 ヘルマン・ヘッセ&lt;/li&gt;
+&lt;li&gt;新唐詩選 吉川幸次郎&lt;/li&gt;
+&lt;li&gt;世界の名詞を読みかえす 飯吉光夫&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;宗教&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;新約聖書&lt;/li&gt;
+&lt;li&gt;日本人のための宗教言論&lt;/li&gt;
+&lt;li&gt;キリスト教神学入門&lt;/li&gt;
+&lt;li&gt;イエスという男&lt;/li&gt;
+&lt;li&gt;カルト教団太陽寺院事変&lt;/li&gt;
+&lt;li&gt;ヨブへの答え&lt;/li&gt;
+&lt;li&gt;約束された場所で&lt;/li&gt;
+&lt;li&gt;善悪の彼岸へ&lt;/li&gt;
+&lt;li&gt;イエスの生涯&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;自然科学&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;新版 動的平衡&lt;/li&gt;
+&lt;li&gt;働かないアリに意義がある&lt;/li&gt;
+&lt;li&gt;利己的な遺伝子&lt;/li&gt;
+&lt;li&gt;生命とは何か&lt;/li&gt;
+&lt;li&gt;サイバネティックス&lt;/li&gt;
+&lt;li&gt;部分と全体&lt;/li&gt;
+&lt;li&gt;鳥類学者 無謀にも恐竜を語る&lt;/li&gt;
+&lt;li&gt;二重らせん&lt;/li&gt;
+&lt;li&gt;科学の発見&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[メンテナンスしやすいAnsiblePlaybookの書き方]]></title><description><![CDATA[このページでは、保守的な Playbook の書き方、冪等性などをしっかりと考慮した Playbook や tips を紹介しています。シンプルでクリーンな Playbook を作成しましょう。 Ansible は Red Hat…]]></description><link>https://Shin-tech25.netlify.app/ansible-playbook-maintainance/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/ansible-playbook-maintainance/</guid><pubDate>Wed, 06 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;このページでは、保守的な Playbook の書き方、冪等性などをしっかりと考慮した Playbook や tips を紹介しています。シンプルでクリーンな Playbook を作成しましょう。&lt;/p&gt;
+&lt;p&gt;Ansible は Red Hat 社により開発されているサーバプロビジョニング・ツールです。Linux を始めとして、Windows、Cisco 機器などに対しても設定変更を行うことができます。汎用性が高いことがメリットです。&lt;/p&gt;
+&lt;p&gt;一方、設計段階で Playbook( = Ansible 実行コード)の設計方針をしっかりと決めなければ、Playbook と処理の対応関係が次第に分かりづらくなり、保守に時間がかかるコードを量産してしまうことに繋がります。&lt;/p&gt;
+&lt;p&gt;業務で実際に複雑な Playbook を見てきました。見ただけでは実際に何をする処理なのか分かりづらく、ミスの温床になります。&lt;/p&gt;
+&lt;p&gt;そういった Playbook を作らないためにどうしたら良いか。以下に記載しました。&lt;/p&gt;
+&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
+&lt;p&gt;保守的な Playbook を考える上でも観点はいくつかあります。
+その中でも特に重要な観点を以下に挙げました。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;トップダウン設計&lt;/li&gt;
+&lt;li&gt;インベントリ設計&lt;/li&gt;
+&lt;li&gt;ドライランチェック&lt;/li&gt;
+&lt;li&gt;冪等性&lt;/li&gt;
+&lt;li&gt;変数の設計&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;について挙げていきます。&lt;/p&gt;
+&lt;h3 id=&quot;トップダウン設計&quot;&gt;トップダウン設計&lt;/h3&gt;
+&lt;p&gt;Playbook の設計で最も重視すべきなのがこのトップダウン設計です。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;site.yml&lt;/li&gt;
+&lt;li&gt;各種 Playbook&lt;/li&gt;
+&lt;li&gt;role&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;この順番に Playbook を記述していきます。実際の処理(Task)は、role にだけ記述します。&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;や Playbook には、対応関係のみを記述します。こうすることで、メンテナンスしやすくなります。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;は以下のように、Playbook を&lt;code class=&quot;language-text&quot;&gt;import_playbook&lt;/code&gt;により import します。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Linuxの共通設定(all)
+  &lt;span class=&quot;token key atrule&quot;&gt;import_playbook&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; linux&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;common.yml
+
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Manager 用の設定
+  &lt;span class=&quot;token key atrule&quot;&gt;import_playbook&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; manager.yml
+
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Staging用の設定
+  &lt;span class=&quot;token key atrule&quot;&gt;import_playbook&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; staging.yml
+
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Production用の設定
+  &lt;span class=&quot;token key atrule&quot;&gt;import_playbook&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; production.yml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;各種 Playbook は以下のように、&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt; を用いて処理を記述していきます。なお、&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt;は&lt;code class=&quot;language-text&quot;&gt;roles&lt;/code&gt;の下にネストして、&lt;code class=&quot;language-text&quot;&gt;tags&lt;/code&gt;を付与します。
+このようにすることで、&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt;の局所的使用を可能にします。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Linux の共通設定用の Playbook
+  &lt;span class=&quot;token key atrule&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; linux
+  &lt;span class=&quot;token key atrule&quot;&gt;become&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;gather_facts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
+
+  &lt;span class=&quot;token key atrule&quot;&gt;roles&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;# ホスト名変更&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; change_hostname
+    &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; change_hostname
+
+  &lt;span class=&quot;token comment&quot;&gt;# 共通パッケージインストール&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; linux_common_packages
+    &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; linux_common_packages
+
+  &lt;span class=&quot;token comment&quot;&gt;# firewalld 有効化と設定&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; firewalld_setup
+    &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; firewalld_setup
+
+  &lt;span class=&quot;token comment&quot;&gt;# sshd 有効化と設定&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; sshd
+    &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; sshd
+
+  &lt;span class=&quot;token comment&quot;&gt;# docker インストール&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; install_docker
+    &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; install_docker
+
+  &lt;span class=&quot;token comment&quot;&gt;# SELinux 無効化と必要なら再起動&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; selinux
+    &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; selinux&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;図にすると以下のようになります。
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 800px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d90c01beefc6ce9a680a8b11eea879c1/2d494/Playbook_topdown_structure.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 59.336419753086425%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAMABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAQACBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAe8aAmP/xAAWEAADAAAAAAAAAAAAAAAAAAABECD/2gAIAQEAAQUCgL//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAYEAEBAAMAAAAAAAAAAAAAAAAAARBBUf/aAAgBAQABPyFE27hH/9oADAMBAAIAAwAAABDDz//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABwQAQACAgMBAAAAAAAAAAAAAAEAETFxIUGx4f/aAAgBAQABPxBVsSjczfs9oNoemVR4Ji7Z/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Playbookトップダウン設計&quot;
+        title=&quot;Playbookトップダウン設計&quot;
+        src=&quot;/static/d90c01beefc6ce9a680a8b11eea879c1/a296c/Playbook_topdown_structure.jpg&quot;
+        srcset=&quot;/static/d90c01beefc6ce9a680a8b11eea879c1/f544b/Playbook_topdown_structure.jpg 200w,
+/static/d90c01beefc6ce9a680a8b11eea879c1/41689/Playbook_topdown_structure.jpg 400w,
+/static/d90c01beefc6ce9a680a8b11eea879c1/a296c/Playbook_topdown_structure.jpg 800w,
+/static/d90c01beefc6ce9a680a8b11eea879c1/c35de/Playbook_topdown_structure.jpg 1200w,
+/static/d90c01beefc6ce9a680a8b11eea879c1/2d494/Playbook_topdown_structure.jpg 1296w&quot;
+        sizes=&quot;(max-width: 800px) 100vw, 800px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;インベントリ設計&quot;&gt;インベントリ設計&lt;/h3&gt;
+&lt;p&gt;以下に YAML 形式でのインベントリを例として記載しました。&lt;/p&gt;
+&lt;p&gt;YAML 形式では、&lt;code class=&quot;language-text&quot;&gt;children:&lt;/code&gt;の下に位置するグループがその上のグループに所属することになります。また、&lt;code class=&quot;language-text&quot;&gt;hosts:&lt;/code&gt;の下に位置するホストがその上のグループに所属することになります。&lt;/p&gt;
+&lt;p&gt;例えば、グループ&lt;code class=&quot;language-text&quot;&gt;manager&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;staging&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;production&lt;/code&gt;は&lt;code class=&quot;language-text&quot;&gt;linux&lt;/code&gt;グループに所属しており、同時に&lt;code class=&quot;language-text&quot;&gt;all&lt;/code&gt;に所属しています。（&lt;code class=&quot;language-text&quot;&gt;all&lt;/code&gt;は特別なグループで全てのホストが必ずこれに属しています。）&lt;code class=&quot;language-text&quot;&gt;staging001.ga&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;test003.ga&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;test004.ga&lt;/code&gt;は&lt;code class=&quot;language-text&quot;&gt;staging&lt;/code&gt;グループと&lt;code class=&quot;language-text&quot;&gt;all&lt;/code&gt;グループに所属しています。&lt;/p&gt;
+&lt;p&gt;hosts.yml&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;linux&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;staging&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;production&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;manager001.ga&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;staging&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;staging001.ga&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;test003.ga&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;test004.ga&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;test005.ga&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;production&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token key atrule&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        production001.ga&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ホストやグループの変数（Inventory Variables）は、&lt;code class=&quot;language-text&quot;&gt;host_vars/&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;group_vars/&lt;/code&gt;の下にそれぞれのホストやグループの名前を冠した YAML ファイルを配置し記載します。&lt;/p&gt;
+&lt;p&gt;以下にディレクトリ構造の例を記載します。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Ansible/
+  inventory/
+    group_vars/
+      all.yml
+      manager.yml
+      production.yml
+      staging.yml
+    host_vars/
+      manager001.ga.yml
+      production001.ga.yml
+      staging001.ga.yml
+      test003.ga.yml
+      test004.ga.yml
+      test005.ga.yml
+    hosts.yml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;グループも意識しないと沢山出来てしまいますが、原則として「一つの Playbook には、一つのグループが紐づく」ことを意識すると沢山のグループを作らずに済み可読性が上がります。グループには役割や機能を抽象化したものを記載すると分かりやすいです。例えば、Zabbix サーバなら zabbix グループという具合に。&lt;/p&gt;
+&lt;p&gt;今回の例で、インベントリの設計を図にしたものが以下になります。&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 800px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/ecf23d3e43543dbffdc25988c10376ab/f6954/Inventory_structure.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 57.49817117776153%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAgAF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB3yoMo//EABYQAAMAAAAAAAAAAAAAAAAAAAEQIP/aAAgBAQABBQJCP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABgQAQADAQAAAAAAAAAAAAAAAAABEDFB/9oACAEBAAE/IXGKjEP/2gAMAwEAAgADAAAAECAP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAHBAAAgICAwAAAAAAAAAAAAAAAAERITFBUYGR/9oACAEBAAE/EG3xHY3e17I5Wy1hFGD/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;インベントリ設計&quot;
+        title=&quot;インベントリ設計&quot;
+        src=&quot;/static/ecf23d3e43543dbffdc25988c10376ab/a296c/Inventory_structure.jpg&quot;
+        srcset=&quot;/static/ecf23d3e43543dbffdc25988c10376ab/f544b/Inventory_structure.jpg 200w,
+/static/ecf23d3e43543dbffdc25988c10376ab/41689/Inventory_structure.jpg 400w,
+/static/ecf23d3e43543dbffdc25988c10376ab/a296c/Inventory_structure.jpg 800w,
+/static/ecf23d3e43543dbffdc25988c10376ab/c35de/Inventory_structure.jpg 1200w,
+/static/ecf23d3e43543dbffdc25988c10376ab/f6954/Inventory_structure.jpg 1367w&quot;
+        sizes=&quot;(max-width: 800px) 100vw, 800px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;トップダウン設計によるメリット&quot;&gt;トップダウン設計によるメリット&lt;/h3&gt;
+&lt;p&gt;トップダウン設計のメリットは単に可読性が上がり、スケーラビリティが高くなるだけではありません。コマンド実行が非常に簡単で運用も楽になります。Ansible には実際には沢山のオプションがあります。コマンド実行時にそれらを適切に付与してやる必要がありますが、トップダウン設計によってオプションもシンプルで簡単になります。&lt;/p&gt;
+&lt;p&gt;例えば、以下のようになります。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# ansible-playbook site.yml&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;これは、Playbook の総本山である&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;をホストの制限なく実行されています。&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;に指定されているホストは&lt;code class=&quot;language-text&quot;&gt;all&lt;/code&gt;です。また、&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;は&lt;code class=&quot;language-text&quot;&gt;linux-common.yml&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;manager.yml&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;staging.yml&lt;/code&gt;、&lt;code class=&quot;language-text&quot;&gt;production.yml&lt;/code&gt;を import していますから、結果的に&lt;strong&gt;必要なインフラが全て揃う&lt;/strong&gt;コマンドということになります。&lt;/p&gt;
+&lt;p&gt;以下はどうでしょうか？&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# ansible-playbook site.yml -l staging&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;-l&lt;/code&gt;オプションは、ホストやグループを制限するオプションです。上の例では、&lt;code class=&quot;language-text&quot;&gt;staging&lt;/code&gt;グループに制限して&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;を実行しています。実際には、&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;を実行するのにはたとえ変更が全く無かったとしてもそれなりの時間を要します為、ホストやグループを制限して実行するのが普通です。しっかりとトップダウンで設計されていれば、Playbook は常に&lt;code class=&quot;language-text&quot;&gt;site.yml&lt;/code&gt;を指定して実行することができ、各種 Playbook を指定して実行することもできますがその必要がなくなります。これが最大のメリットです。&lt;/p&gt;
+&lt;p&gt;また、次の例も見てみましょう。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# ansible-playbook site.yml -l staging --tags httpd&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;この例では、httpd という&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt;を指定して実行しています。&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt;は&lt;code class=&quot;language-text&quot;&gt;tag&lt;/code&gt;でタグ付けしています。コマンド実行時に&lt;code class=&quot;language-text&quot;&gt;--tags&lt;/code&gt;で指定した&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt;を実行することができます。このようにすることで&lt;code class=&quot;language-text&quot;&gt;role&lt;/code&gt;の局所的使用を可能にします。&lt;/p&gt;
+&lt;p&gt;まとめると、以下のようなコマンドで Playbook を実行することができます。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# ansible-playbook site.yml &amp;lt; -l (指定したターゲット) &amp;gt; &amp;lt; --tags (role名) &amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;トップダウン設計することで、Playbook の実行コマンドがシンプルになりました。&lt;/p&gt;
+&lt;h3 id=&quot;ドライランチェック&quot;&gt;ドライランチェック&lt;/h3&gt;
+&lt;p&gt;ドライランチェックには、&lt;code class=&quot;language-text&quot;&gt;ansible-playbook site.yml --check&lt;/code&gt;のように、&lt;code class=&quot;language-text&quot;&gt;--check&lt;/code&gt;をオプションとして付与して実行します。
+Playbook を実行する前に、冪等性のチェックと同様にドライランチェックを実行しましょう。
+ドライランチェックを実行した際に問題が無いような Playbook の設計をしましょう。&lt;/p&gt;
+&lt;h3 id=&quot;冪等性&quot;&gt;冪等性&lt;/h3&gt;
+&lt;p&gt;Playbook が冪等性が保たれていることを確認するために、最も簡単な方法は Playbook を二度実行して変更箇所が無いかどうか確認することです。
+ただし、これはサーバの設定変更が反映されてしまいます。冪等性を確認するために Ansible が用意してくれているツールがあります。それが、&lt;code class=&quot;language-text&quot;&gt;Ansible Molecule&lt;/code&gt;です。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Molecule&lt;/code&gt;では、&lt;code class=&quot;language-text&quot;&gt;Role&lt;/code&gt;の開発支援とテスト自動化を行うことが出来るツールで、テストの部分に注目すると以下のテストを行えるとされている。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lint チェック&lt;/li&gt;
+&lt;li&gt;Docker 内での Playbook 実行&lt;/li&gt;
+&lt;li&gt;冪等性チェック&lt;/li&gt;
+&lt;li&gt;テストコードの実行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ansible Molecule の使い方については、別のページで詳しく書くことにしますが品質を考えるとこれは便利そうです。&lt;/p&gt;
+&lt;h3 id=&quot;変数の設計&quot;&gt;変数の設計&lt;/h3&gt;
+&lt;p&gt;Playbook では、Vars セクションに限らず、様々なところで変数を定義することが出来ます。他の多くのプログラミング言語と同じく、スコープが狭い変数のほうが優先度が高い（＝上書きされる）特徴があります。&lt;/p&gt;
+&lt;p&gt;参照範囲は 3 つのスコープに分かれます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Global 領域&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;環境変数(environment vars)&lt;/li&gt;
+&lt;li&gt;エキストラ変数(extra vars)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Play 単位&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;プレイ変数(play vars)&lt;/li&gt;
+&lt;li&gt;タスク変数(task vars)&lt;/li&gt;
+&lt;li&gt;ロール変数(role vars)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Host 単位&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;インベントリ変数(inventory vars)&lt;/li&gt;
+&lt;li&gt;ファクト変数(host facts)&lt;/li&gt;
+&lt;li&gt;レジスタ変数(registered vars)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;変数をどこで定義しているかで Playbook 自体の汎用性も変わってきます。ホストやグループに紐づく変数はインベントリ変数、role は汎用的に定義して Playbook の方でタスク変数としてロールのデフォルト変数を上書きするなどの工夫が必要です。実際には何が正解ということはないですが、上で書いたようなことを意識した上で汎用性の高い Playbook を設計しましょう。&lt;/p&gt;
+&lt;h3 id=&quot;内部リンク&quot;&gt;内部リンク&lt;/h3&gt;
+&lt;h3 id=&quot;参考&quot;&gt;参考&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://dev.classmethod.jp/articles/ansible-molecule/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Ansible のテストツール Molecule でできること&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Moff animal cafe イーアス高尾に行ってきました]]></title><description><![CDATA[醍醐味 Moff animal cafe イーアス高尾は、室内で動物と触れ合うことができるこじんまりした動物園です。常時 15 ～ 2…]]></description><link>https://Shin-tech25.netlify.app/moff-iias-takao/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/moff-iias-takao/</guid><pubDate>Sun, 03 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;醍醐味&quot;&gt;醍醐味&lt;/h2&gt;
+&lt;p&gt;Moff animal cafe イーアス高尾は、室内で動物と触れ合うことができるこじんまりした動物園です。常時 15 ～ 20 種の動物達と触れ合うことができ、フリードリンクを飲みながらゆったりすることができます。イメージとしては、カフェと動物園の中間みたいな場所でした。&lt;/p&gt;
+&lt;p&gt;都内の猫カフェは忙しく時間制限を設けている場所も多い印象ですが、ここは時間制限等は特にないのが特徴です！&lt;/p&gt;
+&lt;p&gt;公式ページはこちら → &lt;a href=&quot;https://takao.iias.jp/shop/detail/1020.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Moff animal cafe イーアス高尾&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;フクロウとの触れ合い&quot;&gt;フクロウとの触れ合い&lt;/h2&gt;
+&lt;p&gt;フクロウとの触れ合いが出来る珍しいコーナーです。大きなワシミミズクを腕に乗せて「フクロウ体験」をすることが出来ました。&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 400px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5c8640db975043113768d307e18fa57f/41689/owl_on_arm.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAUBAwQC/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQAC/9oADAMBAAIQAxAAAAFkL9hXCom3qZLUAa//xAAeEAACAQMFAAAAAAAAAAAAAAABAgMAMTIQERIiM//aAAgBAQABBQKr6MQrM3SKOUpuXVcuVJ5jI3//xAAWEQEBAQAAAAAAAAAAAAAAAAAAERD/2gAIAQMBAT8BRc//xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPwEh/8QAHhAAAQQBBQAAAAAAAAAAAAAAAQACEBEhIjFBUWL/2gAIAQEABj8CmnDA2XquFYc5t9rWxCwYE//EAB4QAQACAgEFAAAAAAAAAAAAAAEAESExEEFRYXGh/9oACAEBAAE/IcG0hQEbHjxwDtEUdV4FBsqjJn6iLAlVuD0T5ZogI//aAAwDAQACAAMAAAAQnMf8/8QAFhEBAQEAAAAAAAAAAAAAAAAAARBB/9oACAEDAQE/EEYMT//EABgRAAMBAQAAAAAAAAAAAAAAAAABERBR/9oACAECAQE/EE0U6uf/xAAeEAEAAgICAwEAAAAAAAAAAAABABEhMUFRYXGB8P/aAAgBAQABPxBSsR5Y6LCxOSUy602ZWmHyfYEMIotNcPvUcuHb9ysMrVrf1xlQQmlcXBWKA1mZ38lmdvcuME//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;owl_on_arm&quot;
+        title=&quot;owl_on_arm&quot;
+        src=&quot;/static/5c8640db975043113768d307e18fa57f/41689/owl_on_arm.jpg&quot;
+        srcset=&quot;/static/5c8640db975043113768d307e18fa57f/f544b/owl_on_arm.jpg 200w,
+/static/5c8640db975043113768d307e18fa57f/41689/owl_on_arm.jpg 400w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;リクガメの散歩&quot;&gt;リクガメの散歩&lt;/h2&gt;
+&lt;p&gt;リクガメはマイペースで非常に気まぐれです。そして、私の写真も気まぐれだったようで撮影するのを忘れてしまいました。リクガメの名前は「石塚さん」だったことを覚えています（何故、石塚さんなのかは分かりません）。石塚さんの散歩は偶に見ることが出来ますよ。&lt;/p&gt;
+&lt;h2 id=&quot;ひよこコーナー&quot;&gt;ひよこコーナー&lt;/h2&gt;
+&lt;p&gt;室内に入ってすぐの場所にひよこコーナーがあります。ひよこさん達は皆元気で、エサを与えると近寄って食べてくれます。モフモフしていて温かったです。&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 400px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2553b920f2e2d1ae18b53a2c38c05327/41689/chiks1.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAMCBAX/xAAXAQEBAQEAAAAAAAAAAAAAAAABAAID/9oADAMBAAIQAxAAAAGPJ6nHz3tMjKgzFf/EABwQAAICAgMAAAAAAAAAAAAAAAABAhEDBCAxQv/aAAgBAQABBQLPrNEE4yseS0+y+Hg//8QAFREBAQAAAAAAAAAAAAAAAAAAASD/2gAIAQMBAT8BY//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAECAQE/ASP/xAAcEAAABwEBAAAAAAAAAAAAAAAAAQIQESExIJH/2gAIAQEABj8ClKfBJljWN4tib//EAB0QAQACAgIDAAAAAAAAAAAAAAEAESFBEDFRYXH/2gAIAQEAAT8hQsfYsmvoMzg5l2b8QjbLXJM2dy/ZYbiqHH//2gAMAwEAAgADAAAAECgcwv/EABgRAAIDAAAAAAAAAAAAAAAAAAABEBFB/9oACAEDAQE/EE2aP//EABYRAAMAAAAAAAAAAAAAAAAAAAEgQf/aAAgBAgEBPxAon//EAB0QAQADAAIDAQAAAAAAAAAAAAEAESExUUFhceH/2gAIAQEAAT8QEKUcGJX5CvGOLUnm77ZRCdd4FeowGDQvYqZx9mtaswjNqrWJkqLTsZNlvBcUzYcZ7jzP/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;chiks1&quot;
+        title=&quot;chiks1&quot;
+        src=&quot;/static/2553b920f2e2d1ae18b53a2c38c05327/41689/chiks1.jpg&quot;
+        srcset=&quot;/static/2553b920f2e2d1ae18b53a2c38c05327/f544b/chiks1.jpg 200w,
+/static/2553b920f2e2d1ae18b53a2c38c05327/41689/chiks1.jpg 400w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 400px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/291d9e8114c4dc25a6b7c6081653ff48/41689/chiks2.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQBAgMF/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgEA/9oADAMBAAIQAxAAAAHCvTSKaKBqr6rE0kAX/8QAHxAAAgEDBQEAAAAAAAAAAAAAAQIAAxESBBMjMTND/9oACAEBAAEFAtRQtAxplGyXeWz8sANvtiqzKV/Re5//xAAWEQADAAAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8BI//EABgRAAIDAAAAAAAAAAAAAAAAAAABEBEx/9oACAECAQE/AWWbH//EABwQAAICAgMAAAAAAAAAAAAAAAERABACMUFRYf/aAAgBAQAGPwJ6HUWTeo6b8NI8xgUIa//EABoQAAMBAQEBAAAAAAAAAAAAAAABESExgZH/2gAIAQEAAT8hZPdFG6XRPRG16VZtmkIk0E3W/DNmahG+zsEquQxNJeH2IZ//2gAMAwEAAgADAAAAEGQuT//EABYRAAMAAAAAAAAAAAAAAAAAAAABEf/aAAgBAwEBPxBVlCUKf//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAgEBPxCowtMf/8QAHxABAAMAAQQDAAAAAAAAAAAAAQARITFBUWGBkdHw/9oACAEBAAE/EKvLOrxdjC4HoFB809YmK1MUuxMEbsHg9waVAF0p9lReJqhvh2hUYKg8cwDbqsu39kWF9WARi0AGwD8wgQYNkBc//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;chiks2&quot;
+        title=&quot;chiks2&quot;
+        src=&quot;/static/291d9e8114c4dc25a6b7c6081653ff48/41689/chiks2.jpg&quot;
+        srcset=&quot;/static/291d9e8114c4dc25a6b7c6081653ff48/f544b/chiks2.jpg 200w,
+/static/291d9e8114c4dc25a6b7c6081653ff48/41689/chiks2.jpg 400w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;犬猫コーナー&quot;&gt;犬猫コーナー&lt;/h2&gt;
+&lt;p&gt;犬さん猫さんも十数匹いました。猫さんはちょっとクールなのが特徴（笑）。ただし、エサにはすぐに食いついて来ます。ダラけている様子がとても可愛い。&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 400px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c0572b3bf803e1b9c6c939872428c513/41689/cat1.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 133.25%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAwAEAv/EABYBAQEBAAAAAAAAAAAAAAAAAAACAf/aAAwDAQACEAMQAAABPZmeKerGAuzNUcf/xAAcEAEAAgIDAQAAAAAAAAAAAAABABICIQMRIjH/2gAIAQEAAQUC5EsfK2npF0OnLFPNuyMJia//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAdEAABBAIDAAAAAAAAAAAAAAABABARMQIhEmGR/9oACAEBAAY/Ar0+wPVLUpGXHpWGLf/EAB0QAQACAgIDAAAAAAAAAAAAAAEAESExQVEQcZH/2gAIAQEAAT8hRrdMmfseKa1DdAtprk7dwEUb6JSIQstcJDF7iLcKfLAcyf/aAAwDAQACAAMAAAAQlz/D/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAEREP/aAAgBAwEBPxBZCH//xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQH/2gAIAQIBAT8Q3FVX/8QAHhABAAICAgMBAAAAAAAAAAAAAQARITFBUWFxsYH/2gAIAQEAAT8QDIpgOjOfI1uGbi0lRZzWzMz4Siw10etRWkN0V1CBfHcQDr6I381E2AKv8QbqKC/CKqDlmCODUKILP//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cat1&quot;
+        title=&quot;cat1&quot;
+        src=&quot;/static/c0572b3bf803e1b9c6c939872428c513/41689/cat1.jpg&quot;
+        srcset=&quot;/static/c0572b3bf803e1b9c6c939872428c513/f544b/cat1.jpg 200w,
+/static/c0572b3bf803e1b9c6c939872428c513/41689/cat1.jpg 400w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 400px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3f4251c4412983839d5343b604e40582/41689/cat2.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 74.75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMCBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAABA//aAAwDAQACEAMQAAABbFCZ02yuB//EABoQAQADAAMAAAAAAAAAAAAAAAIAAQMREyH/2gAIAQEAAQUC7q4O4hRRgPpFZ1//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAwEBPwFH/8QAFREBAQAAAAAAAAAAAAAAAAAAABL/2gAIAQIBAT8BU//EABwQAAMBAAIDAAAAAAAAAAAAAAABEQIhMTJBof/aAAgBAQAGPwLlU8FC5kGlj6LLz37pMn//xAAaEAEAAwEBAQAAAAAAAAAAAAABABEhMUFR/9oACAEBAAE/IaPU9WOdEfIWvKBWxusbWLcxVKzuz//aAAwDAQACAAMAAAAQQB//xAAXEQADAQAAAAAAAAAAAAAAAAAAASER/9oACAEDAQE/EG7DZ//EABYRAQEBAAAAAAAAAAAAAAAAAAABQf/aAAgBAgEBPxDFl//EAB4QAQACAQQDAAAAAAAAAAAAAAEAESExQVFhkcHw/9oACAEBAAE/EAm+yhNeI2cYKLb6ubGAUBXSbMwcIrFlfWkIK+gcY4mRgbILv4J//9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cat2&quot;
+        title=&quot;cat2&quot;
+        src=&quot;/static/3f4251c4412983839d5343b604e40582/41689/cat2.jpg&quot;
+        srcset=&quot;/static/3f4251c4412983839d5343b604e40582/f544b/cat2.jpg 200w,
+/static/3f4251c4412983839d5343b604e40582/41689/cat2.jpg 400w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;アクセス&quot;&gt;アクセス&lt;/h2&gt;
+&lt;p&gt;最寄り駅 JR 高尾駅 から徒歩 5-10 分程度です。駅から直線で歩くだけですのでとても分かり易い！&lt;/p&gt;
+&lt;h2 id=&quot;公式ページ&quot;&gt;公式ページ&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://takao.iias.jp/shop/detail/1020.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Moff animal cafe イーアス高尾&lt;/a&gt;&lt;/p&gt;</content:encoded></item></channel></rss>

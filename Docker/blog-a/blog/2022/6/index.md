@@ -31,4 +31,78 @@ import React, { useState } from "react"
 import ReactDOM from "react-dom"
 
 import { VictoryBar, VictoryChart } from "Victory"
+
+const data = [
+  { quarter: "a", earnings: 13000 },
+  { quarter: "b", earnings: 16500 },
+  { quarter: "c", earnings: 14250 },
+  { quarter: "d", earnigns: 19000 },
+]
+
+const App = () => (
+  <VictoryChart
+    style={{ tickLabels: { fontSize: 120 } }}
+    width="960"
+    height="500"
+    domainPadding={50}
+    padding={{ top: 10, bottom: 40, left: 80, right: 10 }}
+  >
+    <VictoryBar data={data} x="quarter" y="earnings" />
+  </VictoryChart>
+)
+
+const rootElement = document.getElementById("root")
+ReactDOM.render(<App />, rootElement)
 ```
+
+CSV からデータを読み取るようにした場合は以下のようになります。
+
+```js
+import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
+import {csv} from 'd3';
+
+import { VictoryBar, VictoryChart } from 'Victory';
+
+const row = d => {
+  d.population = +d.population;
+  return d;
+};
+
+const App () => {
+  const [data, setData] = useState([]);
+
+  useEffect(()=>{
+    csv('data.csv', row).then(setData);
+  }, []);
+
+  return (
+    <VictoryChart
+      style={{tickLabels: {fontSize: 120}}}
+      width='960'
+      height='500'
+      domainPadding={50}
+      padding={{top: 10, bottom: 40, left: 80, right: 10}}
+    >
+      <VictoryBar data={data} x="country" y="population" />
+    </VictoryChart>
+  )
+
+  const rootElement = document.getElementById("root")
+  ReactDOM.render(<App />, rootElement)
+}
+
+```
+
+ポイントとしては
+
+- d3 のライブラリ読み込み
+- csv の raw データを setData()で渡す
+- データを渡す場合には第２引数が空配列の初回実行 useEffect を用いる
+- データパース関数も別で用意して、d3.csv()の第２引数に渡す。
+
+上の４点かなと思います。
+
+D3.js と React.js の組み合わせはデータビジュアライゼーションに置いて非常にポテンシャルが高いと感じておりますので今後も継続して勉強していく予定です。
+
+また何か考えたことや分かったことあったらアップしていきます。
