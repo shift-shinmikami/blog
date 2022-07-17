@@ -1,5 +1,6 @@
 const path = require(`path`)
 const relatedPost = require(`./gatsby-related-post`)
+const { paginate } = require("gatsby-awesome-pagination")
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -74,6 +75,16 @@ exports.createPages = async ({ graphql, actions }) => {
         next,
       },
     })
+  })
+
+  paginate({
+    createPage,
+    items: posts,
+    itemsPerPage: 8,
+    component: path.resolve("src/templates/index.js"),
+    pathPrefix: ({ pageNumber }) => (
+        pageNumber === 0 ? "/" : "/page"
+    )
   })
 
   // tagページ //
