@@ -5,8 +5,6 @@ description: "保守的な Playbook の書き方、冪等性などをしっか�
 slug: ansible-playbook-maintainance
 tags:
   - Ansible
-  - Backend
-  - Infra
 keywords: Ansible, Playbook, 冪等性, メンテナンス, 設計
 ---
 
@@ -97,7 +95,7 @@ Playbook の設計で最も重視すべきなのがこのトップダウン設�
 ```
 
 図にすると以下のようになります。
-![Playbookトップダウン設計](./Playbookトップダウン設計.jpg)
+![Playbookトップダウン設計](./Playbook_topdown_structure.jpg)
 
 ### インベントリ設計
 
@@ -157,7 +155,7 @@ Ansible/
 
 今回の例で、インベントリの設計を図にしたものが以下になります。
 
-![インベントリ設計](./インベントリ設計.jpg)
+![インベントリ設計](./Inventory_structure.jpg)
 
 ### トップダウン設計によるメリット
 

@@ -1,3 +1,47 @@
-# My gatsby blog
+# 目的
 
-[https://Shin-tech25.netlify.app](https://Shin-tech25.netlify.app)
+本で学んだことを、ブログでアウトプットして整理し、また発信する。投稿は検索やタグ付け機能によって後から振り返ることができるようにする。
+ネット上にデジタルな資産を蓄える。
+
+# タグ一覧
+
+- 読書
+  - ビジネス書
+  - 歴史
+  - 経済学
+  - 哲学
+  - 経営学
+  - 心理学
+  - 音楽
+  - 脳科学
+  - 文学
+  - 詩
+  - 宗教
+  - 自然科学
+- 副業
+  - 税金
+- 政治
+- 時事
+- FrontEnd
+  - JavaScript
+- Backend
+  - Node.js
+  - Python
+- Infra
+  - Ansible
+- 雑記
+  - 遊び
+  - 旅行
+
+ポイントとしては、大項目をタグに含めない。タグに含めてしまうと関連記事で沢山表示されるがその運用はあまり良くない。
+下段２階層目～タグ付けする程度で良い。
+
+# 執筆～デプロイまで
+
+Git、GitHub を用いた開発方式を採っている。ブランチは dev ブランチで開発し、プルリクエストによってデプロイされる仕組み。
+
+gatsby develop
+gatsby build
+git add .
+git commit
+git push -u origin dev
