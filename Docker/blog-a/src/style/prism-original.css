@@ -259,7 +259,19 @@ pre[data-line] {
 }
 
 .pagination a{
-
   padding-left: 1.0em;
   padding-right: 1.0em;
+}
+
+.faCircleChevronLeft {
+  width: 1.9em;
+  height: 1.9em;
+  color: #3ec986;
+
+}
+
+.faCircleChevronRight {
+  width: 1.9em;
+  height: 1.9em;
+  color: #3ec986;
 }

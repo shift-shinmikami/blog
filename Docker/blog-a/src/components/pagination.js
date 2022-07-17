@@ -1,5 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCircleChevronLeft } from "@fortawesome/free-solid-svg-icons"
+import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons"
 
 const style = {
   marginRight: '5px'
@@ -13,12 +16,16 @@ const Pagination = ({ pageContext }) => {
     <div className="pagination">
       {
         previousPagePath
-          ? <Link to={previousPagePath} style={style}>←</Link>
+          ? <Link to={previousPagePath} style={style}>
+              <FontAwesomeIcon icon={faCircleChevronLeft} className="faCircleChevronLeft" />
+            </Link>
           : null
       }
       {
         nextPagePath
-          ? <Link to={nextPagePath} style={style}>→</Link>
+          ? <Link to={nextPagePath} style={style}>
+              <FontAwesomeIcon icon={faCircleChevronRight} className="faCircleChevronRight" />
+            </Link>
           : null
       }
     </div>

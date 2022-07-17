@@ -5,6 +5,10 @@
   "version": "0.1.0",
   "author": "Shin-tech25 <Shin-tech25@gmail.com>",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "gatsby": "^2.15.14",
     "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-image": "^2.2.18",
