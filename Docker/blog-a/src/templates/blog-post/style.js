@@ -53,6 +53,26 @@ const Wrapper = styled.div`
         line-height: 2;
         margin: 20px 0;
       }
+      h1 {
+        width: 100%;
+        position: relative;
+        font-size: 1.2rem;
+        margin-top: 50px;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-weight: 600;
+        vertical-align: center;
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 7px;
+          background: -webkit-repeating-linear-gradient(-45deg, #c488d0, #c488d0 2px, #fff 2px, #fff 4px);
+          background: repeating-linear-gradient(-45deg, #c488d0, #c488d0 2px, #fff 2px, #fff 4px);
+        }
+      }
       h2 {
         width: 100%;
         position: relative;
@@ -61,7 +81,6 @@ const Wrapper = styled.div`
         padding-bottom: 10px;
         margin-bottom: 20px;
         font-weight: 600;
-        width: 100%;
         vertical-align: center;
         &:before {
           position: absolute;
@@ -130,7 +149,7 @@ const Wrapper = styled.div`
         margin-bottom: 10px;
       }
       /* ===============================================
-      #  list 
+      #  list
       =============================================== */
       ul,
       ol {

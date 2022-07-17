@@ -30,7 +30,7 @@ blockquote {
 
 blockquote:before {
   position: absolute;
-  top: 15px;
+  top: 2px;
   left: 20px;
   content: '“';
   font-size: 4em;

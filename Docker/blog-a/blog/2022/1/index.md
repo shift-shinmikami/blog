@@ -5,7 +5,6 @@ description: "Moff animal cafe イーアス高尾の醍醐味やどのような�
 slug: moff-iias-takao
 tags:
   - 遊び
-  - 旅行
 keywords: Moff, cafe, 猫カフェ, イーアス高尾, 高尾, フクロウ, もふもふ, 可愛い動物, リラックス
 ---
 
