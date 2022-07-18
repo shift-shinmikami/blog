@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 18 Jul 2022 11:43:31 GMT</lastBuildDate><item><title><![CDATA[D3.js x React.js 基礎]]></title><description><![CDATA[D3 について React について なぜ D3 と React を組み合わせるのか Victory のデータを CSV で読み込む D3.js と React.js を組み合わせたデータ可視化については様々な文献がある一方、難易度が高く理解し難いのが現状です。
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 18 Jul 2022 14:28:04 GMT</lastBuildDate><item><title><![CDATA[クラウドネイティブとは何か]]></title><description><![CDATA[クラウドネイティブ コンピューティングの定義 クラウドネイティブコンピューティングとは、具体的にどのようなものでしょうか。実はよく聞く言葉ではあるものの、具体的な定義があるわけではないです。クラウドネイティブを冠にしている業界団体として、Cloud Native…]]></description><link>https://Shin-tech25.netlify.app/cloud-native-computing-basic/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/cloud-native-computing-basic/</guid><pubDate>Mon, 18 Jul 2022 03:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;クラウドネイティブ-コンピューティングの定義&quot;&gt;クラウドネイティブ コンピューティングの定義&lt;/h1&gt;
+&lt;p&gt;クラウドネイティブコンピューティングとは、具体的にどのようなものでしょうか。実はよく聞く言葉ではあるものの、具体的な定義があるわけではないです。クラウドネイティブを冠にしている業界団体として、Cloud Native Computing Foundation(CNCF)と呼ばれる団体があります。CNCF は、&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;オープンソースを活用しベンダー中立のクラウドのエコシステム確立を目指す&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;とうたっています。&lt;/p&gt;
+&lt;p&gt;CNCF は、その団体名にも含まれている「クラウドネイティブコンピューティング」に独自の定義を与えています。&lt;a href=&quot;https://github.com/cncf/toc/blob/master/DEFINITION.md&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt; 上に公開されているため、こちらを確認してみましょう。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;クラウドネイティブ技術は、パブリッククラウド、プライベートクラウド、ハイブリッドクラウドなどの近代的でダイナミックな環境において、スケーラブルなアプリケーションを構築および実行するための能力を組織にもたらします。このアプローチの代表例に、コンテナ、サービスメッシュ、マイクロサービス、イミュータブルインフラストラクチャ、および宣言型 API があります。
+これらの手法により、回復性、管理力、および可観測性のある疎結合システムが実現します。これらを堅牢な自動化と組み合わせることで、エンジニアはインパクトのある変更を最小限の労力で頻繁かつ予測どおりに行うことが出来ます。
+Cloud Native Computing Foundation は、オープンソースでベンダー中立プロジェクトのエコシステムを育成・維持して、このパラダイムの採用を促進したいと考えています。私たちは最先端のパターンを民主化し、これらのイノベーションを誰もが利用できるようにします。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;クラウドネイティブコンピューティングの目的は、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;スケーラブルなアプリケーションを構築/運用すること&lt;/li&gt;
+&lt;li&gt;IT システムに対して、最小限の工数で、頻繁かつ予測どおりにインパクトのある変更を加えること&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;にあります。DX で求められるスピード感と柔軟性を実現することが、クラウドネイティブコンピューティングの目的でもあると言って良いでしょう。このような技術的かつビジネス上の目的を実現するために、パブリッククラウド、プライベートクラウド、ハイブリッドクラウドを活用し、疎結合システムを目指します。さらに理念としてオープンソースを積極的に活用することで、ベンダー中立のエコシステム実現を掲げています。&lt;/p&gt;
+&lt;h1 id=&quot;クラウドネイティブコンピューティングのコンセプト&quot;&gt;クラウドネイティブコンピューティングのコンセプト&lt;/h1&gt;
+&lt;h1 id=&quot;参考&quot;&gt;参考&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;絵で見て分かるマイクロサービスの仕組み&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[D3.js x React.js 基礎]]></title><description><![CDATA[D3 について React について なぜ D3 と React を組み合わせるのか Victory のデータを CSV で読み込む D3.js と React.js を組み合わせたデータ可視化については様々な文献がある一方、難易度が高く理解し難いのが現状です。
 Youtube…]]></description><link>https://Shin-tech25.netlify.app/react-d3-basic/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/react-d3-basic/</guid><pubDate>Sun, 17 Jul 2022 05:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;d3-について&quot;&gt;D3 について&lt;/h1&gt;
 &lt;h1 id=&quot;react-について&quot;&gt;React について&lt;/h1&gt;
 &lt;h1 id=&quot;なぜ-d3-と-react-を組み合わせるのか&quot;&gt;なぜ D3 と React を組み合わせるのか&lt;/h1&gt;
