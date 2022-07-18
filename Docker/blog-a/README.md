@@ -30,6 +30,10 @@
   - Python
 - Infra
   - Ansible
+- クラウドネイティブ
+- プログラミング
+  - アルゴリズム
+  - 個人開発
 - 雑記
   - 遊び
   - 旅行
@@ -46,3 +50,11 @@ gatsby build
 git add .
 git commit
 git push -u origin dev
+
+# バージョン
+
+Gatsby CLI version: 4.18.0
+Gatsby version: 2.15.14
+node v16.15.1
+npm 8.11.0
+Windows11
