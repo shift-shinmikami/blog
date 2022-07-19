@@ -36,6 +36,14 @@ http {
     include /etc/nginx/conf.d/*.conf;
 
     server {
+        listen              443 ssl;
+        server_name         {{server_name}};
+        root                /usr/share/nginx/html;
+        ssl_certificate     /etc/letsencrypt/live/www.shin-tech25.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/www.shin-tech25.com/privkey.pem;
+    }
+
+    server {
         listen       80 default_server;
         listen       [::]:80 default_server;
         server_name  _;
