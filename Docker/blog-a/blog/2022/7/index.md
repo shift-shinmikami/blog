@@ -1,6 +1,6 @@
 ---
 title: クラウドネイティブとは何か
-date: "2022-07-18T12:00:00"
+date: "2022-07-19T08:57:00"
 description: "クラウドネイティブコンピューティングとは何かについて基礎から。"
 slug: cloud-native-computing-basic
 tags:
@@ -30,6 +30,38 @@ CNCF は、その団体名にも含まれている「クラウドネイティブ
 にあります。DX で求められるスピード感と柔軟性を実現することが、クラウドネイティブコンピューティングの目的でもあると言って良いでしょう。このような技術的かつビジネス上の目的を実現するために、パブリッククラウド、プライベートクラウド、ハイブリッドクラウドを活用し、疎結合システムを目指します。さらに理念としてオープンソースを積極的に活用することで、ベンダー中立のエコシステム実現を掲げています。
 
 # クラウドネイティブコンピューティングのコンセプト
+
+クラウドネイティコンピューティングという新たなコンセプトには何が組み込まれているでしょうか。CNCF が Web サイトで公開している[Cloud Native Interactive Landscape](https://landscape.cncf.io/)が役に立ちます。
+
+Cloud Native Interactive Landscape は、クラウドコンピューティングに関連するテクノロジーを整理/分類し、全体を把握できる鳥瞰図となっています。これを参照すると、クラウドネイティブコンピューティングの関連技術は、
+
+- 基盤（Platform）
+- オーケストレーション（Orchestration ＆ Management）
+- アプリケーション基盤（Runtime）
+- アプリケーション開発（App Definition and Development）
+- 運用監視/分析（Observatory and Analysis）
+- サーバーレス
+
+といった各分野をすでにカバーしており、実践に足りうる局面となっていることが分かります。
+
+# クラウドネイティブコンピューティングを支える技術要素
+
+Cloud Native Interactive Landscape には、耳慣れないテクノロジーや製品が数多くリストアップされています。クラウドネイティブコンピューティングを知るための参考になりますが、どこから始めるべきかとまどうかもしれません。クラウドネイティブコンピューティングをどこから始めるか迷った時に、目安となるのが、[Cloud Native Trail Map](https://github.com/cncf/trailmap)です。
+
+Cloud Native Trail Map には、CNCF が GitHub 上で公開しているチャートで、IT システムをクラウドネイティブ化するためのロードマップを示しています。クラウドネイティブコンピューティングに取り組む際、技術適用の順番を判断するための一つの目安になるでしょう。
+
+- CONTAINERRIZATION
+- CI/CD
+- ORCHESTRATION ＆ APPLICATION DEFINITION
+- OBSERVABILITY ＆ ANALYSIS
+- SERVICE PROXY, DISCOVERY, ＆ MESH
+- NETWORKING, POLICY, ＆ SECURITY
+- DISTRIBUTED DATABASE ＆ STORAGE
+- STREAMING ＆ MESSAGING
+- CONTAINER REGISTRY ＆ RUNTIME
+- SOFTWARE DISTRIBUTION
+
+様々な技術分野がありますが、コンテナ化（CONTAINERRIZATION）、コンテナオーケストレーション（Orchestration ＆ Application definition）、マイクロサービス、そして DevOps（CI/CD）が CNCF 設立当初（2016 年頃）にクラウドネイティブを支える技術として中核となるとして推していました。これらが特に重要だと感じております。
 
 # 参考
 
