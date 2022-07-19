@@ -11,24 +11,23 @@ tags:
 keywords: Nginx, SSL/TLS, Let's Encrypt, お名前.com, サーバ証明書, ブログ
 ---
 
-# Nginx 設定ファイル(/etc/nginx/nginx.conf)
+# 概要
 
-ssl.conf
+Nginx の Web サイトをフリーのサーバ証明書発行サービスである Let's Encrypt を用いて SSL 対応する方法について解説します。VPS には Web Arena Indigo を用いています。この VPS サーバにインストールした Nginx に対して Let's Encrpt を用いて SSL 対応することを考えました。また、サーバ証明書を自動で更新出来るように cron 設定しました。
 
-```conf
-server {
-    listen       443 ssl;
-    server_name  localhost;
+# WebArena Indigo の紹介
 
-    ssl_certificate      /etc/ssl/certs/ssl-cert-snakeoil.pem;
-    ssl_certificate_key  /etc/ssl/private/ssl-cert-snakeoil.key;
+WebArena Indigo とは、国内最安値のシンプルに使える個人向けの VPS サービスです。NTTPC コミュニケーションズが運営しており、高速・安定のネットワーク回線を利用できることが強みです。
 
-    location / {
-        root   /usr/share/nginx/html;
-        index  index.html index.htm;
-    }
-}
-```
+最安で 349 円（月額）から利用できるリーズナブルな価格設定が魅力的です。
+
+# お名前.com のドメインを取得する
+
+お名前.com は最安値で年間 1 円からドメインを取得することが出来ます。WebArena Indigo で建てたサーバに対して、ドメインを取得しました。
+
+DNS サーバ設定については以下の公式 Youtube が参考になりました。
+
+`youtube:https://www.youtube.com/embed/ZB23tAxKqmU`
 
 # Let's Encrypt について
 
@@ -49,7 +48,7 @@ Let's Encrypt では、90 日間有効な DV(Domain Validation)SSL 証明書を 
 
 Let's Encrypt はクライアントソフトウェア「Certbot」を使用することで、SSL/TLS サーバ証明書の取得・更新作業を自動化出来る仕組みになっています。一般の認証局では、証明書署名要求＝ CSR(Certificate Signing Request)が必要ですが、これらの作業を Certbot クライアントが自動的に行います。
 
-## Certbot クライアントの準備
+## Let's Encrypt を導入する
 
 私の環境では、CentOS Stream-8 を用いています。CentOS に準じて解説します。
 また、Web サーバには Nginx を用いています。Apache を用いる場合は、別途`python-certbot-apache`もインストールする必要があります。
@@ -59,15 +58,36 @@ sudo yum install epel-release
 sudo yum install certbot
 ```
 
-## SSL/TLS サーバ証明書の取得
-
 証明書取得コマンドの実行
 
 ```
 certbot certonly --webroot -w /var/www/html -d www.shin-tech25.com
 ```
 
-`youtube:https://www.youtube.com/embed/ZB23tAxKqmU`
+# Nginx 設定ファイル(/etc/nginx/nginx.conf)の編集
+
+Nginx の設定ファイル(/etc/nginx/nginx.conf)を編集し、以下の server ディレクティブを追加します。server_name には、DNS で設定したドメインを記入してください。
+
+ssl.conf
+
+```conf
+server {
+    listen       443 ssl;
+    server_name  www.shin-tech25.com;
+
+    ssl_certificate     /etc/letsencrypt/live/www.shin-tech25.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/www.shin-tech25.com/privkey.pem;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+    }
+}
+```
+
+Let's Encrypt を使用した場合、/etc/letsencrypt/live/(ドメイン名)/fullchain.pem にサーバ証明書のシンボリックリンクが貼られます。また、/etc/letsencrypt/live/(ドメイン名)/privkey.pem に秘密鍵のシンボリックリンクが貼られます。これを Nginx の設定ファイルに記載します。
+
+実態は、/etc/letsencrypt/archive/(ドメイン名)/fullchainN.pem、/etc/letsencrypt/archive/(ドメイン名)/privkeyN.pem となります。N は更新回数を表します。更新の度にサーバ証明書・秘密鍵の実態は更新されます。シンボリックリンクは最新の実態ファイルを参照します。
 
 ### cron を使用して自動で SSL 証明書を更新出来るようにする
 
@@ -93,16 +113,22 @@ Let's Encrypt は、90 日間で有効期限が切れるため、2 ヶ月間隔�
 0 0 1 */2 * (起動したい処理)
 ```
 
-`sudo certbot renew`コマンドを打つためには、Nginx が停止している必要があるため、直前に Nginx 停止、直後に Nginx 再起動するような処理を行います。
+また、30 日間以上の猶予がある場合は、`--force-renewal`オプションを付与すれば警告を無視して強制的に更新することが可能です。
 
 ```
-sudo certbot renew --pre-hook "systemctl stop nginx" --post-hook "systemctl restart nginx"
+sudo certbot renew --force-renewal
+```
+
+一応テストする際には、`--dry-run`オプションを付けてちゃんと通ることを確認しましょう。
+
+```
+sudo certbot renew --force-renewal --dry-run
 ```
 
 まとめると以下のような crontab の書き方になります。
 
 ```
-0 0 1 */2 *  sudo certbot renew --pre-hook "systemctl stop nginx" --post-hook "systemctl restart nginx"
+0 0 1 */2 *  sudo certbot renew --force-renewal
 ```
 
 crontab の設定には、`crontab -u root -e`で root ユーザの crontab を設定することができます。
