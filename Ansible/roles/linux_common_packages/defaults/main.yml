@@ -8,5 +8,4 @@ packages:
   - gcc
   - git
   - yum-utils
-  - epel-release
   - certbot

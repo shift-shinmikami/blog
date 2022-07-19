@@ -3,7 +3,13 @@
 # パッケージインストール
     # httpd, php, wget, vim, phthon39, firewalld
 - name: EPELレポジトリインストール
-  shell: yum install epel-release
+  yum:
+    name: epel-release
+    state: latest
+  register: result
+
+- name: debug
+  debug: var=result
 
 - name: パッケージ インストール
   yum:
