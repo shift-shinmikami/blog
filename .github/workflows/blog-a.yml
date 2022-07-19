@@ -9,7 +9,6 @@ jobs:
   CICD:
     runs-on: ubuntu-latest
     steps:
-      # CD Phase
       # Checkout
       - name: Checkout
         uses: actions/checkout@v2
