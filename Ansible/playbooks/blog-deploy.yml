@@ -1,5 +1,5 @@
 - name: Docker Deploy
-  hosts: shin-tech25.com
+  hosts: shin-tech25.ga
   become: true
   gather_facts: true
 
