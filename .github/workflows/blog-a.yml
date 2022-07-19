@@ -4,12 +4,16 @@ on:
       - 'dev'
     paths:
       - 'Docker/blog-a/**'
-      - '.github/workflows/blog-a.yml'
+      - '.github/workflows/ansible-playbook.yml'
 jobs:
   CICD:
     runs-on: ubuntu-latest
     steps:
       # CD Phase
+      # Checkout
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Deploy
       - name: deploy artifacts
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
