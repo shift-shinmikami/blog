@@ -26,4 +26,3 @@ jobs:
           cp -r Docker/blog-a/public/ Ansible/playbooks/files/
           ls -l Ansible/playbooks/files/
           ansible-playbook -i Ansible/inventory/hosts.yml Ansible/playbooks/blog-deploy.yml --private-key ~/.ssh/id_rsa
-      #

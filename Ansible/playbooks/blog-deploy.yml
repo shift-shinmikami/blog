@@ -11,5 +11,5 @@
 
     - name: public/フォルダを/usr/share/nginx/html/に移動
       copy:
-        src:
+        src: files/
         dest: /usr/share/nginx/html/
