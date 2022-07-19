@@ -2,6 +2,9 @@
 # tasks file for linux_common_packages
 # パッケージインストール
     # httpd, php, wget, vim, phthon39, firewalld
+- name: EPELレポジトリインストール
+  shell: yum install epel-release
+
 - name: パッケージ インストール
   yum:
     name: "{{ packages }}"
