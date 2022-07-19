@@ -42,9 +42,9 @@
           chmod 700 ~/.ssh/id_rsa
           eval $(ssh-agent -s)
           ssh-add ~/.ssh/id_rsa
-          ssh-keyscan -p 22 -H shin-tech25.ga &gt;&gt; ~/.ssh/known_hosts  # Blog
+          ssh-keyscan -p 22 -H shin-tech25.com &gt;&gt; ~/.ssh/known_hosts  # Blog
           cd Ansible/
-          ansible-playbook -i inventory/hosts.yml playbooks/docker-deploy.yml --private-key ~/.ssh/id_rsa --extra-vars &apos;docker_deploy_host=shin-tech25.ga docker_image=&quot;${{ secrets.DOCKER_HUB_USERNAME }}/blog:latest&quot; docker_container_name=blog&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+          ansible-playbook -i inventory/hosts.yml playbooks/docker-deploy.yml --private-key ~/.ssh/id_rsa --extra-vars &apos;docker_deploy_host=shin-tech25.com docker_image=&quot;${{ secrets.DOCKER_HUB_USERNAME }}/blog:latest&quot; docker_container_name=blog&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1 id=&quot;playbookdocker-deployyml&quot;&gt;Playbook(docker-deploy.yml)&lt;/h1&gt;
 &lt;p&gt;docker-deploy.yml は以下のように role を import しています。role はそれぞれの処理を担当します。&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Docker Deploy

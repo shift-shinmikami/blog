@@ -1,5 +1,5 @@
 - name: Deploy Blog
-  hosts: shin-tech25.ga
+  hosts: shin-tech25.com
   become: true
   gather_facts: true
 

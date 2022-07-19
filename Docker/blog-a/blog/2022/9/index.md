@@ -57,9 +57,9 @@ jobs:
           chmod 700 ~/.ssh/id_rsa
           eval $(ssh-agent -s)
           ssh-add ~/.ssh/id_rsa
-          ssh-keyscan -p 22 -H shin-tech25.ga >> ~/.ssh/known_hosts  # Blog
+          ssh-keyscan -p 22 -H shin-tech25.com >> ~/.ssh/known_hosts  # Blog
           cd Ansible/
-          ansible-playbook -i inventory/hosts.yml playbooks/docker-deploy.yml --private-key ~/.ssh/id_rsa --extra-vars 'docker_deploy_host=shin-tech25.ga docker_image="${{ secrets.DOCKER_HUB_USERNAME }}/blog:latest" docker_container_name=blog'
+          ansible-playbook -i inventory/hosts.yml playbooks/docker-deploy.yml --private-key ~/.ssh/id_rsa --extra-vars 'docker_deploy_host=shin-tech25.com docker_image="${{ secrets.DOCKER_HUB_USERNAME }}/blog:latest" docker_container_name=blog'
 ```
 
 # Playbook(docker-deploy.yml)
