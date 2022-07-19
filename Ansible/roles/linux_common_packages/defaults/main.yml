@@ -8,3 +8,4 @@ packages:
   - gcc
   - git
   - yum-utils
+  - certbot

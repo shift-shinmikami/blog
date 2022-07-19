@@ -2,7 +2,6 @@ name: ansible-playbook
 on:
   push:
     branches:
-      - main
       - master
     paths:
       - 'Ansible/**'

@@ -1,0 +1,37 @@
+---
+# tasks file for install_nginx
+- name: Nginxインストール
+  yum:
+    name: nginx
+    state: latest
+
+- name: Nginx設定ファイル修正
+  vars:
+    server_name: shin-tech25.com
+  template:
+    src: "{{role_path}}/files/nginx.conf.j2"
+    dest: /etc/nginx/nginx.conf
+
+- name: サービス有効化
+  service:
+    name: nginx
+    state: restarted
+    enabled: yes
+
+- name: ファイアウォール穴あけ(http)
+  firewalld:
+    service: http
+    permanent: yes
+    state: enabled
+  ignore_errors: true
+  notify:
+    - restart firewalld
+
+- name: ファイアウォール穴あけ(https)
+  firewalld:
+    service: https
+    permanent: yes
+    state: enabled
+  ignore_errors: true
+  notify:
+    - restart firewalld

@@ -1,5 +1,85 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 19 Jul 2022 02:33:16 GMT</lastBuildDate><item><title><![CDATA[Markdownで書ける静的サイトにこだわる理由]]></title><description><![CDATA[このサイトの特徴 このサイトは、Gatsby という React…]]></description><link>https://Shin-tech25.netlify.app/why-blog-by-markdown/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/why-blog-by-markdown/</guid><pubDate>Tue, 19 Jul 2022 00:16:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;このサイトの特徴&quot;&gt;このサイトの特徴&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 19 Jul 2022 13:23:12 GMT</lastBuildDate><item><title><![CDATA[NginxのWebサイトをLet's EncryptでSSL対応する方法]]></title><description><![CDATA[Nginx 設定ファイル(/etc/nginx/nginx.conf) ssl.conf Let’s Encrypt について Let’s Encrypt はフリーで証明書を発行してくれる認証局です。米国の非営利団体である ISRG(Internet Security…]]></description><link>https://Shin-tech25.netlify.app/Nginx-LetsEncrypt/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/Nginx-LetsEncrypt/</guid><pubDate>Tue, 19 Jul 2022 04:44:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;nginx-設定ファイルetcnginxnginxconf&quot;&gt;Nginx 設定ファイル(/etc/nginx/nginx.conf)&lt;/h1&gt;
+&lt;p&gt;ssl.conf&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;conf&quot;&gt;&lt;pre class=&quot;language-conf&quot;&gt;&lt;code class=&quot;language-conf&quot;&gt;server {
+    listen       443 ssl;
+    server_name  localhost;
+
+    ssl_certificate      /etc/ssl/certs/ssl-cert-snakeoil.pem;
+    ssl_certificate_key  /etc/ssl/private/ssl-cert-snakeoil.key;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;lets-encrypt-について&quot;&gt;Let’s Encrypt について&lt;/h1&gt;
+&lt;p&gt;Let’s Encrypt はフリーで証明書を発行してくれる認証局です。米国の非営利団体である ISRG(Internet Security Research Group)により運営されています。全ての Web サイトを暗号化することを目指したプロジェクトです。証明書有効期限は 90 日と短いですが、コマンドで自動更新が可能です。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://letsencrypt.org/ja/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Let’s Encrypt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://free-ssl.jp/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Let’s Encrypt 総合ポータル&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;非営利団体ですが、現在では Facebook やシスコシステムズ、Akamai Technologies、Verizon といった数多くの大手企業に支えられているため、財務基盤に問題があるわけではありません。&lt;/p&gt;
+&lt;p&gt;Let’s Encrypt では、90 日間有効な DV(Domain Validation)SSL 証明書を 2 つの認証方式（ドメイン認証、DNS 認証）で提供しています。SSL 証明書は無料で提供されていますが、暗号強度などは一般的に販売されている SSL 署名書と同じです。&lt;/p&gt;
+&lt;p&gt;また、大きな特徴として ACME(Automated Certificate Management Environment)プロトコルと呼ばれる SSL 証明書を自動発行する仕組みを利用している点です。他の認証局と異なり、認証してから数秒で SSL 証明書が発行され、すぐにサーバーへデプロイ出来るという非常に高度な SSL 証明書発行インフラを運用しています。&lt;/p&gt;
+&lt;p&gt;管理者（root）権限のあるサーバーで Let’s Encrypt を利用する場合は、一般的に certbot などのアプリケーションが利用されています。事前にスクリプトが定期的に実行されるように設定しておけば、レンタルサーバーの無料 SSL 機能と同様の自動更新が比較的簡単に実現できます。&lt;/p&gt;
+&lt;h1 id=&quot;lets-encrypt-の使い方&quot;&gt;Let’s Encrypt の使い方&lt;/h1&gt;
+&lt;p&gt;Let’s Encrypt はクライアントソフトウェア「Certbot」を使用することで、SSL/TLS サーバ証明書の取得・更新作業を自動化出来る仕組みになっています。一般の認証局では、証明書署名要求＝ CSR(Certificate Signing Request)が必要ですが、これらの作業を Certbot クライアントが自動的に行います。&lt;/p&gt;
+&lt;h2 id=&quot;certbot-クライアントの準備&quot;&gt;Certbot クライアントの準備&lt;/h2&gt;
+&lt;p&gt;私の環境では、CentOS Stream-8 を用いています。CentOS に準じて解説します。
+また、Web サーバには Nginx を用いています。Apache を用いる場合は、別途&lt;code class=&quot;language-text&quot;&gt;python-certbot-apache&lt;/code&gt;もインストールする必要があります。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;sudo yum install epel-release
+sudo yum install certbot&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;ssltls-サーバ証明書の取得&quot;&gt;SSL/TLS サーバ証明書の取得&lt;/h2&gt;
+&lt;p&gt;証明書取得コマンドの実行&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;certbot certonly --webroot -w /var/www/html -d www.shin-tech25.com&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+          &lt;div
+            class=&quot;gatsby-resp-iframe-wrapper&quot;
+            style=&quot;padding-bottom: 50%; position: relative; height: 0; overflow: hidden;margin-bottom: 1.0725rem&quot;
+          &gt;
+            &lt;div&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/ZB23tAxKqmU&quot; style=&quot;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          &quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;/p&gt;
+&lt;h3 id=&quot;cron-を使用して自動で-ssl-証明書を更新出来るようにする&quot;&gt;cron を使用して自動で SSL 証明書を更新出来るようにする&lt;/h3&gt;
+&lt;p&gt;cron は&lt;code class=&quot;language-text&quot;&gt;* * * * *&lt;/code&gt;の 5 箇所を指定して、起動時間を設定します。左から「分」「時」「日」「月」「曜日」を指定します。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// cronの起動時間設定
+* * * * * （起動したい処理）
+| | | | |
+| | | | |- 曜日
+| | | |--- 月
+| | |----- 日
+| |------- 時
+|--------- 分&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Let’s Encrypt は、90 日間で有効期限が切れるため、2 ヶ月間隔で SSL 証明書を更新できるように設定しました。&lt;/p&gt;
+&lt;p&gt;2 ヶ月間隔で処理を実行する書き方は以下です。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# 2ヶ月毎に起動する（2/1 00:00, 4/1 00:00, 6/1 00:00・・・12/1 00:00）
+0 0 1 */2 * (起動したい処理)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;sudo certbot renew&lt;/code&gt;コマンドを打つためには、Nginx が停止している必要があるため、直前に Nginx 停止、直後に Nginx 再起動するような処理を行います。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;sudo certbot renew --pre-hook &amp;quot;systemctl stop nginx&amp;quot; --post-hook &amp;quot;systemctl restart nginx&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;まとめると以下のような crontab の書き方になります。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;0 0 1 */2 *  sudo certbot renew --pre-hook &amp;quot;systemctl stop nginx&amp;quot; --post-hook &amp;quot;systemctl restart nginx&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;crontab の設定には、&lt;code class=&quot;language-text&quot;&gt;crontab -u root -e&lt;/code&gt;で root ユーザの crontab を設定することができます。&lt;/p&gt;
+&lt;p&gt;cron を書き換えたら、サービスの再起動を行っておきましょう。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; systemctl restart crond&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;参考&quot;&gt;参考&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://oki2a24.com/2018/11/06/enable-ssl-tls-in-docker-nginx/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Docker の nginx:latest(1.15.5)で SSL/TLS を使えるようにする最低限の Dockerfile を作りました&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://qiita.com/__juiblex__/items/fe599755dc321b7489b8&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;nginx リバースプロキシ環境で Let’s Encrypt による SSL/TLS 化&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ssl.sakura.ad.jp/column/letsencrypt/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;無料 SSL 証明書の Let’s Encrypt とは？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://free-ssl.jp/usage/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Let’s Encrypt の使い方&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://it-jog.com/khow/serv/renewletsencrypt&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Let’s Encrypt の SSL 証明書を更新する(手動と cron による自動更新)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.yoheim.net/blog.php?q=20190902&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;cron の日時指定を、基礎から学ぶ（分,時,日,月,曜日の指定、○ 分ごと、月末起動、など）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.server-memo.net/tips/crontab.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;crontab の書き方&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Markdownで書ける静的サイトにこだわる理由]]></title><description><![CDATA[このサイトの特徴 このサイトは、Gatsby という React…]]></description><link>https://Shin-tech25.netlify.app/why-blog-by-markdown/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/why-blog-by-markdown/</guid><pubDate>Tue, 19 Jul 2022 00:16:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;このサイトの特徴&quot;&gt;このサイトの特徴&lt;/h1&gt;
 &lt;p&gt;このサイトは、Gatsby という React 派生の静的サイトジェネレーターで作成されています。エンジニア以外の人からしたら、静的サイト？何のことってなると思いますが、静的サイトとはユーザーリクエストに従って動的にページを作成するのではなく、一度ビルドしてしまったものをレンダリングするため非常に早いのが特徴です。&lt;/p&gt;
+&lt;h1 id=&quot;ネット上に個人ノートを持つことの重要性&quot;&gt;ネット上に個人ノートを持つことの重要性&lt;/h1&gt;
+&lt;h1 id=&quot;執筆プロセス改善&quot;&gt;執筆プロセス改善&lt;/h1&gt;
 &lt;h1 id=&quot;markdown-とは&quot;&gt;Markdown とは&lt;/h1&gt;
 &lt;h1 id=&quot;markdown-のメリット&quot;&gt;Markdown のメリット&lt;/h1&gt;
 &lt;h1 id=&quot;サイトのテンプレートエンジンで重視していること&quot;&gt;サイトのテンプレートエンジンで重視していること&lt;/h1&gt;
