@@ -10,7 +10,7 @@
     server_name: shin-tech25.ga
   template:
     src: "{{role_path}}/files/nginx.conf.j2"
-    dest: /etc/prometheus/nginx.conf
+    dest: /etc/nginx/nginx.conf
 
 - name: サービス有効化
   service:
