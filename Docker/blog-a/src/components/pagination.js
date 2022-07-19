@@ -1,8 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCircleChevronLeft } from "@fortawesome/free-solid-svg-icons"
-import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons"
+import { faCircleChevronLeft, faCircleChevronRight } from "@fortawesome/free-solid-svg-icons"
 
 const style = {
   marginRight: '5px'
