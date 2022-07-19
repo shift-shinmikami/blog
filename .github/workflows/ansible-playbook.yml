@@ -1,0 +1,26 @@
+name: ansible-playbook
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'Ansible/**'
+      - '.github/workflows/ansible-playbook.yml'
+jobs:
+  ansible-playbook:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run ansible playbook
+      env:
+        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+      run: |
+        mkdir -p ~/.ssh
+        echo "$PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+        chmod 700 ~/.ssh/id_rsa
+        eval $(ssh-agent -s)
+        ssh-add ~/.ssh/id_rsa
+        ssh-keyscan -p 22 -H 116.80.61.252 >> ~/.ssh/known_hosts  # Blog
+        cd Ansible/
+        ansible-playbook -i inventory/hosts.yml playbooks/site.yml --private-key ~/.ssh/id_rsa
