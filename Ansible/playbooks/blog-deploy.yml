@@ -1,0 +1,15 @@
+- name: Docker Deploy
+  hosts: shin-tech25.com
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: /usr/share/nginx/html/をディレクトリごと削除
+      file:
+        path: /usr/share/nginx/html/
+        state: absent
+
+    - name: public/フォルダを/usr/share/nginx/html/に移動
+      copy:
+        src: files/public/
+        dest: /usr/share/nginx/html/
