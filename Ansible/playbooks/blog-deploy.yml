@@ -10,9 +10,10 @@
         state: absent
 
     - name: public/フォルダを/usr/share/nginx/html/に移動
-      copy:
+      synchronize:
         src: files/
         dest: /usr/share/nginx/html/
+        compress: no
       register: result
 
     - name: debug(public/フォルダを/usr/share/nginx/html/に移動)
