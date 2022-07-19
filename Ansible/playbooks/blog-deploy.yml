@@ -1,4 +1,4 @@
-- name: blog build deploy
+- name: Deploy Blog
   hosts: shin-tech25.ga
   become: true
   gather_facts: true
