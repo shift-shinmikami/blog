@@ -1,97 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 19 Jul 2022 08:14:16 GMT</lastBuildDate><item><title><![CDATA[Dockerで動くNginx WebサイトをSSL/TLS対応する方法]]></title><description><![CDATA[CICD パイプライン CICD パイプラインには GitHub Actions を用いています。GitHub の runner から対象のホストに対して docker-deploy.yml をばら撒くことでコンテナを配置しています。 Playbook(docker-deploy…]]></description><link>https://Shin-tech25.netlify.app/ssltls-nginx-docker/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/ssltls-nginx-docker/</guid><pubDate>Tue, 19 Jul 2022 04:44:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;cicd-パイプライン&quot;&gt;CICD パイプライン&lt;/h1&gt;
-&lt;p&gt;CICD パイプラインには GitHub Actions を用いています。GitHub の runner から対象のホストに対して docker-deploy.yml をばら撒くことでコンテナを配置しています。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;token key atrule&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token key atrule&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;master&apos;&lt;/span&gt;
-    &lt;span class=&quot;token key atrule&quot;&gt;paths&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Docker/blog-a/**&apos;&lt;/span&gt;
-
-&lt;span class=&quot;token key atrule&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;token key atrule&quot;&gt;CICD&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token key atrule&quot;&gt;runs-on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ubuntu&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;latest
-    &lt;span class=&quot;token key atrule&quot;&gt;steps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;token comment&quot;&gt;# CI Phase&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Checkout
-        &lt;span class=&quot;token key atrule&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; actions/checkout@v2
-
-      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Login to Docker Hub
-        &lt;span class=&quot;token key atrule&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker/login&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;action@v1
-        &lt;span class=&quot;token key atrule&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-          &lt;span class=&quot;token key atrule&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.DOCKER_HUB_USERNAME &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-          &lt;span class=&quot;token key atrule&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.DOCKER_HUB_ACCESS_TOKEN &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Set up Docker Buildx
-        &lt;span class=&quot;token key atrule&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker/setup&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;buildx&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;action@v1
-
-      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Build and push
-        &lt;span class=&quot;token key atrule&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker/build&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;push&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;action@v2
-        &lt;span class=&quot;token key atrule&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-         &lt;span class=&quot;token key atrule&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Docker/blog&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;a/
-         &lt;span class=&quot;token key atrule&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;  Docker/blog&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;a/Dockerfile
-         &lt;span class=&quot;token key atrule&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
-         &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;  $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.DOCKER_HUB_USERNAME &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;/blog&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;latest
-
-      &lt;span class=&quot;token comment&quot;&gt;# CD Phase&lt;/span&gt;
-      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; deploy docker image
-        &lt;span class=&quot;token key atrule&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-          &lt;span class=&quot;token key atrule&quot;&gt;PRIVATE_KEY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.PRIVATE_KEY &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;token scalar string&quot;&gt;
-          mkdir -p ~/.ssh
-          echo &quot;$PRIVATE_KEY&quot; | tr -d &apos;\r&apos; &gt; ~/.ssh/id_rsa
-          chmod 700 ~/.ssh/id_rsa
-          eval $(ssh-agent -s)
-          ssh-add ~/.ssh/id_rsa
-          ssh-keyscan -p 22 -H shin-tech25.com &gt;&gt; ~/.ssh/known_hosts  # Blog
-          cd Ansible/
-          ansible-playbook -i inventory/hosts.yml playbooks/docker-deploy.yml --private-key ~/.ssh/id_rsa --extra-vars &apos;docker_deploy_host=shin-tech25.com docker_image=&quot;${{ secrets.DOCKER_HUB_USERNAME }}/blog:latest&quot; docker_container_name=blog&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1 id=&quot;playbookdocker-deployyml&quot;&gt;Playbook(docker-deploy.yml)&lt;/h1&gt;
-&lt;p&gt;docker-deploy.yml は以下のように role を import しています。role はそれぞれの処理を担当します。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Docker Deploy
-  &lt;span class=&quot;token key atrule&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;{{ docker_deploy_host }}&quot;&lt;/span&gt;
-  &lt;span class=&quot;token key atrule&quot;&gt;become&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
-  &lt;span class=&quot;token key atrule&quot;&gt;gather_facts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;true&lt;/span&gt;
-
-  &lt;span class=&quot;token key atrule&quot;&gt;roles&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; firewalld_tcp_port_open
-      &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; firewalld_tcp_port_open
-      &lt;span class=&quot;token key atrule&quot;&gt;vars&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;token key atrule&quot;&gt;firewalld_tcp_port&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;80&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; firewalld_tcp_port_open
-      &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; firewalld_tcp_port_open
-      &lt;span class=&quot;token key atrule&quot;&gt;vars&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;token key atrule&quot;&gt;firewalld_tcp_port&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;443&lt;/span&gt;
-
-    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker_image_prune
-      &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker_image_prune
-
-    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker_container_stop
-      &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker_container_stop
-
-    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker_container_prune
-      &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker_container_prune
-
-    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker_pull_image
-      &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker_pull_image
-
-    &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;role&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker_container_run
-      &lt;span class=&quot;token key atrule&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; docker_container_run&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h1 id=&quot;dockerfile&quot;&gt;Dockerfile&lt;/h1&gt;
-&lt;p&gt;nginx:latest のイメージをベースに必要なライブラリのインストールを行った後、ssl.conf をイメージにコピーして含ませるということをしています。
-public/は今回は静的サイトジェネレーター(Gatsby)のビルド成果物が含まれているフォルダです。この部分は適宜各々の環境で読み替えてください。&lt;/p&gt;
-&lt;p&gt;Dockerfile&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;FROM nginx&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;latest
-
-RUN apt&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;get update &amp;amp;&amp;amp; apt&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;get install &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;y \
-  openssl \
-  ssl&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;cert \
-  &amp;amp;&amp;amp; apt&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;get clean \
-  &amp;amp;&amp;amp; rm &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;rf /var/lib/apt/lists/*
-
-COPY public/  /usr/share/nginx/html/
-COPY ./ssl.conf /etc/nginx/conf.d/
-
-CMD &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;/usr/sbin/nginx&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;-g&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;daemon off;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 19 Jul 2022 13:23:12 GMT</lastBuildDate><item><title><![CDATA[NginxのWebサイトをLet's EncryptでSSL対応する方法]]></title><description><![CDATA[Nginx 設定ファイル(/etc/nginx/nginx.conf) ssl.conf Let’s Encrypt について Let’s Encrypt はフリーで証明書を発行してくれる認証局です。米国の非営利団体である ISRG(Internet Security…]]></description><link>https://Shin-tech25.netlify.app/Nginx-LetsEncrypt/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/Nginx-LetsEncrypt/</guid><pubDate>Tue, 19 Jul 2022 04:44:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;nginx-設定ファイルetcnginxnginxconf&quot;&gt;Nginx 設定ファイル(/etc/nginx/nginx.conf)&lt;/h1&gt;
 &lt;p&gt;ssl.conf&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;conf&quot;&gt;&lt;pre class=&quot;language-conf&quot;&gt;&lt;code class=&quot;language-conf&quot;&gt;server {
     listen       443 ssl;
@@ -118,29 +25,57 @@ CMD &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class
 &lt;h1 id=&quot;lets-encrypt-の使い方&quot;&gt;Let’s Encrypt の使い方&lt;/h1&gt;
 &lt;p&gt;Let’s Encrypt はクライアントソフトウェア「Certbot」を使用することで、SSL/TLS サーバ証明書の取得・更新作業を自動化出来る仕組みになっています。一般の認証局では、証明書署名要求＝ CSR(Certificate Signing Request)が必要ですが、これらの作業を Certbot クライアントが自動的に行います。&lt;/p&gt;
 &lt;h2 id=&quot;certbot-クライアントの準備&quot;&gt;Certbot クライアントの準備&lt;/h2&gt;
-&lt;p&gt;私の環境では、CentOS Stream-8 を用いています。CentOS に準じて解説します。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;// インストール
-sudo yum install epel-release
-sudo yum install certbot python-certbot-apache
-
-// クライアント起動
-certbot&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id=&quot;テスト実行（結果）&quot;&gt;テスト実行（結果）&lt;/h2&gt;
-&lt;p&gt;特に問題ない場合は、Certbot クライアントが起動して、TUI 画面に以下のように表示されます。&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;No names were found in your configuration files.
-You should specify ServerNames in your config files in order to allow for accurate installation of your certificate.
-If you do use the default vhost, you may specify the name manually.
-Would you like to continue ?&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;このメッセージの後、NO を選択して、SSL/TLS サーバ証明書の取得に進みます。&lt;/p&gt;
+&lt;p&gt;私の環境では、CentOS Stream-8 を用いています。CentOS に準じて解説します。
+また、Web サーバには Nginx を用いています。Apache を用いる場合は、別途&lt;code class=&quot;language-text&quot;&gt;python-certbot-apache&lt;/code&gt;もインストールする必要があります。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sh&quot;&gt;&lt;pre class=&quot;language-sh&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;sudo yum install epel-release
+sudo yum install certbot&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&quot;ssltls-サーバ証明書の取得&quot;&gt;SSL/TLS サーバ証明書の取得&lt;/h2&gt;
 &lt;p&gt;証明書取得コマンドの実行&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;certbot certonly --webroot -w /var/www/html -d shin-tech25.com -d www.shin-tech25.com&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;certbot certonly --webroot -w /var/www/html -d www.shin-tech25.com&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;
+          &lt;div
+            class=&quot;gatsby-resp-iframe-wrapper&quot;
+            style=&quot;padding-bottom: 50%; position: relative; height: 0; overflow: hidden;margin-bottom: 1.0725rem&quot;
+          &gt;
+            &lt;div&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/ZB23tAxKqmU&quot; style=&quot;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          &quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;/p&gt;
+&lt;h3 id=&quot;cron-を使用して自動で-ssl-証明書を更新出来るようにする&quot;&gt;cron を使用して自動で SSL 証明書を更新出来るようにする&lt;/h3&gt;
+&lt;p&gt;cron は&lt;code class=&quot;language-text&quot;&gt;* * * * *&lt;/code&gt;の 5 箇所を指定して、起動時間を設定します。左から「分」「時」「日」「月」「曜日」を指定します。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;// cronの起動時間設定
+* * * * * （起動したい処理）
+| | | | |
+| | | | |- 曜日
+| | | |--- 月
+| | |----- 日
+| |------- 時
+|--------- 分&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Let’s Encrypt は、90 日間で有効期限が切れるため、2 ヶ月間隔で SSL 証明書を更新できるように設定しました。&lt;/p&gt;
+&lt;p&gt;2 ヶ月間隔で処理を実行する書き方は以下です。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# 2ヶ月毎に起動する（2/1 00:00, 4/1 00:00, 6/1 00:00・・・12/1 00:00）
+0 0 1 */2 * (起動したい処理)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;sudo certbot renew&lt;/code&gt;コマンドを打つためには、Nginx が停止している必要があるため、直前に Nginx 停止、直後に Nginx 再起動するような処理を行います。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;sudo certbot renew --pre-hook &amp;quot;systemctl stop nginx&amp;quot; --post-hook &amp;quot;systemctl restart nginx&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;まとめると以下のような crontab の書き方になります。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;0 0 1 */2 *  sudo certbot renew --pre-hook &amp;quot;systemctl stop nginx&amp;quot; --post-hook &amp;quot;systemctl restart nginx&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;crontab の設定には、&lt;code class=&quot;language-text&quot;&gt;crontab -u root -e&lt;/code&gt;で root ユーザの crontab を設定することができます。&lt;/p&gt;
+&lt;p&gt;cron を書き換えたら、サービスの再起動を行っておきましょう。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; systemctl restart crond&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1 id=&quot;参考&quot;&gt;参考&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://oki2a24.com/2018/11/06/enable-ssl-tls-in-docker-nginx/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Docker の nginx:latest(1.15.5)で SSL/TLS を使えるようにする最低限の Dockerfile を作りました&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://qiita.com/__juiblex__/items/fe599755dc321b7489b8&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;nginx リバースプロキシ環境で Let’s Encrypt による SSL/TLS 化&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://ssl.sakura.ad.jp/column/letsencrypt/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;無料 SSL 証明書の Let’s Encrypt とは？&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://free-ssl.jp/usage/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Let’s Encrypt の使い方&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://it-jog.com/khow/serv/renewletsencrypt&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Let’s Encrypt の SSL 証明書を更新する(手動と cron による自動更新)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.yoheim.net/blog.php?q=20190902&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;cron の日時指定を、基礎から学ぶ（分,時,日,月,曜日の指定、○ 分ごと、月末起動、など）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.server-memo.net/tips/crontab.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;crontab の書き方&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Markdownで書ける静的サイトにこだわる理由]]></title><description><![CDATA[このサイトの特徴 このサイトは、Gatsby という React…]]></description><link>https://Shin-tech25.netlify.app/why-blog-by-markdown/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/why-blog-by-markdown/</guid><pubDate>Tue, 19 Jul 2022 00:16:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;このサイトの特徴&quot;&gt;このサイトの特徴&lt;/h1&gt;
 &lt;p&gt;このサイトは、Gatsby という React 派生の静的サイトジェネレーターで作成されています。エンジニア以外の人からしたら、静的サイト？何のことってなると思いますが、静的サイトとはユーザーリクエストに従って動的にページを作成するのではなく、一度ビルドしてしまったものをレンダリングするため非常に早いのが特徴です。&lt;/p&gt;
 &lt;h1 id=&quot;ネット上に個人ノートを持つことの重要性&quot;&gt;ネット上に個人ノートを持つことの重要性&lt;/h1&gt;

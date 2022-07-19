@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - 'dev'
+      - 'master'
     paths:
       - 'Docker/blog-a/**'
       - '.github/workflows/blog-a.yml'

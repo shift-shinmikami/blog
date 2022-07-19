@@ -1,124 +1,17 @@
 ---
-title: Dockerで動くNginx WebサイトをSSL/TLS対応する方法
+title: NginxのWebサイトをLet's EncryptでSSL対応する方法
 date: "2022-07-19T13:44:00"
-description: "Dockerで動くNginx WebサイトをSSL/TLS対応する方法について。"
-slug: ssltls-nginx-docker
+description: "NginxのWebサイトをフリーのサーバ証明書発行サービスであるLet's Encryptを用いてSSL対応する方法について。ドメイン取得にお名前.comを使う方法についても解説します。"
+slug: Nginx-LetsEncrypt
 tags:
-  - Docker
   - Nginx
   - SSL/TLS
-keywords: Docker, Nginx, SSL/TLS, Let's Encrypt
+  - ドメイン
+  - ブログ
+keywords: Nginx, SSL/TLS, Let's Encrypt, お名前.com, サーバ証明書, ブログ
 ---
 
-# CICD パイプライン
-
-CICD パイプラインには GitHub Actions を用いています。GitHub の runner から対象のホストに対して docker-deploy.yml をばら撒くことでコンテナを配置しています。
-
-```YAML
-on:
-  push:
-    branches:
-      - 'master'
-    paths:
-      - 'Docker/blog-a/**'
-
-jobs:
-  CICD:
-    runs-on: ubuntu-latest
-    steps:
-      # CI Phase
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Login to Docker Hub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-
-      - name: Build and push
-        uses: docker/build-push-action@v2
-        with:
-         context: Docker/blog-a/
-         file:  Docker/blog-a/Dockerfile
-         push: true
-         tags:  ${{ secrets.DOCKER_HUB_USERNAME }}/blog:latest
-
-      # CD Phase
-      - name: deploy docker image
-        env:
-          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
-          chmod 700 ~/.ssh/id_rsa
-          eval $(ssh-agent -s)
-          ssh-add ~/.ssh/id_rsa
-          ssh-keyscan -p 22 -H shin-tech25.com >> ~/.ssh/known_hosts  # Blog
-          cd Ansible/
-          ansible-playbook -i inventory/hosts.yml playbooks/docker-deploy.yml --private-key ~/.ssh/id_rsa --extra-vars 'docker_deploy_host=shin-tech25.com docker_image="${{ secrets.DOCKER_HUB_USERNAME }}/blog:latest" docker_container_name=blog'
-```
-
-# Playbook(docker-deploy.yml)
-
-docker-deploy.yml は以下のように role を import しています。role はそれぞれの処理を担当します。
-
-```YAML
-- name: Docker Deploy
-  hosts: "{{ docker_deploy_host }}"
-  become: true
-  gather_facts: true
-
-  roles:
-    - role: firewalld_tcp_port_open
-      tags: firewalld_tcp_port_open
-      vars:
-        firewalld_tcp_port: 80
-    - role: firewalld_tcp_port_open
-      tags: firewalld_tcp_port_open
-      vars:
-        firewalld_tcp_port: 443
-
-    - role: docker_image_prune
-      tags: docker_image_prune
-
-    - role: docker_container_stop
-      tags: docker_container_stop
-
-    - role: docker_container_prune
-      tags: docker_container_prune
-
-    - role: docker_pull_image
-      tags: docker_pull_image
-
-    - role: docker_container_run
-      tags: docker_container_run
-```
-
-# Dockerfile
-
-nginx:latest のイメージをベースに必要なライブラリのインストールを行った後、ssl.conf をイメージにコピーして含ませるということをしています。
-public/は今回は静的サイトジェネレーター(Gatsby)のビルド成果物が含まれているフォルダです。この部分は適宜各々の環境で読み替えてください。
-
-Dockerfile
-
-```YAML
-FROM nginx:latest
-
-RUN apt-get update && apt-get install -y \
-  openssl \
-  ssl-cert \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
-
-COPY public/  /usr/share/nginx/html/
-COPY ./ssl.conf /etc/nginx/conf.d/
-
-CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
-```
+# Nginx 設定ファイル(/etc/nginx/nginx.conf)
 
 ssl.conf
 
@@ -159,35 +52,65 @@ Let's Encrypt はクライアントソフトウェア「Certbot」を使用す�
 ## Certbot クライアントの準備
 
 私の環境では、CentOS Stream-8 を用いています。CentOS に準じて解説します。
+また、Web サーバには Nginx を用いています。Apache を用いる場合は、別途`python-certbot-apache`もインストールする必要があります。
 
 ```sh
-// インストール
 sudo yum install epel-release
-sudo yum install certbot python-certbot-apache
-
-// クライアント起動
-certbot
+sudo yum install certbot
 ```
-
-## テスト実行（結果）
-
-特に問題ない場合は、Certbot クライアントが起動して、TUI 画面に以下のように表示されます。
-
-```
-No names were found in your configuration files.
-You should specify ServerNames in your config files in order to allow for accurate installation of your certificate.
-If you do use the default vhost, you may specify the name manually.
-Would you like to continue ?
-```
-
-このメッセージの後、NO を選択して、SSL/TLS サーバ証明書の取得に進みます。
 
 ## SSL/TLS サーバ証明書の取得
 
 証明書取得コマンドの実行
 
 ```
-certbot certonly --webroot -w /var/www/html -d shin-tech25.com -d www.shin-tech25.com
+certbot certonly --webroot -w /var/www/html -d www.shin-tech25.com
+```
+
+`youtube:https://www.youtube.com/embed/ZB23tAxKqmU`
+
+### cron を使用して自動で SSL 証明書を更新出来るようにする
+
+cron は`* * * * *`の 5 箇所を指定して、起動時間を設定します。左から「分」「時」「日」「月」「曜日」を指定します。
+
+```
+// cronの起動時間設定
+* * * * * （起動したい処理）
+| | | | |
+| | | | |- 曜日
+| | | |--- 月
+| | |----- 日
+| |------- 時
+|--------- 分
+```
+
+Let's Encrypt は、90 日間で有効期限が切れるため、2 ヶ月間隔で SSL 証明書を更新できるように設定しました。
+
+2 ヶ月間隔で処理を実行する書き方は以下です。
+
+```
+# 2ヶ月毎に起動する（2/1 00:00, 4/1 00:00, 6/1 00:00・・・12/1 00:00）
+0 0 1 */2 * (起動したい処理)
+```
+
+`sudo certbot renew`コマンドを打つためには、Nginx が停止している必要があるため、直前に Nginx 停止、直後に Nginx 再起動するような処理を行います。
+
+```
+sudo certbot renew --pre-hook "systemctl stop nginx" --post-hook "systemctl restart nginx"
+```
+
+まとめると以下のような crontab の書き方になります。
+
+```
+0 0 1 */2 *  sudo certbot renew --pre-hook "systemctl stop nginx" --post-hook "systemctl restart nginx"
+```
+
+crontab の設定には、`crontab -u root -e`で root ユーザの crontab を設定することができます。
+
+cron を書き換えたら、サービスの再起動を行っておきましょう。
+
+```bash
+sudo systemctl restart crond
 ```
 
 # 参考
@@ -196,3 +119,6 @@ certbot certonly --webroot -w /var/www/html -d shin-tech25.com -d www.shin-tech2
 - [nginx リバースプロキシ環境で Let's Encrypt による SSL/TLS 化](https://qiita.com/__juiblex__/items/fe599755dc321b7489b8)
 - [無料 SSL 証明書の Let's Encrypt とは？](https://ssl.sakura.ad.jp/column/letsencrypt/)
 - [Let's Encrypt の使い方](https://free-ssl.jp/usage/)
+- [Let's Encrypt の SSL 証明書を更新する(手動と cron による自動更新)](https://it-jog.com/khow/serv/renewletsencrypt)
+- [cron の日時指定を、基礎から学ぶ（分,時,日,月,曜日の指定、○ 分ごと、月末起動、など）](https://www.yoheim.net/blog.php?q=20190902)
+- [crontab の書き方](https://www.server-memo.net/tips/crontab.html)
