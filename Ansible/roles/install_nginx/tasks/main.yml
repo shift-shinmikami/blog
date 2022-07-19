@@ -5,6 +5,13 @@
     name: nginx
     state: latest
 
+- name: Nginx設定ファイル修正
+  vars:
+    server_name: shin-tech25.ga
+  template:
+    src: "{{role_path}}/files/nginx.conf.j2"
+    dest: /etc/prometheus/nginx.conf
+
 - name: サービス有効化
   service:
     name: nginx
