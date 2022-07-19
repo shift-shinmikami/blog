@@ -24,5 +24,6 @@ jobs:
           ssh-add ~/.ssh/id_rsa
           ssh-keyscan -p 22 -H 116.80.61.252 >> ~/.ssh/known_hosts  # Blog
           cp -r Docker/blog-a/public/ Ansible/playbooks/files/
+          ls -l /Ansible/playbooks/files/
           ansible-playbook -i Ansible/inventory/hosts.yml Ansible/playbooks/blog-deploy.yml --private-key ~/.ssh/id_rsa
       #
