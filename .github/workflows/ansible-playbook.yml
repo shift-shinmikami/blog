@@ -2,8 +2,7 @@ name: ansible-playbook
 on:
   push:
     branches:
-      - main
-      - master
+      - dev
     paths:
       - 'Ansible/**'
       - '.github/workflows/ansible-playbook.yml'

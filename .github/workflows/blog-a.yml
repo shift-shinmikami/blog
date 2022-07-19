@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - 'master'
+      - 'dev'
     paths:
       - 'Docker/blog-a/**'
 
