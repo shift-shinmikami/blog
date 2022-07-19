@@ -1,4 +1,4 @@
-- name: Docker Deploy
+- name: blog build deploy
   hosts: shin-tech25.ga
   become: true
   gather_facts: true
@@ -13,3 +13,7 @@
       copy:
         src: files/
         dest: /usr/share/nginx/html/
+      register: result
+
+    - name: debug(public/フォルダを/usr/share/nginx/html/に移動)
+      debug: var=result
