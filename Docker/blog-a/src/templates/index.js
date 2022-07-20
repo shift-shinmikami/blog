@@ -70,7 +70,7 @@ const BlogIndex = ({ data, location, pageContext }) => {
           <Image fixed={data.avatar.childImageSharp.fixed} alt="author" />
           <h1>{data.site.siteMetadata.title}</h1>
           <p>{data.site.siteMetadata.description}</p>
-          <a href="https://twitter.com/shintech25" style={{ color: 'white', fontWeight: 'bold'}}>Follow My Twitter!!</a>
+          <a href="https://twitter.com/shintech25" target="_blank" style={{ color: 'white', fontWeight: 'bold'}}>Follow My Twitter!!</a>
         </div>
         <div className="inner" itemScope itemType="http://schema.org/Blog">
           {posts.map(({ node }) => {
