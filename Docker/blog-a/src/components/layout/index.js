@@ -15,8 +15,8 @@ const Layout = props => {
   }
   return (
     <Wrapper>
-      <Header className={isHome ? "isHome" : "notHome"} isHome={isHome} />
-      <main className={isHome ? "isHome content" : "notHome content"}>
+      <Header className="isHome" isHome={isHome} />
+      <main className="isHome content">
         {children}
       </main>
       {/*<Footer />*/}
