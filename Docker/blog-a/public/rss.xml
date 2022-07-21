@@ -1,4 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 21 Jul 2022 02:38:08 GMT</lastBuildDate><item><title><![CDATA[ブログ執筆で使えるサービス]]></title><description><![CDATA[このページでは、ブログ執筆で使えるサービスを紹介します。]]></description><link>https://Shin-tech25.netlify.app/blog-tools/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/blog-tools/</guid><pubDate>Thu, 21 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;このページでは、ブログ執筆で使えるサービスを紹介します。&quot;&gt;このページでは、ブログ執筆で使えるサービスを紹介します。&lt;/h1&gt;</content:encoded></item><item><title><![CDATA[NginxのWebサイトをLet's EncryptでSSL対応する方法]]></title><description><![CDATA[概要 Nginx の Web サイトをフリーのサーバ証明書発行サービスである Let’s Encrypt を用いて SSL 対応する方法について解説します。VPS には Web Arena Indigo を用いています。この VPS サーバにインストールした Nginx…]]></description><link>https://Shin-tech25.netlify.app/Nginx-LetsEncrypt/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/Nginx-LetsEncrypt/</guid><pubDate>Tue, 19 Jul 2022 04:44:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;概要&quot;&gt;概要&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 21 Jul 2022 02:48:44 GMT</lastBuildDate><item><title><![CDATA[ビルドからGit Push するまでのバッチファイル作成]]></title><description><![CDATA[Gatsby でのデプロイまでの流れ Gatsby では、執筆 → ビルドします。GitHub Actions などの CI/CD パイプラインを用いている場合は、を起点にしてワークフローが起動します。 そこで、ビルド →git add . → git commit → git…]]></description><link>https://Shin-tech25.netlify.app/blog-tools/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/blog-tools/</guid><pubDate>Thu, 21 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;gatsby-でのデプロイまでの流れ&quot;&gt;Gatsby でのデプロイまでの流れ&lt;/h1&gt;
+&lt;p&gt;Gatsby では、執筆 → ビルドします。GitHub Actions などの CI/CD パイプラインを用いている場合は、&lt;code class=&quot;language-text&quot;&gt;git push&lt;/code&gt;を起点にしてワークフローが起動します。&lt;/p&gt;
+&lt;p&gt;そこで、ビルド →git add . → git commit → git push&lt;/p&gt;
+&lt;p&gt;までの一連の流れをバッチファイルにしました。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bat&quot;&gt;&lt;pre class=&quot;language-bat&quot;&gt;&lt;code class=&quot;language-bat&quot;&gt;@echo off
+echo deploy bat called...
+call gatsby build
+call git add .
+call git commit -m &amp;quot;deploy %date% %time%&amp;quot;
+call git push&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;github-actions&quot;&gt;GitHub Actions&lt;/h1&gt;
+&lt;p&gt;GitHub Actions では、master ブランチでの push を起点にして動作します。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# 条件&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;master&apos;&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;paths&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;(Gatsbyの作業ディレクトリ)&apos;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;.github/workflows/blog-a.yml&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# ジョブ&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;DeployBlog&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;runs-on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ubuntu&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;latest
+    &lt;span class=&quot;token key atrule&quot;&gt;steps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token comment&quot;&gt;# 実際の処理を以下に記載&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[NginxのWebサイトをLet's EncryptでSSL対応する方法]]></title><description><![CDATA[概要 Nginx の Web サイトをフリーのサーバ証明書発行サービスである Let’s Encrypt を用いて SSL 対応する方法について解説します。VPS には Web Arena Indigo を用いています。この VPS サーバにインストールした Nginx…]]></description><link>https://Shin-tech25.netlify.app/Nginx-LetsEncrypt/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/Nginx-LetsEncrypt/</guid><pubDate>Tue, 19 Jul 2022 04:44:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;概要&quot;&gt;概要&lt;/h1&gt;
 &lt;p&gt;Nginx の Web サイトをフリーのサーバ証明書発行サービスである Let’s Encrypt を用いて SSL 対応する方法について解説します。VPS には Web Arena Indigo を用いています。この VPS サーバにインストールした Nginx に対して Let’s Encrpt を用いて SSL 対応することを考えました。また、サーバ証明書を自動で更新出来るように cron 設定しました。&lt;/p&gt;
 &lt;h1 id=&quot;webarena-indigo-の紹介&quot;&gt;WebArena Indigo の紹介&lt;/h1&gt;
 &lt;p&gt;WebArena Indigo とは、国内最安値のシンプルに使える個人向けの VPS サービスです。NTTPC コミュニケーションズが運営しており、高速・安定のネットワーク回線を利用できることが強みです。&lt;/p&gt;
