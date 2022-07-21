@@ -12,7 +12,7 @@ const Wrapper = styled.header`
   padding-top: 5px;
   transition: 0.6s ease;
   background: rgba(255, 255, 255, 0);
-  background-color: rgba(97, 126, 140, 0.7);
+  background-color: rgba(97, 126, 140, 0.25);
   a {
     color: #fff;
     text-decoration: none;
