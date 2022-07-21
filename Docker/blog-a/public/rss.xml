@@ -1,4 +1,46 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 21 Jul 2022 06:46:04 GMT</lastBuildDate><item><title><![CDATA[ビルドからGit Push するまでのバッチファイル作成]]></title><description><![CDATA[Gatsby でのデプロイまでの流れ Gatsby では、執筆 → ビルドします。GitHub Actions などの CI/CD パイプラインを用いている場合は、を起点にしてワークフローが起動します。 そこで、gatsby build → git add . → git…]]></description><link>https://Shin-tech25.netlify.app/blog-tools/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/blog-tools/</guid><pubDate>Thu, 21 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;gatsby-でのデプロイまでの流れ&quot;&gt;Gatsby でのデプロイまでの流れ&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 21 Jul 2022 07:24:26 GMT</lastBuildDate><item><title><![CDATA[AWSの責任共有モデルとセキュリティ対策]]></title><description><![CDATA[AWS のセキュリティ AWS は「AWS においてセキュリティは最優先事項」と言い切っています。AWS は圧倒的なコストをかけてセキュリティを担保しています。 特徴として、AWS が担保する範囲とユーザーが注意して守るべき範囲を分けています。これを AWS…]]></description><link>https://Shin-tech25.netlify.app/aws-responsibility-security/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/aws-responsibility-security/</guid><pubDate>Thu, 21 Jul 2022 07:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;aws-のセキュリティ&quot;&gt;AWS のセキュリティ&lt;/h1&gt;
+&lt;p&gt;AWS は「AWS においてセキュリティは最優先事項」と言い切っています。AWS は圧倒的なコストをかけてセキュリティを担保しています。&lt;/p&gt;
+&lt;p&gt;特徴として、AWS が担保する範囲とユーザーが注意して守るべき範囲を分けています。これを AWS の責任共有モデルと言います。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/jp/compliance/shared-responsibility-model/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;公式ページ（AWS の責任共有モデル）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 800px;&quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/47f698db713f91fc9b08c4eac6c8a5d7/1c998/Shared_Responsibility_Model_V2_JP.a4acd9721218c9d7d4ab5083c349e706e8ad300d.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 55.115961800818546%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAEEAwX/xAAXAQADAQAAAAAAAAAAAAAAAAABAgME/9oADAMBAAIQAxAAAAHNdJZqRl4w/8QAGRABAAIDAAAAAAAAAAAAAAAAAgASARAR/9oACAEBAAEFAqOUcIfNYn//xAAXEQADAQAAAAAAAAAAAAAAAAAAARMC/9oACAEDAQE/AYZIo//EABcRAAMBAAAAAAAAAAAAAAAAAAACExT/2gAIAQIBAT8B0MXY/8QAGBAAAgMAAAAAAAAAAAAAAAAAABABAkH/2gAIAQEABj8Csapf/8QAHBAAAgEFAQAAAAAAAAAAAAAAAAERECExYZFR/9oACAEBAAE/IVPY+7NfQo1nn0ijA//aAAwDAQACAAMAAAAQvx//xAAYEQEBAAMAAAAAAAAAAAAAAAABABEhYf/aAAgBAwEBPxDsyOst/8QAGREAAwADAAAAAAAAAAAAAAAAAAERQYHw/9oACAECAQE/EJ4XbExWI//EAB4QAAEDBAMAAAAAAAAAAAAAAAEAESExYXHREEHh/9oACAEBAAE/ECYUF+sxuomix2hgfMF0Am1N8Vsr/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;AWS_Shared_Responsibility&quot;
+        title=&quot;AWS_Shared_Responsibility&quot;
+        src=&quot;/static/47f698db713f91fc9b08c4eac6c8a5d7/a296c/Shared_Responsibility_Model_V2_JP.a4acd9721218c9d7d4ab5083c349e706e8ad300d.jpg&quot;
+        srcset=&quot;/static/47f698db713f91fc9b08c4eac6c8a5d7/f544b/Shared_Responsibility_Model_V2_JP.a4acd9721218c9d7d4ab5083c349e706e8ad300d.jpg 200w,
+/static/47f698db713f91fc9b08c4eac6c8a5d7/41689/Shared_Responsibility_Model_V2_JP.a4acd9721218c9d7d4ab5083c349e706e8ad300d.jpg 400w,
+/static/47f698db713f91fc9b08c4eac6c8a5d7/a296c/Shared_Responsibility_Model_V2_JP.a4acd9721218c9d7d4ab5083c349e706e8ad300d.jpg 800w,
+/static/47f698db713f91fc9b08c4eac6c8a5d7/c35de/Shared_Responsibility_Model_V2_JP.a4acd9721218c9d7d4ab5083c349e706e8ad300d.jpg 1200w,
+/static/47f698db713f91fc9b08c4eac6c8a5d7/1c998/Shared_Responsibility_Model_V2_JP.a4acd9721218c9d7d4ab5083c349e706e8ad300d.jpg 1466w&quot;
+        sizes=&quot;(max-width: 800px) 100vw, 800px&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&quot;aws-セキュリティの利点&quot;&gt;AWS セキュリティの利点&lt;/h1&gt;
+&lt;h2 id=&quot;データの保護&quot;&gt;データの保護&lt;/h2&gt;
+&lt;p&gt;AWS インフラストラクチャには、ユーザーのプライバシーを保護するための強力な安全対策が用意されています。全てのデータは安全性が非常に高い AWS データセンターに保存されます。&lt;/p&gt;
+&lt;h2 id=&quot;コンプライアンスの要件に準拠&quot;&gt;コンプライアンスの要件に準拠&lt;/h2&gt;
+&lt;p&gt;AWS では、インフラストラクチャ内で数多くのコンプライアンス・プログラムを管理できます。つまり、コンプライアンスの一部は最初から達成されています。&lt;/p&gt;
+&lt;h2 id=&quot;コスト削減&quot;&gt;コスト削減&lt;/h2&gt;
+&lt;p&gt;AWS データセンターを利用することでコストを削減できます。ユーザーが独自の施設を管理する必要がなく、最上位のセキュリティを維持できます。&lt;/p&gt;
+&lt;h2 id=&quot;迅速なスケーリング&quot;&gt;迅速なスケーリング&lt;/h2&gt;
+&lt;p&gt;AWS クラウドの使用量に合わせてセキュリティをスケーリング出来ます。ビジネスの規模にかかわらず、AWS インフラストラクチャによってユーザーのデータが保護されます。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[gatsby buildからgit push するまでのバッチファイル作成]]></title><description><![CDATA[Gatsby でのデプロイまでの流れ Gatsby では、執筆 → ビルドします。GitHub Actions などの CI/CD パイプラインを用いている場合は、を起点にしてワークフローが起動します。 そこで、gatsby build → git add . → git…]]></description><link>https://Shin-tech25.netlify.app/blog-tools/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/blog-tools/</guid><pubDate>Thu, 21 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;gatsby-でのデプロイまでの流れ&quot;&gt;Gatsby でのデプロイまでの流れ&lt;/h1&gt;
 &lt;p&gt;Gatsby では、執筆 → ビルドします。GitHub Actions などの CI/CD パイプラインを用いている場合は、&lt;code class=&quot;language-text&quot;&gt;git push&lt;/code&gt;を起点にしてワークフローが起動します。&lt;/p&gt;
 &lt;p&gt;そこで、gatsby build → git add . → git commit → git push&lt;/p&gt;
 &lt;p&gt;までの一連の流れをバッチファイルにしました。&lt;/p&gt;

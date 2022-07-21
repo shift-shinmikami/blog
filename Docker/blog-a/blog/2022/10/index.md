@@ -1,7 +1,7 @@
 ---
-title: ビルドからGit Push するまでのバッチファイル作成
+title: gatsby buildからgit push するまでのバッチファイル作成
 date: "2022-07-21T09:00:00"
-description: "ビルドからGit Pushするまでのバッチファイルを作成し、更にデプロイしやすくしました。"
+description: "gatsby buildからgit pushするまでのバッチファイルを作成し、更にデプロイしやすくしました。"
 slug: blog-tools
 tags:
   - ブログ
