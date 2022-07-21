@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 21 Jul 2022 02:48:44 GMT</lastBuildDate><item><title><![CDATA[ビルドからGit Push するまでのバッチファイル作成]]></title><description><![CDATA[Gatsby でのデプロイまでの流れ Gatsby では、執筆 → ビルドします。GitHub Actions などの CI/CD パイプラインを用いている場合は、を起点にしてワークフローが起動します。 そこで、ビルド →git add . → git commit → git…]]></description><link>https://Shin-tech25.netlify.app/blog-tools/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/blog-tools/</guid><pubDate>Thu, 21 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;gatsby-でのデプロイまでの流れ&quot;&gt;Gatsby でのデプロイまでの流れ&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 21 Jul 2022 06:46:04 GMT</lastBuildDate><item><title><![CDATA[ビルドからGit Push するまでのバッチファイル作成]]></title><description><![CDATA[Gatsby でのデプロイまでの流れ Gatsby では、執筆 → ビルドします。GitHub Actions などの CI/CD パイプラインを用いている場合は、を起点にしてワークフローが起動します。 そこで、gatsby build → git add . → git…]]></description><link>https://Shin-tech25.netlify.app/blog-tools/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/blog-tools/</guid><pubDate>Thu, 21 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;gatsby-でのデプロイまでの流れ&quot;&gt;Gatsby でのデプロイまでの流れ&lt;/h1&gt;
 &lt;p&gt;Gatsby では、執筆 → ビルドします。GitHub Actions などの CI/CD パイプラインを用いている場合は、&lt;code class=&quot;language-text&quot;&gt;git push&lt;/code&gt;を起点にしてワークフローが起動します。&lt;/p&gt;
-&lt;p&gt;そこで、ビルド →git add . → git commit → git push&lt;/p&gt;
+&lt;p&gt;そこで、gatsby build → git add . → git commit → git push&lt;/p&gt;
 &lt;p&gt;までの一連の流れをバッチファイルにしました。&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bat&quot;&gt;&lt;pre class=&quot;language-bat&quot;&gt;&lt;code class=&quot;language-bat&quot;&gt;@echo off
 echo deploy bat called...
@@ -125,7 +125,7 @@ sudo yum install certbot&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;li&gt;Evernote, note など電子ノート&lt;/li&gt;
 &lt;li&gt;WordPress&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;まず、誰もが思いつくのが紙のノート。紙のノートは速記性に優れ、また図やちょっとした表を示すにはシンプルながら最も協力なメディアであるのは今も昔も変わらないです。一方で、紙媒体は共有性と編集性は弱いです。とは言え、どれだけデジタルが加速しても人間がアナログな生き物である限り紙は使われるだろうと勝手に推測しています。&lt;/p&gt;
+&lt;p&gt;まず、誰もが思いつくのが紙のノート。紙のノートは速記性に優れ、また図やちょっとした表を示すにはシンプルながら最も強力なメディアであるのは今も昔も変わらないです。一方で、紙媒体では、WEB などに比べるとアナログである分、簡単に共有することが難しかったり、一度書いてしまうと編集が少し大変であるというデメリットが挙げられます。&lt;/p&gt;
 &lt;p&gt;FC2 ブログや Hatena ブログなどのブログサービスも一時期流行りました。こちらは、個人の日記的な意味合いが強いですが、意見発信の場としても使われているように思います。メリットは簡単にブログを立ち上げられることが挙げられますが、デメリットはカスタマイズ性があまり無いこと、Web 上から独自のエディタで記入していく必要があること、サービスそのものが終わる可能性があることなど、まとめるとそのブログサービスに依拠していることだと思います。&lt;/p&gt;
 &lt;p&gt;Evernote, note などの電子ノートは FC2 ブログに比べてフリーフォマットで使いやすくなりました。しかしこれもそのサービスに依拠しているため、アプリケーションが必要であったりサブスクリプションが必要であったりなどの制約があります。（現時点ではあまり考えられませんが）サービス終了の可能性もあります。&lt;/p&gt;
 &lt;p&gt;WordPress は、技術者でなくてもプラグインなどを導入することによって簡単に Web サイト制作出来るソフトウェアです。こちらは、もとが OSS のため移行が容易い、技術的なハードルが低い、プラグインなどの導入でカスタマイズが容易など、メリットが多いです。また、検索性、編集性、共有性に優れています。一方、デメリット挙げるとすると、WordPress 自体の動きがやや重いこと、データベースと PHP が別途必要である点だと思います。データベースと PHP があるサーバをレンタルするか自分で構築する必要があり、技術的なハードルと若干コストも掛かります。&lt;/p&gt;
@@ -176,7 +176,7 @@ sudo yum install certbot&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;td align=&quot;center&quot;&gt;○&lt;/td&gt;
 &lt;td align=&quot;center&quot;&gt;◎&lt;/td&gt;
 &lt;td align=&quot;center&quot;&gt;○&lt;/td&gt;
-&lt;td align=&quot;center&quot;&gt;◎&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;○&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&quot;right&quot;&gt;共有性&lt;/td&gt;
@@ -199,29 +199,40 @@ sudo yum install certbot&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h1 id=&quot;このブログの特徴&quot;&gt;このブログの特徴&lt;/h1&gt;
 &lt;p&gt;当ブログは Gatsby によってビルドされている静的サイトです。他のブログと違う点は、VPS に WebArena Indigo を契約していて、こちらで動かしています。WebArena Indigo は NTTPC コミュニケーションズさんが運営している国内最安値の VPS サービスで、月額 300 円程度から利用できるコスパの良さが魅力的です。また、デプロイに GitHub Actions などを使っています。&lt;/p&gt;
 &lt;h2 id=&quot;gatsby-による-markdown-静的サイト&quot;&gt;Gatsby による Markdown 静的サイト&lt;/h2&gt;
-&lt;h2 id=&quot;github-actions-と-ansible-によるデプロイ自動化&quot;&gt;GitHub Actions と Ansible によるデプロイ自動化&lt;/h2&gt;
+&lt;p&gt;Gatsby という静的サイトジェネレータを用いてサイトを構築しています。もともとは Markdown 形式で書かれています。Markdown と言うのは例えば以下のような記述のものです。&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# 見出し1
+## 見出し2
+### 見出し3
+**強調**
+こんにちは&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;上のような簡単な記述でドキュメントを記述することが出来ます。ビルドすると、Markdown からパースされて HTML/CSS/JavaScript に変換されます。&lt;/p&gt;
+&lt;p&gt;ブログは継続的に更新していくものであるため、Markdown のような記述のしやすさは優位性があります。&lt;/p&gt;
+&lt;h2 id=&quot;github-actions-によるデプロイ自動化&quot;&gt;GitHub Actions によるデプロイ自動化&lt;/h2&gt;
+&lt;p&gt;また、当ブログは GitHub Actions によりデプロイの自動化を行っております。デプロイの自動化は、開発効率を大きく向上させます。CI/CD や DevOps の考え方をブログ執筆に応用させました。&lt;/p&gt;
 &lt;h1 id=&quot;markdown-静的サイトのメリット・デメリット&quot;&gt;Markdown 静的サイトのメリット・デメリット&lt;/h1&gt;
 &lt;h2 id=&quot;メリット&quot;&gt;メリット&lt;/h2&gt;
+&lt;p&gt;Markdown で作る静的サイトには速記性、編集性、検索性、共有性、保存性いずれにおいても優位性があります。また、コンテンツ（文章）とスタイル（見た目）を分離することが出来る点もメリットです。&lt;/p&gt;
 &lt;h3 id=&quot;速記性&quot;&gt;速記性&lt;/h3&gt;
+&lt;p&gt;Markdown で書くことが出来るため、記述の仕方が分かりやすい点がメリットです。感覚的にも&lt;code class=&quot;language-text&quot;&gt;#&lt;/code&gt;が見出し 1、&lt;code class=&quot;language-text&quot;&gt;##&lt;/code&gt;が見出し 2 など、構造化しやすいです。&lt;/p&gt;
+&lt;p&gt;構造化しやすい → 論理的な文章を書くことができます。&lt;/p&gt;
 &lt;h3 id=&quot;編集性&quot;&gt;編集性&lt;/h3&gt;
+&lt;p&gt;エディターで書くため、修正や加工が容易です。また、Markdown で書かれた文章は移行が容易いです。&lt;/p&gt;
 &lt;h3 id=&quot;検索性&quot;&gt;検索性&lt;/h3&gt;
+&lt;p&gt;テンプレートエンジンに検索機能やタグ付け機能があれば後で文章を検索することができます。この点は、別途実装するか、検索やタグ付け機能があるテンプレートを選ぶ必要があります。&lt;/p&gt;
 &lt;h3 id=&quot;共有性&quot;&gt;共有性&lt;/h3&gt;
+&lt;p&gt;Web サイトのため、誰でも自由に閲覧することができます。&lt;/p&gt;
 &lt;h3 id=&quot;保存性&quot;&gt;保存性&lt;/h3&gt;
+&lt;p&gt;Markdown で書かれたテキストと静的イメージのみで出来ており、それをビルドしたものは非常に軽量のため、保存性に優れます。
+また、廃棄も容易です。&lt;/p&gt;
 &lt;h3 id=&quot;コンテンツとスタイルの分離&quot;&gt;コンテンツとスタイルの分離&lt;/h3&gt;
+&lt;p&gt;コンテンツ（文章）とスタイル（見た目）を分離することが出来ます。Markdown で書かれたものを別のテンプレートエンジンに読ませれば、中身は同じですが別の見た目で表示させることが出来ますし、プログラミングの知識があれば自身でカスタマイズ出来ます。&lt;/p&gt;
 &lt;h2 id=&quot;デメリット&quot;&gt;デメリット&lt;/h2&gt;
 &lt;h3 id=&quot;技術的なハードルが高い&quot;&gt;技術的なハードルが高い&lt;/h3&gt;
-&lt;h1 id=&quot;ブログ執筆プロセス&quot;&gt;ブログ執筆プロセス&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;インプット&lt;/li&gt;
-&lt;li&gt;メモ&lt;/li&gt;
-&lt;li&gt;清書&lt;/li&gt;
-&lt;li&gt;執筆&lt;/li&gt;
-&lt;li&gt;静的解析&lt;/li&gt;
-&lt;li&gt;ビルド&lt;/li&gt;
-&lt;li&gt;デプロイ&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;システムはボトルネックに依存する、という話（律速段階）&quot;&gt;システムはボトルネックに依存する、という話（律速段階）&lt;/h1&gt;
-&lt;p&gt;アウトプットに時間をかけるのはやめよう。本質的な付加価値の追求に専念することが出来るようにした。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[クラウドネイティブとは何か]]></title><description><![CDATA[クラウドネイティブ コンピューティングの定義 クラウドネイティブコンピューティングとは、具体的にどのようなものでしょうか。実はよく聞く言葉ではあるものの、具体的な定義があるわけではないです。クラウドネイティブを冠にしている業界団体として、Cloud Native…]]></description><link>https://Shin-tech25.netlify.app/cloud-native-computing-basic/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/cloud-native-computing-basic/</guid><pubDate>Mon, 18 Jul 2022 23:57:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;クラウドネイティブ-コンピューティングの定義&quot;&gt;クラウドネイティブ コンピューティングの定義&lt;/h1&gt;
+&lt;p&gt;一番はやはりこれでしょう。正直、エンジニアじゃないと厳しい部分が多々あります・・・。ただし、ブログは継続していくものですから、日々勉強を継続していけば技術的なハードルを超えることは可能です。&lt;/p&gt;
+&lt;h1 id=&quot;ブログ執筆プロセスの改善&quot;&gt;ブログ執筆プロセスの改善&lt;/h1&gt;
+&lt;p&gt;インプット → メモ → 清書 → 執筆 → ビルド → デプロイ&lt;/p&gt;
+&lt;p&gt;システムはボトルネックに依存する、という話（律速段階）があります。ブログ執筆プロセスのアウトプット段階（執筆 → ビルド → デプロイ）はなるべく効率化するべきでしょう。プロセスを改善することでアウトプットの量も上がるし、それにつれて質も上がります。&lt;/p&gt;
+&lt;p&gt;要するに、本質的な付加価値の追求に専念することが出来る状態が大事、という話でした。。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[クラウドネイティブとは何か]]></title><description><![CDATA[クラウドネイティブ コンピューティングの定義 クラウドネイティブコンピューティングとは、具体的にどのようなものでしょうか。実はよく聞く言葉ではあるものの、具体的な定義があるわけではないです。クラウドネイティブを冠にしている業界団体として、Cloud Native…]]></description><link>https://Shin-tech25.netlify.app/cloud-native-computing-basic/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/cloud-native-computing-basic/</guid><pubDate>Mon, 18 Jul 2022 23:57:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;クラウドネイティブ-コンピューティングの定義&quot;&gt;クラウドネイティブ コンピューティングの定義&lt;/h1&gt;
 &lt;p&gt;クラウドネイティブコンピューティングとは、具体的にどのようなものでしょうか。実はよく聞く言葉ではあるものの、具体的な定義があるわけではないです。クラウドネイティブを冠にしている業界団体として、Cloud Native Computing Foundation(CNCF)と呼ばれる団体があります。CNCF は、&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;オープンソースを活用しベンダー中立のクラウドのエコシステム確立を目指す&lt;/p&gt;

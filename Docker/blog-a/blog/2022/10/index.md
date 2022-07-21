@@ -15,7 +15,7 @@ keywords: ブログ, git, bat, CI/CD
 
 Gatsby では、執筆 → ビルドします。GitHub Actions などの CI/CD パイプラインを用いている場合は、`git push`を起点にしてワークフローが起動します。
 
-そこで、ビルド →git add . → git commit → git push
+そこで、gatsby build → git add . → git commit → git push
 
 までの一連の流れをバッチファイルにしました。
 
