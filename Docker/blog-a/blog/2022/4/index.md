@@ -44,8 +44,6 @@ const map2 = array2.map((_, i) => _ * i)
 console.log(map2)
 ```
 
-### どんな時に使う？
-
 ## filter()
 
 `filter()`は、`map()`と似ていて、配列のメソッドとして実行し、特定の条件を満たす要素だけを取り出す関数です。
@@ -60,13 +58,93 @@ const result = data.filter(value => {
 console.log(result)
 ```
 
+配列の中から、ある条件に合う要素全てを抽出し新しい配列として生成したい場合などに用います。
+
+ある条件に合う最初の要素のみ抽出したい場合は`find()`を使いましょう。
+
 ## forEach()
+
+配列内の各要素に対して昇順で、1 回ずつ実行する
+
+```js
+const numbers = [1, 2, 3]
+
+numbers.forEach(number => console.log(number))
+
+//出力
+//1
+//2
+//3
+```
+
+`map()`や`filter()`などと異なり、配列内の要素を用いて何かしらの処理を行いたい時などに用います。
+
+基本的に、いきなり forEach を用いるのではなく、map()や filter()などを検討するほうが可読性も上がり良いでしょう。
 
 ## find()
 
+ある条件に合う最初の要素の値を返す
+
+```js
+const dataset = [
+  { id: "001", name: "aaa" },
+  { id: "002", name: "bbb" },
+  { id: "003", name: "ccc" },
+  { id: "004", name: "aaa" },
+]
+
+const newDataset = dataset.find(data => data.name === "aaa")
+
+// 出力
+console.log(newDataset)
+// { id: "001", name: "aaa"}
+```
+
+上記の出力結果のように、最初に条件に合った要素を取得する。
+`truthy`な値を返すまで繰り返し処理が行わます。
+
+`truthy`とは、Boolean コンテキストに現れた時に true とみなされる値のことです。
+
 ## findIndex()
 
-# まとめ
+ある条件に合う最初の要素の位置を返します。
+
+```js
+const dataset = [
+  { id: "001", name: "aaa"};
+  { id: "002", name: "bbb"};
+  { id: "003", name: "ccc"};
+  { id: "004", name: "ddd"};
+];
+
+const newDataset = dataset.findIndex(data => data.name === "bbb");
+
+//出力
+console.log(newDataset);
+//1
+```
+
+返り値
+
+- 条件に合う最初の要素の index 番号（位置）
+- どの要素も条件に一致しない場合は`-1`が返り値となる
+
+```js
+// どの要素も条件に一致しない場合
+
+const dataset = [
+  { id: "001", name: "aaa" },
+  { id: "002", name: "bbb" },
+  { id: "003", name: "ccc" },
+  { id: "004", name: "aaa" },
+]
+
+const newDataset = dataset.findIndex(data => data.name === "ddd")
+
+// 出力
+console.log(newDataset)
+// -1
+```
 
 # 参考
 
