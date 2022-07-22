@@ -9,11 +9,31 @@ tags:
 keywords: D3, D3.js, React, React.js, データ可視化, Dataviz, Data visualization
 ---
 
-# D3 について
+# D3.js について
+
+D3.js(Data-Driven Documents)はデータを基盤として、文書を操作するための JavaScript ライブラリーです。これを利用すると、あるデータを DOM にバインディングした後、チャートやグラフとしてビジュアライズすることが可能です。
+
+- 協力なデータ可視化ライブラリー
+- WEB 標準に準拠
+- HTML、SVG、CSS を操作できる
+- メソッドチェーンを利用
+- Firefox・Chrome・Safari・IE9 以上・Android・iOS に対応
 
 # React について
 
+React は、Facebook 社が開発した Web サイト上の UI パーツを構築するための JavaScript ライブラリです。
+
+以下のような特徴があります。
+
+- 宣言的な View（Declarative）
+- コンポーネントベース（Component-Based）
+- 一度学習すれば、どこでも使える（Learn Once, Write Anywhere）
+
 # なぜ D3 と React を組み合わせるのか
+
+コンポーネント指向の React と SVG によるデータ可視化の D3 を組み合わせるとメリットがあります。D3 だけだとコード量が膨大になりがちで、可読性が悪く、再利用性もあまりありませんが、コンポーネント化し、データ読み込みを変数化することで可読性、再利用性を向上させることが出来ます。
+
+この点が D3 と React を組み合わせるメリットです。
 
 # Victory のデータを CSV で読み込む
 
