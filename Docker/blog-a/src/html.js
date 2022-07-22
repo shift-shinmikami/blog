@@ -11,7 +11,8 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        {/* ここにAdsense Script Tagを追記する */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6461117183201003"
+     crossorigin="anonymous"></script>
 
         {props.headComponents}
       </head>
