@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - 'master'
+      - 'gatsby-plugin-disqus*'
     paths:
       - 'Docker/blog-a/**'
       - '.github/workflows/blog-a.yml'
