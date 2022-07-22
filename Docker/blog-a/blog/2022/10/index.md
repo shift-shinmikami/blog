@@ -19,7 +19,7 @@ Gatsby では、執筆 → ビルドします。GitHub Actions などの CI/CD �
 
 までの一連の流れをバッチファイルにしました。
 
-```bat
+```bat:deploy.bat
 @echo off
 echo deploy bat called...
 call gatsby build
@@ -32,7 +32,7 @@ call git push
 
 GitHub Actions では、master ブランチでの push を起点にして動作します。
 
-```YAML
+```YAML:.github/workflows/deploy-blog.yml
 # 条件
 on:
   push:
@@ -40,7 +40,7 @@ on:
       - 'master'
     paths:
       - '(Gatsbyの作業ディレクトリ)'
-      - '.github/workflows/blog-a.yml'
+      - '.github/workflows/deploy-blog.yml'
 
 # ジョブ
 jobs:
