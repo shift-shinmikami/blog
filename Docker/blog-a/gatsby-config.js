@@ -108,7 +108,7 @@ module.exports = {
           {
             resolve: `gatsby-plugin-disqus`,
             options: {
-              shortname: `https-Shin-tech25-netlify-app`,
+              shortname: `shin-tech25`,
             },
           },
           `gatsby-remark-copy-linked-files`,

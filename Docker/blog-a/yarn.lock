@@ -5528,10 +5528,10 @@
   dependencies:
     "@babel/runtime" "^7.6.0"
 
-"gatsby-plugin-disqus@^1.2.2":
-  "integrity" "sha512-RWiU8Jtg94kVphjBnxqnF+0txyJ3eZN/9vw/VlMgz0mor1FwULkiiiOyNXAJxbX6tFqYmypnmfa+edQWX/rMpQ=="
-  "resolved" "https://registry.npmjs.org/gatsby-plugin-disqus/-/gatsby-plugin-disqus-1.2.2.tgz"
-  "version" "1.2.2"
+"gatsby-plugin-disqus@^1.2.4":
+  "integrity" "sha512-HoNJdTKKifRIGVMTMt1rbFModWm3UT7Mnae24R0kuR0bj5b1XzJF9pgQ78BSFVP+D7Yndn51+vEr8goDLIBOGg=="
+  "resolved" "https://registry.npmjs.org/gatsby-plugin-disqus/-/gatsby-plugin-disqus-1.2.4.tgz"
+  "version" "1.2.4"
 
 "gatsby-plugin-feed@^2.3.12":
   "integrity" "sha512-z7Q73H0UA18FB6d8zTyCJVtKVtlwO9Ed3v7KBR2TVYfHb2hjLe3J/xRj5wICHSLTouFLfFkygczjFHJctYFZzQ=="
@@ -10648,7 +10648,7 @@
     "exenv" "^1.2.1"
     "shallowequal" "^1.0.1"
 
-"react@^0.13.0 || ^0.14.0 || ^15.0.0 || ^16.0.0", "react@^0.14.0 || ^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0", "react@^16.0.0", "react@^16.4.2", "react@^16.8.2", "react@^16.8.5", "react@^16.9.0", "react@>= 16.3.0", "react@>=15.0.0", "react@>=16.0.0", "react@>=16.3", "react@>=16.8.0", "react@15.x || 16.x || 16.4.0-alpha.0911da3":
+"react@^0.13.0 || ^0.14.0 || ^15.0.0 || ^16.0.0", "react@^0.14.0 || ^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0", "react@^16.0.0", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.4.2", "react@^16.8.2", "react@^16.9.0", "react@>= 16.3.0", "react@>=15.0.0", "react@>=16.0.0", "react@>=16.3", "react@>=16.8.0", "react@15.x || 16.x || 16.4.0-alpha.0911da3":
   "integrity" "sha512-+7LQnFBwkiw+BobzOF6N//BdoNw0ouwmSJTEm9cglOOmsg/TMiFHZLe2sEoN5M7LgJTj9oHH0gxklfnQe66S1w=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.9.0.tgz"
   "version" "16.9.0"
