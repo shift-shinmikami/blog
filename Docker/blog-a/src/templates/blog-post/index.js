@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Disqus from "gatsby-plugin-disqus"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import { Tags } from "../../components/modules"
@@ -45,6 +46,13 @@ const BlogPostTemplate = ({ data, location, pageContext }) => {
           <Share
             title={post.frontmatter.title}
             url={`${site.siteUrl}/${post.frontmatter.slug}/`}
+          />
+          <Disqus
+            config={{
+              identifier: post.frontmatter.slug,
+              title: post.title,
+              url: site.siteUrl + "/" + post.frontmatter.slug,
+            }}
           />
           {pageContext.relatedPosts.length === 0 ? (
             <Latest latest={pageContext.latestPosts} />
