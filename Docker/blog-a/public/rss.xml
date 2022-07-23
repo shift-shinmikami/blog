@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 23 Jul 2022 08:11:31 GMT</lastBuildDate><item><title><![CDATA[社会人に独学が必要な理由]]></title><description><![CDATA[…]]></description><link>https://Shin-tech25.netlify.app/book-review-howto-learn/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/book-review-howto-learn/</guid><pubDate>Sat, 23 Jul 2022 08:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 23 Jul 2022 09:45:45 GMT</lastBuildDate><item><title><![CDATA[ホワイトハッカーとは？ハッキングに必要な知識]]></title><description><![CDATA[ホワイトハッカー（Ethical Hacker）とは （攻撃者としての）ハッカーと同等のスキルを持ち、その知識と技術をセキュリティのために使う人間のこと ホワイトハッカー（Ethical Hacker…]]></description><link>https://Shin-tech25.netlify.app/ethical-hacker/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/ethical-hacker/</guid><pubDate>Sat, 23 Jul 2022 10:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;ホワイトハッカー（ethical-hacker）とは&quot;&gt;ホワイトハッカー（Ethical Hacker）とは&lt;/h1&gt;
+&lt;p&gt;（攻撃者としての）ハッカーと同等のスキルを持ち、その知識と技術をセキュリティのために使う人間のこと&lt;/p&gt;
+&lt;h1 id=&quot;ホワイトハッカー（ethical-hacker）のスキル&quot;&gt;ホワイトハッカー（Ethical Hacker）のスキル&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;防御：防衛手段の立案、機器の構成・設定など&lt;/li&gt;
+&lt;li&gt;監視：状況の確認、対策の評価など&lt;/li&gt;
+&lt;li&gt;検出：以上の確認と特定など&lt;/li&gt;
+&lt;li&gt;分析：インシデントの確認や根本原因の特定など&lt;/li&gt;
+&lt;li&gt;対応：適切で効率的な対応とフィードバックなど&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[社会人に独学が必要な理由]]></title><description><![CDATA[…]]></description><link>https://Shin-tech25.netlify.app/book-review-howto-learn/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/book-review-howto-learn/</guid><pubDate>Sat, 23 Jul 2022 08:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 &lt;p&gt;山口周著「知的戦闘力を高める独学の技法」を読んで。&lt;/p&gt;
 &lt;p&gt;社会人には独学が必須と言えます。その根拠と、独学の方法論について筆者の見解が述べられていて、示唆深い本になっています。概念的なビジネス本でしたが、私としては良い気づきを得ることが出来ましたので記事にしました。&lt;/p&gt;
 &lt;h2 id=&quot;なぜ今独学が今必要なのか？&quot;&gt;なぜ今独学が今必要なのか？&lt;/h2&gt;
