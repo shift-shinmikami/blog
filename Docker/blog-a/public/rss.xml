@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 23 Jul 2022 12:49:50 GMT</lastBuildDate><item><title><![CDATA[ホワイトハッカーとは？ハッキングに必要な知識]]></title><description><![CDATA[ホワイトハッカー（Ethical Hacker）とは （攻撃者としての）ハッカーと同等のスキルを持ち、その知識と技術をセキュリティのために使う人間のこと ホワイトハッカー（Ethical Hacker…]]></description><link>https://Shin-tech25.netlify.app/ethical-hacker/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/ethical-hacker/</guid><pubDate>Sat, 23 Jul 2022 10:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;ホワイトハッカー（ethical-hacker）とは&quot;&gt;ホワイトハッカー（Ethical Hacker）とは&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 23 Jul 2022 13:07:15 GMT</lastBuildDate><item><title><![CDATA[ホワイトハッカーとは？ハッキングに必要な知識]]></title><description><![CDATA[ホワイトハッカー（Ethical Hacker）とは （攻撃者としての）ハッカーと同等のスキルを持ち、その知識と技術をセキュリティのために使う人間のこと ホワイトハッカー（Ethical Hacker…]]></description><link>https://Shin-tech25.netlify.app/ethical-hacker/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/ethical-hacker/</guid><pubDate>Sat, 23 Jul 2022 10:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;ホワイトハッカー（ethical-hacker）とは&quot;&gt;ホワイトハッカー（Ethical Hacker）とは&lt;/h1&gt;
 &lt;p&gt;（攻撃者としての）ハッカーと同等のスキルを持ち、その知識と技術をセキュリティのために使う人間のこと&lt;/p&gt;
 &lt;h1 id=&quot;ホワイトハッカー（ethical-hacker）のスキル&quot;&gt;ホワイトハッカー（Ethical Hacker）のスキル&lt;/h1&gt;
 &lt;ul&gt;
@@ -55,7 +55,18 @@
 &lt;li&gt;享楽&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;攻撃特定性&quot;&gt;攻撃特定性&lt;/h2&gt;
-&lt;p&gt;ターゲットを選別する理由の多くは同期に依存しています。ターゲットを選別するか否かで攻撃手法も異なってきます。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[社会人に独学が必要な理由]]></title><description><![CDATA[…]]></description><link>https://Shin-tech25.netlify.app/book-review-howto-learn/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/book-review-howto-learn/</guid><pubDate>Sat, 23 Jul 2022 08:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
+&lt;p&gt;ターゲットを選別する理由の多くは同期に依存しています。ターゲットを選別するか否かで攻撃手法も異なってきます。&lt;/p&gt;
+&lt;h2 id=&quot;ハッカーの種類&quot;&gt;ハッカーの種類&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ブラックハット&lt;/li&gt;
+&lt;li&gt;ホワイトハット&lt;/li&gt;
+&lt;li&gt;グレーハット&lt;/li&gt;
+&lt;li&gt;サイバーテロリスト&lt;/li&gt;
+&lt;li&gt;ハクティビスト&lt;/li&gt;
+&lt;li&gt;国営ハッカー&lt;/li&gt;
+&lt;li&gt;スーサイドハッカー&lt;/li&gt;
+&lt;li&gt;スクリプトキディ&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[社会人に独学が必要な理由]]></title><description><![CDATA[…]]></description><link>https://Shin-tech25.netlify.app/book-review-howto-learn/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/book-review-howto-learn/</guid><pubDate>Sat, 23 Jul 2022 08:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;概要&quot;&gt;概要&lt;/h2&gt;
 &lt;p&gt;山口周著「知的戦闘力を高める独学の技法」を読んで。&lt;/p&gt;
 &lt;p&gt;社会人には独学が必須と言えます。その根拠と、独学の方法論について筆者の見解が述べられていて、示唆深い本になっています。概念的なビジネス本でしたが、私としては良い気づきを得ることが出来ましたので記事にしました。&lt;/p&gt;
 &lt;h2 id=&quot;なぜ今独学が今必要なのか？&quot;&gt;なぜ今独学が今必要なのか？&lt;/h2&gt;
