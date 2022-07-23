@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 23 Jul 2022 02:38:25 GMT</lastBuildDate><item><title><![CDATA[マイクロサービスの特徴]]></title><description><![CDATA[マイクロサービスの歴史 マイクロサービスの歴史を遡ると、2010 年代の初頭にはその原型があったようですが、2014 年 3 月の Martin Fowler 氏と James Lewis 氏による Web…]]></description><link>https://Shin-tech25.netlify.app/micro-service-feature/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/micro-service-feature/</guid><pubDate>Sat, 23 Jul 2022 01:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;マイクロサービスの歴史&quot;&gt;マイクロサービスの歴史&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 23 Jul 2022 02:40:51 GMT</lastBuildDate><item><title><![CDATA[マイクロサービスの特徴]]></title><description><![CDATA[マイクロサービスの歴史 マイクロサービスの歴史を遡ると、2010 年代の初頭にはその原型があったようですが、2014 年 3 月の Martin Fowler 氏と James Lewis 氏による Web…]]></description><link>https://Shin-tech25.netlify.app/micro-service-feature/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/micro-service-feature/</guid><pubDate>Sat, 23 Jul 2022 01:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;マイクロサービスの歴史&quot;&gt;マイクロサービスの歴史&lt;/h1&gt;
 &lt;p&gt;マイクロサービスの歴史を遡ると、2010 年代の初頭にはその原型があったようですが、2014 年 3 月の Martin Fowler 氏と James Lewis 氏による Web サイトへの投稿を機に世に広まりました。この投稿で、米国 ThoughtWorks 社の著名なアーティスト/コンサルタントである両氏が、IT システムの開発運用の現場からのフィードバックをマイクロサービスとしてまとめ上げています。&lt;/p&gt;
 &lt;h1 id=&quot;マイクロサービスの特徴&quot;&gt;マイクロサービスの特徴&lt;/h1&gt;
 &lt;p&gt;Martin Fowler 氏と James Lewis 氏は、&lt;a href=&quot;https://martinfowler.com/articles/microservices.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Web サイトへの投稿&lt;/a&gt;でマイクロサービスの 9 つの特徴について挙げています。&lt;/p&gt;
@@ -773,7 +773,7 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;歴史とは何か&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://amzn.to/3opDXUZ&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;歴史とは何か&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;E.H.カー (著), 近藤 和彦 (翻訳)&lt;/td&gt;
 &lt;td&gt;岩波書店&lt;/td&gt;
 &lt;/tr&gt;
