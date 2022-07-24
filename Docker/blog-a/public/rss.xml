@@ -1,6 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 24 Jul 2022 03:24:11 GMT</lastBuildDate><item><title><![CDATA[ホワイトハッキングの活用]]></title><description><![CDATA[ホワイトハッキングの活用 ホワイトハッカーの持つ知識と技術はセキュリティのあらゆる局面で活用します。攻撃者と同等のスキルを持っていることが重要で、そのスキルが最も活かされるのが、脆弱性評価です。]]></description><link>https://Shin-tech25.netlify.app/white-hacking/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/white-hacking/</guid><pubDate>Sun, 24 Jul 2022 04:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;ホワイトハッキングの活用&quot;&gt;ホワイトハッキングの活用&lt;/h1&gt;
-&lt;p&gt;ホワイトハッカーの持つ知識と技術はセキュリティのあらゆる局面で活用します。攻撃者と同等のスキルを持っていることが重要で、そのスキルが最も活かされるのが、脆弱性評価です。&lt;/p&gt;
-&lt;h2 id=&quot;&quot;&gt;&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[ハッキングの手順と攻撃種類]]></title><description><![CDATA[CEH におけるハッキングフェーズの区分について ハッキングは主に以下のような手順になります。 偵察（Reconnaissance） スキャニング（Scanning） アクセス権の取得（Gaining Access） アクセスの維持（Maintaining Access…]]></description><link>https://Shin-tech25.netlify.app/hacking-phase-and-strategy/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/hacking-phase-and-strategy/</guid><pubDate>Sun, 24 Jul 2022 01:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;ceh-におけるハッキングフェーズの区分について&quot;&gt;CEH におけるハッキングフェーズの区分について&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 24 Jul 2022 03:33:13 GMT</lastBuildDate><item><title><![CDATA[偵察（Reconnaissance）]]></title><description><![CDATA[概要 偵察（Reconnaissance）は、CEH…]]></description><link>https://Shin-tech25.netlify.app/hacking-reconnaissance/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/hacking-reconnaissance/</guid><pubDate>Sun, 24 Jul 2022 04:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;概要&quot;&gt;概要&lt;/h1&gt;
+&lt;p&gt;偵察（Reconnaissance）は、CEH における準備段階である最初のフェーズです。この段階で、攻撃にするために必要な情報を集めます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;公開されている情報から&lt;/li&gt;
+&lt;li&gt;直接アクセスして&lt;/li&gt;
+&lt;li&gt;検索エンジンを使って&lt;/li&gt;
+&lt;li&gt;ソーシャルエンジニアリングを駆使して&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;これらの情報を集めます。&lt;/p&gt;
+&lt;h1 id=&quot;情報収集の分類&quot;&gt;情報収集の分類&lt;/h1&gt;
+&lt;p&gt;情報収集の手法は大きく 2 つです。&lt;/p&gt;
+&lt;h2 id=&quot;受動的情報収集&quot;&gt;受動的情報収集&lt;/h2&gt;
+&lt;p&gt;ターゲットが提供している情報を収集
+これは多くの場合「合法」です。&lt;/p&gt;
+&lt;h2 id=&quot;能動的情報収集&quot;&gt;能動的情報収集&lt;/h2&gt;
+&lt;p&gt;ターゲットに直接コマンド等を打ち込む
+状況によっては「非合法」です。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ハッキングの手順と攻撃種類]]></title><description><![CDATA[CEH におけるハッキングフェーズの区分について ハッキングは主に以下のような手順になります。 偵察（Reconnaissance） スキャニング（Scanning） アクセス権の取得（Gaining Access） アクセスの維持（Maintaining Access…]]></description><link>https://Shin-tech25.netlify.app/hacking-phase-and-strategy/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/hacking-phase-and-strategy/</guid><pubDate>Sun, 24 Jul 2022 01:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;ceh-におけるハッキングフェーズの区分について&quot;&gt;CEH におけるハッキングフェーズの区分について&lt;/h1&gt;
 &lt;p&gt;ハッキングは主に以下のような手順になります。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;偵察（Reconnaissance）&lt;/li&gt;
