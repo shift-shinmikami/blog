@@ -9,6 +9,7 @@ import Share from "../../components/share"
 import TOC from "../../components/toc"
 import Related, { Latest } from "../../components/related"
 import Wrapper from "./style"
+import "katex/dist/katex.min.css"
 
 const BlogPostTemplate = ({ data, location, pageContext }) => {
   const post = data.markdownRemark
