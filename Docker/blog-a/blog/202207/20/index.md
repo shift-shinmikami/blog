@@ -41,7 +41,7 @@ Markdown で書く場合は例えば以下のようになります。
 [Google検索エンジンの使い方](/google-search-engine)
 ```
 
-この場合は、https://(ドメイン)/google-search-engine などのようにリンクされます。
+この場合は、ｈ ttps://(ドメイン)/google-search-engine などのようにリンクされます。
 
 クリックすると、外部ページへの遷移のようにリロードするのではなく、SPA のように必要なコンポーネントのみがリロードされる形になります。
 
