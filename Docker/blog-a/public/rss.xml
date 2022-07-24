@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 24 Jul 2022 03:16:05 GMT</lastBuildDate><item><title><![CDATA[ハッキングの手順と攻撃種類]]></title><description><![CDATA[CEH におけるハッキングフェーズの区分について ハッキングは主に以下のような手順になります。 偵察（Reconnaissance） スキャニング（Scanning） アクセス権の取得（Gaining Access） アクセスの維持（Maintaining Access…]]></description><link>https://Shin-tech25.netlify.app/hacking-phase/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/hacking-phase/</guid><pubDate>Sun, 24 Jul 2022 01:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;ceh-におけるハッキングフェーズの区分について&quot;&gt;CEH におけるハッキングフェーズの区分について&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 24 Jul 2022 03:24:11 GMT</lastBuildDate><item><title><![CDATA[ホワイトハッキングの活用]]></title><description><![CDATA[ホワイトハッキングの活用 ホワイトハッカーの持つ知識と技術はセキュリティのあらゆる局面で活用します。攻撃者と同等のスキルを持っていることが重要で、そのスキルが最も活かされるのが、脆弱性評価です。]]></description><link>https://Shin-tech25.netlify.app/white-hacking/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/white-hacking/</guid><pubDate>Sun, 24 Jul 2022 04:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;ホワイトハッキングの活用&quot;&gt;ホワイトハッキングの活用&lt;/h1&gt;
+&lt;p&gt;ホワイトハッカーの持つ知識と技術はセキュリティのあらゆる局面で活用します。攻撃者と同等のスキルを持っていることが重要で、そのスキルが最も活かされるのが、脆弱性評価です。&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[ハッキングの手順と攻撃種類]]></title><description><![CDATA[CEH におけるハッキングフェーズの区分について ハッキングは主に以下のような手順になります。 偵察（Reconnaissance） スキャニング（Scanning） アクセス権の取得（Gaining Access） アクセスの維持（Maintaining Access…]]></description><link>https://Shin-tech25.netlify.app/hacking-phase-and-strategy/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/hacking-phase-and-strategy/</guid><pubDate>Sun, 24 Jul 2022 01:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;ceh-におけるハッキングフェーズの区分について&quot;&gt;CEH におけるハッキングフェーズの区分について&lt;/h1&gt;
 &lt;p&gt;ハッキングは主に以下のような手順になります。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;偵察（Reconnaissance）&lt;/li&gt;
@@ -20,7 +22,16 @@
 &lt;h2 id=&quot;痕跡の消去&quot;&gt;痕跡の消去&lt;/h2&gt;
 &lt;p&gt;侵入した痕跡を消去し、跡からの追跡を困難にする。&lt;/p&gt;
 &lt;p&gt;このフェーズは一般的な分類のため、実際のターゲットに従ってやる内容や行うかどうかも変わってきます。&lt;/p&gt;
-&lt;p&gt;こういった攻撃を行う人達は、準備に時間をかけます。良い攻撃とは、ターゲットへのアクセス時間が短いことです。また、全てネットワーク越しに行われるのではなく、ソーシャルエンジニアリングなども併用します。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[情報セキュリティの基礎]]></title><description><![CDATA[情報セキュリティとは 情報およびインフラ環境が健全で、情報やサービスといった情報資産が盗難・改ざん・破壊といった事象の可能性が低いもしくは許容範囲内であることです。 セキュリティの 3 大要件 C: Confidentiality (機密性) I: Integrity…]]></description><link>https://Shin-tech25.netlify.app/information-security-basic/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/information-security-basic/</guid><pubDate>Sun, 24 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;情報セキュリティとは&quot;&gt;情報セキュリティとは&lt;/h1&gt;
+&lt;p&gt;こういった攻撃を行う人達は、準備に時間をかけます。良い攻撃とは、ターゲットへのアクセス時間が短いことです。また、全てネットワーク越しに行われるのではなく、ソーシャルエンジニアリングなども併用します。&lt;/p&gt;
+&lt;h1 id=&quot;攻撃の種類と目的&quot;&gt;攻撃の種類と目的&lt;/h1&gt;
+&lt;p&gt;ハッキングの攻撃方法と目的は、動機によって異なってきます。&lt;/p&gt;
+&lt;h2 id=&quot;攻撃ターゲット&quot;&gt;攻撃ターゲット&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ホスト&lt;/li&gt;
+&lt;li&gt;ネットワーク&lt;/li&gt;
+&lt;li&gt;アプリケーション&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;それぞれが攻撃のターゲットになりうるため、ハッキングを防ぐためには多層の防御が必要になってきます。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[情報セキュリティの基礎]]></title><description><![CDATA[情報セキュリティとは 情報およびインフラ環境が健全で、情報やサービスといった情報資産が盗難・改ざん・破壊といった事象の可能性が低いもしくは許容範囲内であることです。 セキュリティの 3 大要件 C: Confidentiality (機密性) I: Integrity…]]></description><link>https://Shin-tech25.netlify.app/information-security-basic/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/information-security-basic/</guid><pubDate>Sun, 24 Jul 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;情報セキュリティとは&quot;&gt;情報セキュリティとは&lt;/h1&gt;
 &lt;p&gt;情報およびインフラ環境が健全で、情報やサービスといった情報資産が盗難・改ざん・破壊といった事象の可能性が低いもしくは許容範囲内であることです。&lt;/p&gt;
 &lt;h1 id=&quot;セキュリティの-3-大要件&quot;&gt;セキュリティの 3 大要件&lt;/h1&gt;
 &lt;ul&gt;
