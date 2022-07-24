@@ -50,4 +50,4 @@ whois サイトで検索することが可能。
 最近の検索エンジンは非常に高機能のため、欲しい情報を絞り込むためにはちょっとしたテクニックが必要
 
 こちらのページを参考に
-[Google 検索エンジンの使い方](https://www.shin-tech25.com/google-search)
+[Google 検索エンジンの使い方](/google-search)
