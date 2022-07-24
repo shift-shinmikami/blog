@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 24 Jul 2022 03:33:13 GMT</lastBuildDate><item><title><![CDATA[偵察（Reconnaissance）]]></title><description><![CDATA[概要 偵察（Reconnaissance）は、CEH…]]></description><link>https://Shin-tech25.netlify.app/hacking-reconnaissance/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/hacking-reconnaissance/</guid><pubDate>Sun, 24 Jul 2022 04:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;概要&quot;&gt;概要&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Shin-tech25's RSS Feed]]></title><description><![CDATA[Engineering Blog]]></description><link>https://Shin-tech25.netlify.app</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 24 Jul 2022 03:36:54 GMT</lastBuildDate><item><title><![CDATA[ハッキングにおける情報収集の手法]]></title><description><![CDATA[概要 偵察（Reconnaissance）は、CEH…]]></description><link>https://Shin-tech25.netlify.app/hacking-gathering-information/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/hacking-gathering-information/</guid><pubDate>Sun, 24 Jul 2022 04:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;概要&quot;&gt;概要&lt;/h1&gt;
 &lt;p&gt;偵察（Reconnaissance）は、CEH における準備段階である最初のフェーズです。この段階で、攻撃にするために必要な情報を集めます。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;公開されている情報から&lt;/li&gt;
@@ -12,9 +12,30 @@
 &lt;h2 id=&quot;受動的情報収集&quot;&gt;受動的情報収集&lt;/h2&gt;
 &lt;p&gt;ターゲットが提供している情報を収集
 これは多くの場合「合法」です。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ドメイン&lt;/li&gt;
+&lt;li&gt;URL&lt;/li&gt;
+&lt;li&gt;ネットワーク情報（IP アドレス、使用している IP 範囲、DNS など）&lt;/li&gt;
+&lt;li&gt;ホームページ&lt;/li&gt;
+&lt;li&gt;所在地&lt;/li&gt;
+&lt;li&gt;電話番号&lt;/li&gt;
+&lt;li&gt;役員名簿&lt;/li&gt;
+&lt;li&gt;株式情報&lt;/li&gt;
+&lt;li&gt;公開されているメールアドレス&lt;/li&gt;
+&lt;li&gt;社員のブログや SNS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;などの情報を得ることができます。&lt;/p&gt;
 &lt;h2 id=&quot;能動的情報収集&quot;&gt;能動的情報収集&lt;/h2&gt;
 &lt;p&gt;ターゲットに直接コマンド等を打ち込む
-状況によっては「非合法」です。&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ハッキングの手順と攻撃種類]]></title><description><![CDATA[CEH におけるハッキングフェーズの区分について ハッキングは主に以下のような手順になります。 偵察（Reconnaissance） スキャニング（Scanning） アクセス権の取得（Gaining Access） アクセスの維持（Maintaining Access…]]></description><link>https://Shin-tech25.netlify.app/hacking-phase-and-strategy/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/hacking-phase-and-strategy/</guid><pubDate>Sun, 24 Jul 2022 01:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;ceh-におけるハッキングフェーズの区分について&quot;&gt;CEH におけるハッキングフェーズの区分について&lt;/h1&gt;
+状況によっては「非合法」です。&lt;/p&gt;
+&lt;p&gt;スキャニングのほとんどがこれに当たります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ネットワーク内で稼働しているサーバ&lt;/li&gt;
+&lt;li&gt;サーバが提供しているサービス&lt;/li&gt;
+&lt;li&gt;サーバの OS やアプリケーション&lt;/li&gt;
+&lt;li&gt;認証機能の有無&lt;/li&gt;
+&lt;li&gt;有効なアカウント&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[ハッキングの手順と攻撃種類]]></title><description><![CDATA[CEH におけるハッキングフェーズの区分について ハッキングは主に以下のような手順になります。 偵察（Reconnaissance） スキャニング（Scanning） アクセス権の取得（Gaining Access） アクセスの維持（Maintaining Access…]]></description><link>https://Shin-tech25.netlify.app/hacking-phase-and-strategy/</link><guid isPermaLink="false">https://Shin-tech25.netlify.app/hacking-phase-and-strategy/</guid><pubDate>Sun, 24 Jul 2022 01:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;ceh-におけるハッキングフェーズの区分について&quot;&gt;CEH におけるハッキングフェーズの区分について&lt;/h1&gt;
 &lt;p&gt;ハッキングは主に以下のような手順になります。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;偵察（Reconnaissance）&lt;/li&gt;
