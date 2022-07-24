@@ -44,6 +44,17 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-katex`,
+            options: [
+              {
+                resolve: `gatsby-remark-katex`,
+                options: {
+                  strict: `ignore`
+                }
+              }
+            ]
+          },
+          {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
               offsetY: 0,
@@ -111,7 +122,6 @@ module.exports = {
               shortname: `shin-tech25`,
             },
           },
-          `gatsby-remark-katex`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
