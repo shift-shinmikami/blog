@@ -111,13 +111,7 @@ module.exports = {
               shortname: `shin-tech25`,
             },
           },
-          {
-            resolve: `gatsby-remark-katex`,
-            options: {
-              // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
-              strict: `ignore`
-            }
-          },
+          `gatsby-remark-katex`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
