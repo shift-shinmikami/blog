@@ -8,7 +8,8 @@ tags:
   - Markdown
   - 静的サイト
   - WordPress
-keywords: Markdown, ブログ, 静的サイト
+  - Gatsby
+keywords: Markdown, ブログ, 静的サイト, Gatsby
 ---
 
 # メモやノートをどこに保存するべきか？
