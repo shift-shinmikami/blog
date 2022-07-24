@@ -5,6 +5,7 @@ description: "ホワイトハッカーとは何か？ハッキングに必要な
 slug: ethical-hacker
 tags:
   - ハッキング
+  - セキュリティ
 keywords: ハッカー, ハッキング, セキュリティ
 ---
 
