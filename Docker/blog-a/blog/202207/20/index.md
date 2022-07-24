@@ -37,7 +37,7 @@ Markdown で gatsby-transformer-remark を用いているため、gatsby-config.
 
 Markdown で書く場合は例えば以下のようになります。
 
-```MD
+```
 [Google検索エンジンの使い方](/google-search-engine)
 ```
 
